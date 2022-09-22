@@ -9,3 +9,4 @@ Capstone Project(ENSE 400/477) for Software Systems Engineering at the Universit
 3. Faizah Kolapo
 
 ### Vlogs:
+1. [Vlog 1](https://www.youtube.com/watch?v=Uno1oIQs6zY)
