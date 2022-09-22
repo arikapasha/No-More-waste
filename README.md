@@ -1,7 +1,8 @@
 # No More waste
 ## Team Vecna
 ### Description
-Capstone Project(ENSE 400/477) for Software Systems Engineering at the University of Regina.
+A web/phone app that will give restaurants a platform to connect with local shelters so excess food does not go to waste.
+Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering at the University of Regina.
 
 ### Members
 1. Arika Pasha
