@@ -1,4 +1,4 @@
-# No More waste
+# Capstone project SSE - No More waste
 ## Team Vecna
 ### Description
 A Progressive web app that will give restaurants a platform to connect with local shelters so excess food does not go to waste.
