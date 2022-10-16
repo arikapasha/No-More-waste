@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>
-          No more waste test1x
+          No more waste
         </h2>
         
       </header>
