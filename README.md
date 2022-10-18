@@ -12,6 +12,6 @@ Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering 
 ### Vlogs:
 1. [Vlog 1](https://www.youtube.com/watch?v=Uno1oIQs6zY)
 
-###[Lo-Fi Prototypes](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Lo-Fi%20Prototypes)
+#### [Lo-Fi Prototypes](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Lo-Fi%20Prototypes)
 
-###[Hi-Fi Prototypes](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Hi-Fi%20Prototypes)
+#### [Hi-Fi Prototypes](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Hi-Fi%20Prototypes)
