@@ -1,13 +1,18 @@
 import express from "express"
+import postRoutes from "./routes/posts.js"
+import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/users.js"
+
 
 const app = express()
 
 app.use(express.json())
+app.use("/api/auth", suthRoutes)
+app.use("/api/users", userRoutes)
+app.use("/api/posts", postRoutes)
 
-app.get("https://sea-turtle-app-8pyey.ondigitalocean.app/test", (req,res)=>{
-    res.json("it works!")
-})
 
 app.listen(25060, ()=>{
     console.log("connected")
 })
+
