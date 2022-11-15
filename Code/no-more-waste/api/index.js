@@ -4,7 +4,7 @@ const app = express()
 
 app.use(express.json())
 
-app.get("/test", (req,res)=>{
+app.get("https://sea-turtle-app-8pyey.ondigitalocean.app/test", (req,res)=>{
     res.json("it works!")
 })
 
