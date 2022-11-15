@@ -1,6 +1,7 @@
-import db from "../db.js"
+import {db} from "../db.js"
 import bcrypt from "bcryptjs"
 import jwt from"jsonwebtoken"
+//import 
 
 export const signup = (req,res)=>{
     const q = "select * from user where email = ?"
@@ -45,7 +46,11 @@ export const login = (req,res)=>{
         const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0].password);
         if(!isPasswordCorrect) return res.status(400).json("Wrong password or user does not exist.");
 
-        const token = jwt.sign({user_id.data[0].user_id});
+        const token = jwt.sign({user_id:data[0].user_id},"jwtkey");
+        const {password, ...other} = data[0]
+        res.cookie("access_token",token, {
+            httpOnly: true
+        }).status(200).json(other)
     });
 };
 
