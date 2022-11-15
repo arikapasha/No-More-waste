@@ -47,7 +47,7 @@ export const login = (req,res)=>{
         if(!isPasswordCorrect) return res.status(400).json("Wrong password or user does not exist.");
 
         const token = jwt.sign({user_id:data[0].user_id},"jwtkey");
-        const {password, ...other} = data[0]
+        const {password, ...other} = data[0] // not sending the passowrd but all other values are being sent.
         res.cookie("access_token",token, {
             httpOnly: true
         }).status(200).json(other)
@@ -55,5 +55,8 @@ export const login = (req,res)=>{
 };
 
 export const logout = (req,res)=>{
-    
-}
+    res.clearCookie("access_token",{
+        sameSite:"none",
+        secure:true
+    }).status(200).json("User has been logged out.")
+};
