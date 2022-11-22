@@ -1,4 +1,4 @@
-import logo from './nwmLogo.jpg';
+import logo from './nmwLogo.jpg';
 import './App.css';
 
 function App() {
