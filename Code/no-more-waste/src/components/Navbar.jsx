@@ -13,8 +13,8 @@ const navbar = () => {
     </svg>
     <ul class="list nav__list collapsible__content">
       <span class="nav__item">Name</span>
-      <li class="nav__item"><Link to ="/?cat=profile">Profile</Link></li>
-      <li class="nav__item"><Link to ="/?cat=track">Track Requests</Link></li>
+      <li class="nav__item"><Link to ="/profile/2?cat=profile">Profile</Link></li>
+      <li class="nav__item"><Link to ="/track/2?cat=track">Track Requests</Link></li>
       <li class="nav__item"><Link to ="/support">Support</Link></li>
       <span class="nav__item">Log Out</span>
     </ul>
