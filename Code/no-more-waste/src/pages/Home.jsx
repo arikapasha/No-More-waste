@@ -1,9 +1,40 @@
-import React from 'react'
+import React from "react";
 
 const Home = () => {
-  return (
-    <div>home</div>
-  )
-}
+  const posts = [
+    {
+      post_id: 1,
+      item_name: "Burger King",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fuga hic repudiandae architecto nesciunt eius laboriosam! Sunt eos aspernatur ex quisquam molestias porro tempore culpa illum nam? Temporibus, minima saepe?      ",
+      photo_link:
+        "https://www.seriouseats.com/thmb/Il7mv9ZSDh7n0cZz3t3V-28ImkQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__04__20180309-french-fries-vicky-wasik-15-5a9844742c2446c7a7be9fbd41b6e27d.jpg",
+    },
+    {
+      post_id: 2,
+      item_name: "McDonalds",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fuga hic repudiandae architecto nesciunt eius laboriosam! Sunt eos aspernatur ex quisquam molestias porro tempore culpa illum nam? Temporibus, minima saepe?",
+      photo_link:
+        "https://www.seriouseats.com/thmb/Il7mv9ZSDh7n0cZz3t3V-28ImkQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__04__20180309-french-fries-vicky-wasik-15-5a9844742c2446c7a7be9fbd41b6e27d.jpg",
+    },
+  ];
 
-export default Home
+  return (
+    <div>
+      <button class="card-button create-post-btn">Create a New Post</button>
+      <div class="grid grid--1x2 grid-cards">
+        {posts.map((post) => (
+          <div class="card" key={post.post_id}>
+            <img class="card-image" src={post.photo_link} alt="" />
+            <h3 class="card-heading">{post.item_name}</h3>
+            <p class="card-text">{post.description}</p>
+            <button class="card-button">REQUEST</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Home;

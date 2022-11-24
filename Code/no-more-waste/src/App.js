@@ -22,6 +22,7 @@ import Track from './pages/Track';
 import Support from './pages/Support';
 import "./styles.css";
 import "./normalize.css";
+import CreatePost from './pages/CreatePost';
 
 const Layout = ()=>{
   return (
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path:"/support",
         element:<Support/>
+      },
+      {
+        path:"/createpost",
+        element:<CreatePost/>
       },
     ]
   },
