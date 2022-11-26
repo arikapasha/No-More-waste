@@ -1,4 +1,3 @@
-import logo from './nmwLogo.jpg';
 /* import './App.css';
  */
 

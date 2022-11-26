@@ -1,4 +1,9 @@
 import React from "react";
+import search_icon from "../images/search-icon.svg"
+import line from "../images/line.png"
+import filter from "../images/filter.png"
+
+
 
 const Home = () => {
   const posts = [
@@ -22,6 +27,31 @@ const Home = () => {
 
   return (
     <div>
+      <div class="search-and-filter">
+        <div class="search">
+          <div class="search-div">
+            <img class="search-icon" src={search_icon} alt="" />
+          </div>
+          <div>
+            <img class="search-underline" src={line} alt="" />
+          </div>
+          <div>
+            <input
+              class="search-text"
+              type="text"
+              id="textPlaceholder"
+              name="search-text"
+              placeholder="Enter search request..."
+            />
+          </div>
+        </div>
+        <div class="filter">
+          <div class="filter-div">
+            <img class="filter-icon" src={filter} alt="" />
+          </div>
+        </div>
+      </div>
+
       <button class="card-button create-post-btn">Create a New Post</button>
       <div class="grid grid--1x2 grid-cards">
         {posts.map((post) => (
