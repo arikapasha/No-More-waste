@@ -17,14 +17,14 @@ const Signup = () => {
     role: "r", 
   })
 
-  const handleChange = async e =>{
+  const handleChange =  e =>{
     setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
   }
 
-const handleSubmit= async e=>{
+const handleSubmit = async e =>{
   e.preventDefault()
   try{
-    const res = await axios.post("http://db-mysql-nyc1-11769-do-user-12717269-0.b.db.ondigitalocean.com:25060/api/auth/signup", inputs)
+    const res = await axios.post("https://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
     console.log(res)
   }
   catch(err){
@@ -102,7 +102,7 @@ const handleSubmit= async e=>{
             Business
           </label>
           {/*     <!-- <p class="or-in-form">or</p> -->
-           */}{" "}
+           */}
           <input
             type="checkbox"
             id="shelter-option"
