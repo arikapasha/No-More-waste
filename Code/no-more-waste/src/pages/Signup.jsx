@@ -26,7 +26,7 @@ const Signup = () => {
 const handleSubmit = async e =>{
   e.preventDefault()
   try{
-    const res = await axios.post("http://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
+    const res = await axios.post("https://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
     console.log(res)
   }
   catch(err){
