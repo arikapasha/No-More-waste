@@ -14,22 +14,23 @@ const Signup = () => {
     phone_number: "",
     email: "",
     password: "",
-    role: "r", 
+    
   })
 
+  const [err,setError] = useState(null)
+
   const handleChange =  e =>{
-    setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
-  }
+    setInputs(prev=>({...prev, [e.target.name]: e.target.value}));
+  };
 
 const handleSubmit = async e =>{
   e.preventDefault()
   try{
-    const res = await axios.post("https://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
+    const res = await axios.post("http://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
     console.log(res)
   }
   catch(err){
-    console.log(err)
-    //console.log(res)
+setError(err.response.data);    //console.log(res)
   }
 
 }
@@ -147,6 +148,7 @@ const handleSubmit = async e =>{
           {/*     <a href="#" class="sign-in">Sign in</a> <br />
            */}
           <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
+          {err && <span>{err}</span>}
         </form>
       </div>
     </div>

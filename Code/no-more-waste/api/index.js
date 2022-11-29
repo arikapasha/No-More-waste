@@ -14,7 +14,7 @@ app.use("/api/users", userRoutes)
 app.use("/api/posts", postRoutes)
 
 
-app.listen(25060, ()=>{
+app.listen(8080, ()=>{
     console.log("connected")
 })
 

@@ -29,7 +29,7 @@ const Profile = () => {
                 disabled
             /><br />
             </div>
-            <div class="address-profile profile-padding">
+            <div className="address-profile profile-padding">
                 <label for="address" class="form-label">Address</label><br />
             <input
                 type="text"

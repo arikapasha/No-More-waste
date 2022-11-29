@@ -16,7 +16,7 @@ export const signup = (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, salt);
 
     const q =
-      "inser into user('businessname','address','username','phone_number','email','password','role') values (?)";
+      "inser into user('businessname','address','username','phone_number','email','password') values (?)";
     const values = [
       req.body.businessname,
       req.body.address,
@@ -24,7 +24,6 @@ export const signup = (req, res) => {
       req.body.phone_number,
       req.body.email,
       req.body.password,
-      req.body.role,
     ];
 
     db.query(q, [values], (err, data) => {
