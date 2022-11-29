@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 //import
 
+
 export const signup = (req, res) => {
   const q = "select * from user where email = ?";
   db.query(q, [req.body.email], (err, data) => {

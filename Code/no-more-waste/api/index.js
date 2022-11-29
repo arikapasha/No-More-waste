@@ -3,6 +3,8 @@ import postRoutes from "./routes/posts.js"
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/users.js"
 import cookieParser from "cookie-parser"
+import { db } from "./db.js"
+
 
 
 const app = express()
@@ -18,3 +20,10 @@ app.listen(8080, ()=>{
     console.log("connected")
 })
 
+db.connect(function(err) {
+    if (err) {
+      return console.error('error: ' + err.message);
+    }
+  
+    console.log('Connected to the MySQL server.');
+  });
