@@ -15,16 +15,14 @@ export const signup = (req, res) => {
     //hash the password and create the user
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
-
-    const q =
-      "insert into user(businessname,address,username,phone_number,email,password) values (?)";
+    const q = "insert into user(businessname,address,username,phone_number,email,password) values (?)";
     const values = [
       req.body.businessname,
       req.body.address,
-      req.body.usename,
+      req.body.username,
       req.body.phone_number,
       req.body.email,
-      req.body.password,
+      hash,
     ];
 
     db.query(q, [values], (err, data) => {

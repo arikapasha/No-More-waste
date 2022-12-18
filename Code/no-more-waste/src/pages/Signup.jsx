@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
  
 
@@ -18,20 +18,23 @@ const Signup = () => {
     
   })
 
-  const [err,setError] = useState(null)
+  const [err,setError] = useState(null);
+
+  //const navigate = useNavigate();
 
   const handleChange =  e =>{
     setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
   };
-  //console.log(inputs)
+ // console.log(inputs)
  
   const handleSubmit = async (e) =>{
   
   e.preventDefault()
-  console.log("reached prevent deafutl")
+  
   try{
-    console.log("reach try block");
+    
     const res = await axios.post("/auth/signup", inputs);
+    //navigate("/login");
     console.log(res)
   }
   catch(err){
@@ -72,14 +75,14 @@ setError(err.response.data);    //console.log(res)
 
           />
           <br />
-          <label for="names" class="form-label">
+          <label for="username" class="form-label">
             First and Last name
           </label>
           <br />
           <input
             type="text"
-            name="username"
             id="contact-name"
+            name="username"
             class="form-input"
             onChange = {handleChange}
 

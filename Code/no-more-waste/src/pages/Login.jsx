@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../images/noMoreWasteLogo.svg";
 import axios from "axios";
 import { useState } from "react";
@@ -9,23 +9,26 @@ const Login = () => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
+    
   })
 
-  const [err,setError] = useState(null)
+  const [err,setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleChange =  e =>{
-    setInputs(prev=>({...prev, [e.target.name]: e.target.value}));
+    setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
   };
-  console.log(inputs)
+ // console.log(inputs)
  
-  const handleSubmit =  e =>{
+  const handleSubmit = async (e) =>{
   
   e.preventDefault()
   
   try{
-    console.log("reach try block");
-    const res =  axios.post("/auth/login", inputs);
-    console.log(res)
+    
+    await axios.post("/auth/login", inputs);
+    navigate("/");
   }
   catch(err){
 setError(err.response.data);    //console.log(res)
@@ -72,6 +75,7 @@ setError(err.response.data);    //console.log(res)
           {/*           <p>This is an error!</p>
            */}
           <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
+          {err && <p>{err}</p>}
         </form>
       </div>
     </div>
