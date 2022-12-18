@@ -9,7 +9,7 @@ import {
   Link,
 } from "react-router-dom";
 
-
+import React, { Component }  from 'react';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Login from './pages/Login';

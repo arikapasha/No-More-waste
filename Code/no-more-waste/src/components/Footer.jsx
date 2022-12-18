@@ -10,6 +10,7 @@ const footer = () => {
   return (
 
     <footer class="footer">
+      
       <div class="grid grid--1x3">
         <div class="footer-col-one">
           <h3>HELP & SUPPORT</h3>

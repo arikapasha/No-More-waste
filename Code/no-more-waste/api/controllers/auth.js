@@ -17,7 +17,7 @@ export const signup = (req, res) => {
     const hash = bcrypt.hashSync(req.body.password, salt);
 
     const q =
-      "inser into user('businessname','address','username','phone_number','email','password') values (?)";
+      "insert into user(businessname,address,username,phone_number,email,password) values (?)";
     const values = [
       req.body.businessname,
       req.body.address,
@@ -49,7 +49,7 @@ export const login = (req, res) => {
       data[0].password
     );
     if (!isPasswordCorrect)
-      return res.status(400).json("Wrong password or user does not exist.");
+      return res.status(400).json("Wrong password.");
 
     const token = jwt.sign({ user_id: data[0].user_id }, "jwtkey");
     const { password, ...other } = data[0]; // not sending the passowrd but all other values are being sent.

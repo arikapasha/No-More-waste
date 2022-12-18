@@ -1,9 +1,7 @@
 import React from "react";
-import search_icon from "../images/search-icon.svg"
-import line from "../images/line.png"
-import filter from "../images/filter.png"
-
-
+import search_icon from "../images/search-icon.svg";
+import line from "../images/line.png";
+import filter from "../images/filter.png";
 
 const Home = () => {
   const posts = [

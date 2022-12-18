@@ -21,20 +21,24 @@ const Signup = () => {
   const [err,setError] = useState(null)
 
   const handleChange =  e =>{
-    setInputs(prev=>({...prev, [e.target.name]: e.target.value}));
+    setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
   };
-
-const handleSubmit = async e =>{
+  //console.log(inputs)
+ 
+  const handleSubmit = async (e) =>{
+  
   e.preventDefault()
+  console.log("reached prevent deafutl")
   try{
-    const res = await axios.post("https://sea-turtle-app-8pyey.ondigitalocean.app/api/auth/signup", inputs)
+    console.log("reach try block");
+    const res = await axios.post("/auth/signup", inputs);
     console.log(res)
   }
   catch(err){
 setError(err.response.data);    //console.log(res)
   }
 
-}
+} 
   return (
     <div class="body-style">
       <div class="sign-up-logo">
@@ -94,18 +98,17 @@ setError(err.response.data);    //console.log(res)
 
           />
           <br />
-          <input
+          {/*<input
             type="checkbox"
             id="business-option"
             name="businessOption"
             value="Business"
             class="form-input"
           />
-          <label for="isBusiness" class="form-label">
+           <label for="isBusiness" class="form-label">
             Business
           </label>
-          {/*     <!-- <p class="or-in-form">or</p> -->
-           */}
+          
           <input
             type="checkbox"
             id="shelter-option"
@@ -116,7 +119,7 @@ setError(err.response.data);    //console.log(res)
           <label for="isShelter" class="form-label">
             Shelter
           </label>
-          <br />
+          <br /> */}
           <label for="email" class="form-label">
             Email Address
           </label>

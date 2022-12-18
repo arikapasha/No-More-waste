@@ -3,7 +3,7 @@ import { addPost } from "../controllers/post.js"
 
 const router = express.Router()
 
-router.post("/addpost", addPost )
+router.get("/addpost", addPost )
 
 
 export default router 
