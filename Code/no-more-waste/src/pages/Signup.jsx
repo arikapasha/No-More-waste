@@ -20,7 +20,7 @@ const Signup = () => {
 
   const [err,setError] = useState(null);
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange =  e =>{
     setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
@@ -32,9 +32,8 @@ const Signup = () => {
   e.preventDefault()
   
   try{
-    
     const res = await axios.post("/auth/signup", inputs);
-    //navigate("/login");
+    navigate("/login");
     console.log(res)
   }
   catch(err){
@@ -155,7 +154,7 @@ setError(err.response.data);    //console.log(res)
           {/*     <a href="#" class="sign-in">Sign in</a> <br />
            */}
           <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
-          {err && <span>{err}</span>}
+          {err && <span className="error">{err}</span>}
         </form>
       </div>
     </div>

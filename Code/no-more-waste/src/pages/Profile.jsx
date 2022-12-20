@@ -17,7 +17,7 @@ const Profile = () => {
               name="name"
               class="form-input text-profile"
               value="John Smith"
-              disabled
+              
             />
             <br />
           </div>
@@ -32,7 +32,7 @@ const Profile = () => {
               name="email"
               class="form-input text-profile"
               value="johnsmith@gmail.com"
-              disabled
+              
             />
             <br />
           </div>
@@ -47,7 +47,7 @@ const Profile = () => {
               name="address"
               class="form-input text-profile address-prof"
               value="123 Crane Cres, Regina SK, Canada"
-              disabled
+              
             />
             <br />
           </div>
@@ -59,10 +59,10 @@ const Profile = () => {
             <input
               type="tel"
               id="address-line"
-              name="address"
+              name="phone_number"
               class="form-input text-profile"
               value="3061234567"
-              disabled
+              
             />
             <br />
           </div>
@@ -74,10 +74,10 @@ const Profile = () => {
             <input
               type="text"
               id="business-name"
-              name="businessName"
+              name="businessname"
               class="form-input text-profile"
               value="Mcdonalds"
-              disabled
+              
             />
             <br />
           </div>
@@ -92,7 +92,7 @@ const Profile = () => {
               name="password"
               class="form-input text-profile"
               value="123456"
-              disabled
+              
             />
             <br />
           </div>

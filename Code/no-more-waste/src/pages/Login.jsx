@@ -75,7 +75,7 @@ setError(err.response.data);    //console.log(res)
           {/*           <p>This is an error!</p>
            */}
           <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
-          {err && <p>{err}</p>}
+          {err && <p className="error">{err}</p>}
         </form>
       </div>
     </div>

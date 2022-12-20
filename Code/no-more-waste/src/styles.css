@@ -66,7 +66,11 @@ input:focus, textarea:focus, select:focus{
     }
 }
 
-
+.error{
+    color: red;
+    font-size: medium;
+    padding-top: 5px;
+}
 /* Navigation Bar */
 .nav {
     background: #F4EEE7;
