@@ -3,7 +3,6 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 //import
 
-
 export const signup = (req, res) => {
   const q = "select * from user where email = ?";
   db.query(q, [req.body.email], (err, data) => {
@@ -15,12 +14,14 @@ export const signup = (req, res) => {
     //hash the password and create the user
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
-    const q = "insert into user(businessname,address,username,phone_number,email,password) values (?)";
+    const q =
+      "insert into user(businessname,address,username,phone_number,role,email,password) values (?)";
     const values = [
       req.body.businessname,
       req.body.address,
       req.body.username,
       req.body.phone_number,
+      req.body.role,
       req.body.email,
       hash,
     ];
@@ -46,8 +47,7 @@ export const login = (req, res) => {
       req.body.password,
       data[0].password
     );
-    if (!isPasswordCorrect)
-      return res.status(400).json("Wrong password.");
+    if (!isPasswordCorrect) return res.status(400).json("Wrong password.");
 
     const token = jwt.sign({ user_id: data[0].user_id }, "jwtkey");
     const { password, ...other } = data[0]; // not sending the passowrd but all other values are being sent.
@@ -61,6 +61,7 @@ export const login = (req, res) => {
 };
 
 export const logout = (req, res) => {
+  console.log("im in logout.");
   res
     .clearCookie("access_token", {
       sameSite: "none",

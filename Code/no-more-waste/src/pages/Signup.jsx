@@ -1,46 +1,59 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
- 
 
 import Logo from "../images/noMoreWasteLogo.svg";
 import axios from "axios";
 
-
 const Signup = () => {
+  const [checkedBus, setCheckedBus] = useState(false);
+  const [checkedShelter, setCheckedShelter] = useState(false);
+
   const [inputs, setInputs] = useState({
     businessname: "",
     address: "",
     username: "",
     phone_number: "",
+    role: "",
     email: "",
     password: "",
-    
-  })
+  });
 
-  const [err,setError] = useState(null);
+  const [err, setError] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleChange =  e =>{
-    setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
- // console.log(inputs)
- 
-  const handleSubmit = async (e) =>{
-  
-  e.preventDefault()
-  
-  try{
-    const res = await axios.post("/auth/signup", inputs);
-    navigate("/login");
-    console.log(res)
-  }
-  catch(err){
-setError(err.response.data);    //console.log(res)
+  // console.log(inputs)
+
+  const handleBus = (e) => {
+    setCheckedBus(!checkedBus);
+  };
+  //console.log(checkedBus);
+
+  const handleShelter = (e) => {
+    setCheckedShelter(!checkedShelter);
+  };
+
+  if (checkedBus) {
+    inputs.role = "b";
+  } else if (checkedShelter) {
+    inputs.role = "s";
   }
 
-} 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post("/auth/signup", inputs);
+      navigate("/login");
+      console.log(res);
+    } catch (err) {
+      setError(err.response.data); //console.log(res)
+    }
+  };
   return (
     <div class="body-style">
       <div class="sign-up-logo">
@@ -58,7 +71,7 @@ setError(err.response.data);    //console.log(res)
             id="business-name"
             name="businessname"
             class="form-input"
-            onChange = {handleChange}
+            onChange={handleChange}
           />
           <br />
           <label for="address" class="form-label">
@@ -70,8 +83,7 @@ setError(err.response.data);    //console.log(res)
             id="address-line"
             name="address"
             class="form-input"
-            onChange = {handleChange}
-
+            onChange={handleChange}
           />
           <br />
           <label for="username" class="form-label">
@@ -83,8 +95,7 @@ setError(err.response.data);    //console.log(res)
             id="contact-name"
             name="username"
             class="form-input"
-            onChange = {handleChange}
-
+            onChange={handleChange}
           />
           <br />
           <label for="number" class="form-label">
@@ -96,32 +107,36 @@ setError(err.response.data);    //console.log(res)
             name="phone_number"
             id="phone-number"
             class="form-input"
-            onChange = {handleChange}
-
+            onChange={handleChange}
           />
           <br />
-          {/*<input
+
+          <input required
             type="checkbox"
             id="business-option"
             name="businessOption"
-            value="Business"
+            value={checkedBus}
+            onChange={handleBus}
             class="form-input"
           />
-           <label for="isBusiness" class="form-label">
+
+          <label for="isBusiness" class="form-label">
             Business
           </label>
-          
-          <input
+
+          <input required
             type="checkbox"
             id="shelter-option"
             name="shelterOption"
-            value="Shelter"
+            value={checkedShelter}
+            onChange={handleShelter}
             class="form-input"
           />
           <label for="isShelter" class="form-label">
             Shelter
           </label>
-          <br /> */}
+
+          <br />
           <label for="email" class="form-label">
             Email Address
           </label>
@@ -131,8 +146,7 @@ setError(err.response.data);    //console.log(res)
             id="email-address"
             name="email"
             class="form-input"
-            onChange = {handleChange}
-
+            onChange={handleChange}
           />
           <br />
           <label for="password" class="form-label">
@@ -144,8 +158,7 @@ setError(err.response.data);    //console.log(res)
             id="pass-word"
             name="password"
             class="form-input"
-            onChange = {handleChange}
-
+            onChange={handleChange}
           />
           <br />
           <p class="is-member">
@@ -153,7 +166,9 @@ setError(err.response.data);    //console.log(res)
           </p>
           {/*     <a href="#" class="sign-in">Sign in</a> <br />
            */}
-          <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
+          <button onClick={handleSubmit} class="card-button signup-button">
+            Continue
+          </button>
           {err && <span className="error">{err}</span>}
         </form>
       </div>

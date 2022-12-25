@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../images/noMoreWasteLogo.svg";
 import axios from "axios";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext.js";
 
 const Login = () => {
 
@@ -16,6 +18,9 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const {login} = useContext(AuthContext);
+  //console.log(currentUser);
+
   const handleChange =  e =>{
     setInputs((prev)=>({...prev, [e.target.name]: e.target.value}));
   };
@@ -26,8 +31,8 @@ const Login = () => {
   e.preventDefault()
   
   try{
-    
-    await axios.post("/auth/login", inputs);
+    await login(inputs);
+    /* await axios.post("/auth/login", inputs); */
     navigate("/");
   }
   catch(err){
