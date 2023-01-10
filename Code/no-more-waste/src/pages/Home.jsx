@@ -2,8 +2,13 @@ import React from "react";
 import search_icon from "../images/search-icon.svg";
 import line from "../images/line.png";
 import filter from "../images/filter.png";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext.js";
 
 const Home = () => {
+
+  const { currentUser, logout } = useContext(AuthContext);
   const posts = [
     {
       post_id: 1,
@@ -50,7 +55,8 @@ const Home = () => {
         </div>
       </div>
 
-      <button class="card-button create-post-btn">Create a New Post</button>
+      {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
+      <Link to="/createpost" ><button class="card-button create-post-btn">Create a New Post</button></Link>
       <div class="grid grid--1x2 grid-cards">
         {posts.map((post) => (
           <div class="card" key={post.post_id}>
