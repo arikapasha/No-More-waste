@@ -553,11 +553,12 @@ input:focus, textarea:focus, select:focus{
 
 /* Create post page */
 .create-div {
-    position: relative;
-    top: 50px;
-    left: 420px;
+    margin-top: 8rem;
+    margin-bottom: 20rem;
     height: 500px;
 }
+
+
 .create-heading {
     position: relative;
     left: 25px;
@@ -603,3 +604,35 @@ input:focus, textarea:focus, select:focus{
     font-size: 1.3rem;
     padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .create-div {
+        margin-left: -400px;
+        margin-right: 10px;
+        width: 350px;
+    }
+    .form-label-create {
+        position: relative;
+        left: -3.8rem;
+    }
+    .create-desc {
+        position: relative;
+        left: -3.8rem;
+    }
+    .post-pickup {
+        position: relative;
+        left: -3.8rem;
+    }
+    .create-heading {
+        position: relative;
+        left: -1.3rem;
+    }
+    .create-span {
+        position: relative;
+        left: -3.8rem;
+    }
+    .create-btn {
+        position: relative;
+        left: 5rem;
+    }
+ }
