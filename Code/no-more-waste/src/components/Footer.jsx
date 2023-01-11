@@ -1,5 +1,5 @@
 import React from 'react'
-
+import cr from "../images/copyright.png"
 import tw from "../images/twitter.png"
 import fb from "../images/fb.png"
 import ig from "../images/instagram.png"
@@ -42,7 +42,7 @@ const footer = () => {
       </div>
       <div>
         <span>
-          <img class="copyright-icon" src="images/copyright.png" alt="" />
+          <img class="copyright-icon" src={cr} alt="" />
           <p class="copyright-text">2022 NOMOREWASTE All Rights Reserved</p>
         </span>
       </div>

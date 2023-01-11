@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles.css';
+import "../styles.css";
 import search_icon from "../images/search-icon.svg";
 import line from "../images/line.png";
 import filter from "../images/filter.png";
@@ -13,7 +13,6 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
 
 const Home = () => {
-
   const { currentUser, logout } = useContext(AuthContext);
   const posts = [
     {
@@ -36,21 +35,6 @@ const Home = () => {
 
   return (
     <div>
-      <header>
-        <nav class="nav collapsible">
-          <a class="nav__brand" href="homePageBusiness.html"
-            ><img class="logo-class" src={logo} alt=""
-          /></a>
-          <svg class="icon icon--white nav__toggler">
-            <use href="images/sprite.svg#menu"></use>
-          </svg>
-          <ul class="list nav__list collapsible__content">
-            <li class="nav__item"><a href="#">Profile</a></li>
-            <li class="nav__item"><a href="#">Track Requests</a></li>
-            <li class="nav__item"><a href="#">Support</a></li>
-          </ul>
-        </nav>
-      </header>
       <div class="search-and-filter">
         <div class="search">
           <div class="search-div">
@@ -77,7 +61,9 @@ const Home = () => {
       </div>
 
       {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
-      <Link to="/createpost" ><button class="card-button create-post-btn">Create a New Post</button></Link>
+      <Link to="/createpost">
+        <button class="card-button create-post-btn">Create a New Post</button>
+      </Link>
       <div class="grid grid--1x2 grid-cards">
         {posts.map((post) => (
           <div class="card" key={post.post_id}>
@@ -88,42 +74,11 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <div class="footer">
-        <div class="grid-footer grid--1x3">
-          <div class="footer-col-one">
-            <h3>HELP & SUPPORT</h3>
-            <p>About NOMOREWASTE</p>
-            <p>Responsibility</p>
-          </div>
-          <div class="footer-col-one">
-            <h3>SUPPORT</h3>
-            <p>Contact us</p>
-            <p>FAQs</p>
-          </div>
-          <div class="footer-col-one">
-            <h3>FIND US ON</h3>
-            <span class="footer-span"
-              ><img class="footer-icon" src={fb} alt="" />
-              <img class="footer-icon" src={instagram} alt="" />
-              <img class="footer-icon" src={twitter} alt=""
-            /></span>
-            <h3>SIGN UP FOR NEWSLETTERS</h3>
-            <span class="newsletter-span">
-              <input
-                type="text"
-                class="newsletter-input"
-                placeholder="Email address"
-              />
-              <button class="newsletter-button">SUBSCRIBE</button>
-            </span>
-          </div>
-        </div>
-        <div>
-          <span>
-            <img class="copyright-icon" src={copyright} alt="" />
-            <p class="copyright-text">2022 NOMOREWASTE All Rights Reserved</p>
-          </span>
-        </div>
+      <div>
+        <span>
+          <img class="copyright-icon" src={copyright} alt="" />
+          <p class="copyright-text">2022 NOMOREWASTE All Rights Reserved</p>
+        </span>
       </div>
     </div>
   );
