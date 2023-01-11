@@ -136,7 +136,8 @@ input:focus, textarea:focus, select:focus{
     }
 }
 
-/* Search and filter component */
+@media screen and (min-width: 768px) {
+    /* Search and filter component */
 .search-and-filter {
     position: relative;
     left: 240px;
@@ -497,4 +498,5 @@ input:focus, textarea:focus, select:focus{
 .post-pickup {
     font-size: 1.3rem;
     padding: 10px;
+}
 }
