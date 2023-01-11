@@ -18,9 +18,11 @@ import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Track from './pages/Track';
 import Support from './pages/Support';
+import About from './pages/About';
 import "./styles.css";
 import "./normalize.css";
 import CreatePost from './pages/CreatePost';
+
 
 const Layout = ()=>{
   return (
@@ -61,6 +63,10 @@ const router = createBrowserRouter([
       {
         path:"/createpost",
         element:<CreatePost/>
+      },
+      {
+        path:"/about",
+        element:<About/>
       },
     ]
   },

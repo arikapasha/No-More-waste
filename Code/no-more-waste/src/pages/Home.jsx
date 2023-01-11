@@ -1,13 +1,9 @@
 import React from "react";
 import "../styles.css";
+import "../styles.css";
 import search_icon from "../images/search-icon.svg";
 import line from "../images/line.png";
 import filter from "../images/filter.png";
-import logo from "../images/noMoreWasteLogo.svg";
-import fb from "../images/fb.png";
-import instagram from "../images/instagram.png";
-import twitter from "../images/twitter.png";
-import copyright from "../images/copyright.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
@@ -59,26 +55,21 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
-      <Link to="/createpost">
-        <button class="card-button create-post-btn">Create a New Post</button>
-      </Link>
-      <div class="grid grid--1x2 grid-cards">
-        {posts.map((post) => (
-          <div class="card" key={post.post_id}>
-            <img class="card-image" src={post.photo_link} alt="" />
-            <h3 class="card-heading">{post.item_name}</h3>
-            <p class="card-text">{post.description}</p>
-            <button class="card-button">REQUEST</button>
-          </div>
-        ))}
-      </div>
-      <div>
-        <span>
-          <img class="copyright-icon" src={copyright} alt="" />
-          <p class="copyright-text">2022 NOMOREWASTE All Rights Reserved</p>
-        </span>
+      <div class="display-style">
+        {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
+        <Link to="/createpost">
+          <button class="card-button create-post-btn">Create a New Post</button>
+        </Link>
+        <div class="grid grid--1x2 grid-cards">
+          {posts.map((post) => (
+            <div class="card" key={post.post_id}>
+              <img class="card-image" src={post.photo_link} alt="" />
+              <h3 class="card-heading">{post.item_name}</h3>
+              <p class="card-text">{post.description}</p>
+              <button class="card-button">REQUEST</button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
