@@ -52,7 +52,18 @@ body {
       display: grid;
       justify-content: center;
   }
+  .body-content-create {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+  }
+  .inner-content-create {
+      width: 500px;
+      display: grid;
+      justify-content: center;
+  }
 }
+
 
 .collapsible__content {
   max-height: 0;
@@ -566,6 +577,8 @@ input:focus, textarea:focus, select:focus{
   margin-top: 8rem;
   margin-bottom: 20rem;
   height: 500px;
+  position: relative;
+  left: 0rem;
 }
 
 
@@ -616,33 +629,36 @@ input:focus, textarea:focus, select:focus{
 }
 
 @media screen and (max-width: 768px) {
+  .body-content-create {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+  }
   .create-div {
-      margin-left: -400px;
-      margin-right: 10px;
-      width: 350px;
-  }
-  .form-label-create {
-      position: relative;
-      left: -3.8rem;
-  }
-  .create-desc {
-      position: relative;
-      left: -3.8rem;
-  }
-  .post-pickup {
-      position: relative;
-      left: -3.8rem;
+      width: 300px;
   }
   .create-heading {
       position: relative;
-      left: -1.3rem;
+      left: -3.8rem;
+  }
+  .form-label-create {
+      position: relative;
+      left: -6.2rem;
+  }
+  .create-desc {
+      position: relative;
+      left: -6.2rem;
+  }
+  .post-pickup {
+      position: relative;
+      left: -6.2rem;
   }
   .create-span {
       position: relative;
-      left: -3.8rem;
+      left: -6.2rem;
   }
   .create-btn {
       position: relative;
-      left: 5rem;
+      left: 2.5rem;
   }
 }

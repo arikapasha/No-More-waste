@@ -12,7 +12,9 @@ import copyright from "../images/copyright.png";
 const CreatePost = () => {
   return (
     <div>
-      <div className="sign-up create-div">
+      <div class="body-content-create">
+        <div class="inner-content-create">
+        <div className="sign-up create-div">
         <form className="signup-form">
           <h3 className="sign-up-heading create-heading">Create a new post</h3>
           <label for="restName" className="form-label form-label-create">
@@ -48,6 +50,9 @@ const CreatePost = () => {
 
           <button className="card-button create-btn">Create</button>
         </form>
+      </div>
+        </div>
+      
       </div>
     </div>
   );
