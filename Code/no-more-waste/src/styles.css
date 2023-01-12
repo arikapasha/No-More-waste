@@ -11,8 +11,10 @@ html {
   width: 100%;
   background: linear-gradient(#F9F8F8, #604747);
   position: fixed;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
 
 body {
   /* background: linear-gradient(#e66465, #9198e5); */
@@ -134,7 +136,7 @@ input:focus, textarea:focus, select:focus{
   }
 }
 
-.error{
+.error {
   color: red;
   font-size: medium;
   padding-top: 5px;
@@ -453,6 +455,7 @@ input:focus, textarea:focus, select:focus{
   background-color: #F9F8F8;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-bottom: 10rem;
 }
 .signup-form {
   position: relative;
@@ -506,6 +509,7 @@ input:focus, textarea:focus, select:focus{
   position: relative;
   left: 415px;
   top: -10px;
+  margin-bottom: 10rem;
 }
 .sign-in-logo {
   position: relative;
@@ -527,31 +531,39 @@ input:focus, textarea:focus, select:focus{
       position: relative;
       left: -41.5rem;
   }
-  .sign-in-div {
+  .sign-in-div, .sign-up {
       width: 300px;
+      margin-bottom: 10rem;
   }
-  .sign-in-logo {
+  .sign-in-logo, .sign-up-logo {
       position: relative;
       left: 44rem;
   }
-  .sign-in-heading {
+  .sign-in-heading, .sign-up-heading {
       position: relative;
       left: 3rem;
   }
-  .form-label-sign {
+  .form-label-sign, .form-label {
       position: relative;
       left: -4rem;
   }
-  .form-input-sign {
+  .form-input-sign, .form-input {
       position: relative;
       left: -4rem;
       width: 23rem;
   }
-  .sign-in-btn {
+  .sign-in-btn, .signup-button {
       position: relative;
       left: 2.5rem;
   }
+  .check-input {
+      position: relative;
+      left: -4rem;
+      top: 0.2rem;
+  }
+  
 }
+
 
 /* Landing Page */
 .landing-block {

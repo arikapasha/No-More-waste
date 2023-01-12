@@ -56,7 +56,10 @@ const Signup = () => {
   };
   return (
     <div class="body-style">
-      <div class="sign-up-logo">
+      <div class="body-content-login">
+        <div class="inner-content-login">
+          <div class="login-group">
+          <div class="sign-up-logo">
         <img src={Logo} alt="" />
       </div>
       <div class="sign-up">
@@ -117,7 +120,7 @@ const Signup = () => {
             name="businessOption"
             value={checkedBus}
             onChange={handleBus}
-            class="form-input"
+            class="check-input"
           />
 
           <label for="isBusiness" class="form-label">
@@ -130,7 +133,7 @@ const Signup = () => {
             name="shelterOption"
             value={checkedShelter}
             onChange={handleShelter}
-            class="form-input"
+            class="check-input"
           />
           <label for="isShelter" class="form-label">
             Shelter
@@ -172,6 +175,10 @@ const Signup = () => {
           {err && <span className="error">{err}</span>}
         </form>
       </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 };
