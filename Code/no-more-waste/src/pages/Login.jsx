@@ -42,13 +42,16 @@ setError(err.response.data);    //console.log(res)
 } 
   return (
     <div class="body-style">
-      <div class="sign-in-logo">
+      <div class="body-content-login">
+        <div class="inner-content-login">
+          <div class="login-group">
+          <div class="sign-in-logo">
         <img src={Logo} alt="" />
       </div>
       <div class="sign-up sign-in-div">
-        <form action="index.html" class="signup-form">
-          <h3 class="sign-up-heading">Sign In</h3>
-          <label for="email" class="form-label">
+        <form action="index.html" class="signup-form login-form-width">
+          <h3 class="sign-up-heading sign-in-heading">Sign In</h3>
+          <label for="email" class="form-label form-label-sign">
             Email Address
           </label>
           <br />
@@ -56,11 +59,11 @@ setError(err.response.data);    //console.log(res)
             type="email"
             id="email-address"
             name="email"
-            class="form-input"
+            class="form-input form-input-sign"
             onChange={handleChange}
           />
           <br />
-          <label for="password" class="form-label">
+          <label for="password" class="form-label form-label-sign">
             Password
           </label>
           <br />
@@ -68,7 +71,7 @@ setError(err.response.data);    //console.log(res)
             type="password"
             id="pass-word"
             name="password"
-            class="form-input"
+            class="form-input form-input-sign"
             onChange={handleChange}
           />
           <br />
@@ -79,10 +82,14 @@ setError(err.response.data);    //console.log(res)
            */}
           {/*           <p>This is an error!</p>
            */}
-          <button onClick={handleSubmit} class="card-button signup-button">Continue</button>
+          <button onClick={handleSubmit} class="card-button signup-button sign-in-btn">Continue</button>
           {err && <p className="error">{err}</p>}
         </form>
       </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 };
