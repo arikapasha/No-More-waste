@@ -22,17 +22,21 @@ const navbar = () => {
             {currentUser ? <Link>{currentUser.businessname}</Link> : <Link></Link>}
           </li>
           <li class="nav__item">
-            <Link to="/profile/2?cat=profile">Profile</Link>
+            {currentUser ? <Link to="/profile/2?cat=profile">Profile</Link> : <Link></Link> }
           </li>
           <li class="nav__item">
-            <Link to="/track/2?cat=track">Track Requests</Link>
+            {currentUser ? <Link to="/track/2?cat=track">Track Requests</Link> : <Link></Link>}
+          </li>
+          <li class="nav__item">
+            <Link to="/about">About Us</Link>
           </li>
           <li class="nav__item">
             <Link to="/support">Support</Link>
           </li>
+
           
             <li  class="nav__item">
-              <Link to="/login" onClick={logout}>Log Out</Link>
+              {currentUser ? <Link to="/login" onClick={logout}>Log Out</Link> : <Link></Link>}
             </li>
           
         </ul>
