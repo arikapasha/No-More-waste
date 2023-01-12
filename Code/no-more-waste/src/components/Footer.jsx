@@ -25,8 +25,8 @@ const footer = () => {
             <h3>FIND US ON</h3>
             <span class="footer-span"
               ><img class="footer-icon" src={fb} alt="" />
-              <img class="footer-icon" src={instagram} alt="" />
-              <img class="footer-icon" src={twitter} alt=""
+              <img class="footer-icon" src={ig} alt="" />
+              <img class="footer-icon" src={tw} alt=""
             /></span>
             <h3>SIGN UP FOR NEWSLETTERS</h3>
             <span class="newsletter-span">
@@ -41,7 +41,7 @@ const footer = () => {
         </div>
         <div>
           <span>
-            <img class="copyright-icon" src={copyright} alt="" />
+            <img class="copyright-icon" src={cr} alt="" />
             <p class="copyright-text">2022 NOMOREWASTE All Rights Reserved</p>
           </span>
         </div>
