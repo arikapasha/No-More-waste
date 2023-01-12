@@ -31,7 +31,9 @@ const Home = () => {
 
   return (
     <div>
-      <div class="search-and-filter">
+      <div class="body-content-home">
+        <div class="inner-content">
+        <div class="search-and-filter">
         <div class="search">
           <div class="search-div">
             <img class="search-icon" src={search_icon} alt="" />
@@ -55,7 +57,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div class="display-style">
         {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
         <Link to="/createpost">
           <button class="card-button create-post-btn">Create a New Post</button>
@@ -70,7 +71,10 @@ const Home = () => {
             </div>
           ))}
         </div>
+        </div>
+      
       </div>
+      
     </div>
   );
 };
