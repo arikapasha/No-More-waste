@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
 
 const Profile = () => {
-  const { currentUser, logout } = useContext(AuthContext);
+  const { currentUser} = useContext(AuthContext);
   return (
     <div>
       <title>Profile</title>

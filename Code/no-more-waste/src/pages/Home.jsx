@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const { currentUser, logout } = useContext(AuthContext);
+  const { currentUser} = useContext(AuthContext);
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
