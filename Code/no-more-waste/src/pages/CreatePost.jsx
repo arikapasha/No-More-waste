@@ -25,14 +25,14 @@ const CreatePost = () => {
     e.preventDefault();
     const imgUrl = await upload();
 
-    try{
-      await axios.post("/posts",{
+    try {
+      await axios.post("/posts", {
         item_name,
         description,
-        photo_link : imgUrl,
+        photo_link: imgUrl,
         pickup_time,
       });
-    } catch(err){
+    } catch (err) {
       console.log(err);
     }
   };

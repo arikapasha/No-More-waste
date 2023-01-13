@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const { currentUser} = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -109,14 +109,17 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <div class="confirmation landing-block">
+          <div class="confirmation landing-block ">
             <div class="confirmation-text-block">
               <p class="confirmation-text bigger-text">
                 Welcome to No More Waste
               </p>
               <p class="confirmation-text">
                 <Link to="/login">Sign In </Link>
-                to your account to proceed or <Link to="/signup">Sign Up</Link>  today!
+                to your account to proceed or <Link to="/signup">
+                  Sign Up
+                </Link>{" "}
+                today!
               </p>
             </div>
           </div>

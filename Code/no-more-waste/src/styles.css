@@ -1,5 +1,16 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+}
+
+/*changes made for file input*/
+input[type="file"] {
+  display: flex;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: -8px;
 }
 
 html {
@@ -9,12 +20,11 @@ html {
 .body-style {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(#F9F8F8, #604747);
+  background: linear-gradient(#f9f8f8, #604747);
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
 
 body {
   /* background: linear-gradient(#e66465, #9198e5); */
@@ -26,72 +36,72 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
-  
 }
 @media screen and (min-width: 768px) {
-  html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      justify-content: center;
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    justify-content: center;
   }
   .body-content-home {
-      width: 100%;
-      display: grid;
-      justify-content: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
   }
   .inner-content {
-      max-width: 1400px;
-      display: grid;
-      justify-content: center;
+    max-width: 1400px;
+    display: grid;
+    justify-content: center;
   }
   .body-content-create {
-      width: 100%;
-      display: grid;
-      justify-content: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
   }
   .inner-content-create {
-      width: 500px;
-      display: grid;
-      justify-content: center;
+    width: 500px;
+    display: grid;
+    justify-content: center;
   }
   .body-content-login {
-      width: 100%;
-      display: grid;
-      justify-content: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
   }
   .inner-content-login {
-      width: 500px;
-      display: grid;
-      justify-content: center;
+    width: 500px;
+    display: grid;
+    justify-content: center;
   }
   .login-group {
-      position: relative;
-      left: -41.5rem;
+    position: relative;
+    left: -41.5rem;
   }
   .body-content-profile {
-      width: 100%;
-      display: grid;
-      justify-content: center;
-      overflow-y: scroll;
-      overflow-x: hidden;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .inner-content-profile {
-      width: 800px;
-      height: 500px;
-      display: grid;
+    width: 800px;
+    height: 500px;
+    display: grid;
   }
 }
-
 
 .collapsible__content {
   max-height: 0;
@@ -116,7 +126,9 @@ li {
 }
 
 /* Inputs */
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -134,16 +146,16 @@ input:focus, textarea:focus, select:focus{
 
 @media screen and (min-width: 768px) {
   .grid--1x2 {
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      max-width: 1400px;
-      /*margin-left: -15rem;*/
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    max-width: 1400px;
+    /*margin-left: -15rem;*/
   }
 }
 
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -154,7 +166,7 @@ input:focus, textarea:focus, select:focus{
 }
 /* Navigation Bar */
 .nav {
-  background: #F4EEE7;
+  background: #f4eee7;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -176,7 +188,7 @@ input:focus, textarea:focus, select:focus{
 
 .nav__item > a {
   color: #604747;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .nav__item > a:hover {
@@ -199,22 +211,21 @@ input:focus, textarea:focus, select:focus{
   transform: translateY(5px);
 }
 
-
 @media screen and (min-width: 768px) {
   .nav__toggler {
-      display: none;
+    display: none;
   }
 
   .nav__list {
-      width: auto;
-      display: flex;
-      font-size: 1.6rem;
-      max-height: 100%;
-      opacity: 1;
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
   }
 
   .nav__item {
-      border: 0;
+    border: 0;
   }
 }
 
@@ -224,6 +235,7 @@ input:focus, textarea:focus, select:focus{
   position: relative;
   left: 16px;
   top: 20px;
+  margin-bottom: -60px;
 }
 
 .search {
@@ -260,14 +272,13 @@ input:focus, textarea:focus, select:focus{
 }
 @media screen and (max-width: 768px) {
   .search-and-filter {
-      position: relative;
-      left: -1rem;
-      right: 1rem;
+    position: relative;
+    left: -1rem;
+    right: 1rem;
   }
   .search-underline {
-      width: 440px;
+    width: 440px;
   }
- 
 }
 /*@media screen and (min-width: 768px) {
   .search-and-filter {
@@ -287,11 +298,12 @@ input:focus, textarea:focus, select:focus{
   margin: 30px;
   width: 350px;
   height: 450px;
-  background-color: #F9F8F8;
+  background-color: #f9f8f8;
   border-radius: 30px;
   margin-bottom: 10rem;
   /*box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 /*@media screen and (min-width: 768px) {
   .card {
@@ -329,7 +341,7 @@ input:focus, textarea:focus, select:focus{
 }
 .card-button {
   border-radius: 12px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   font-size: 1.3rem;
@@ -345,7 +357,7 @@ input:focus, textarea:focus, select:focus{
 }
 .card-button:hover {
   background-color: #604747;
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 
 /* Footer */
@@ -355,7 +367,7 @@ input:focus, textarea:focus, select:focus{
   bottom: 0;*/
   width: 100%;
   height: 250px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   color: #000000;
 }
 .footer-col-one {
@@ -367,11 +379,10 @@ input:focus, textarea:focus, select:focus{
 
 @media screen and (max-width: 768px) {
   .footer {
-      height: 500px;
-      overflow-y: hidden;
-      overflow-x: hidden;
+    height: 500px;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
-  
 }
 .footer-span {
   position: relative;
@@ -379,10 +390,9 @@ input:focus, textarea:focus, select:focus{
 }
 @media screen and (max-width: 768px) {
   .footer-span {
-      position: relative;
-      left: 8px;
+    position: relative;
+    left: 8px;
   }
- 
 }
 .footer-icon {
   width: 20px;
@@ -407,14 +417,14 @@ input:focus, textarea:focus, select:focus{
   height: 2.4rem;
   width: 9rem;
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .newsletter-button:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
 }
 .newsletter-span {
@@ -440,7 +450,7 @@ input:focus, textarea:focus, select:focus{
   position: relative;
   left: 320px;
   top: 120px;
-  background-color: #F9F8F8;
+  background-color: #f9f8f8;
   width: 650px;
   height: 200px;
   border-radius: 18px;
@@ -463,7 +473,7 @@ input:focus, textarea:focus, select:focus{
   left: 420px;
   width: 430px;
   height: 650px;
-  background-color: #F9F8F8;
+  background-color: #f9f8f8;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-bottom: 10rem;
@@ -529,58 +539,66 @@ input:focus, textarea:focus, select:focus{
 
 @media screen and (max-width: 768px) {
   .body-content-login {
-      width: 100%;
-      display: grid;
-      justify-content: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
   }
   .inner-content-login {
-      width: 400px;
-      display: grid;
-      justify-content: center;
+    width: 400px;
+    display: grid;
+    justify-content: center;
   }
   .login-group {
-      position: relative;
-      left: -41.5rem;
+    position: relative;
+    left: -41.5rem;
   }
-  .sign-in-div, .sign-up {
-      width: 300px;
-      margin-bottom: 10rem;
+  .sign-in-div,
+  .sign-up {
+    width: 300px;
+    margin-bottom: 10rem;
   }
-  .sign-in-logo, .sign-up-logo {
-      position: relative;
-      left: 44rem;
+  .sign-in-logo,
+  .sign-up-logo {
+    position: relative;
+    left: 44rem;
   }
-  .sign-in-heading, .sign-up-heading {
-      position: relative;
-      left: 3rem;
+  .sign-in-heading,
+  .sign-up-heading {
+    position: relative;
+    left: 3rem;
   }
-  .form-label-sign, .form-label {
-      position: relative;
-      left: -4rem;
+  .form-label-sign,
+  .form-label {
+    position: relative;
+    left: -4rem;
   }
-  .form-input-sign, .form-input {
-      position: relative;
-      left: -4rem;
-      width: 23rem;
+  .form-input-sign,
+  .form-input {
+    position: relative;
+    left: -4rem;
+    width: 23rem;
   }
-  .sign-in-btn, .signup-button {
-      position: relative;
-      left: 2.5rem;
+  .sign-in-btn,
+  .signup-button {
+    position: relative;
+    left: 2.5rem;
   }
   .check-input {
-      position: relative;
-      left: -4rem;
-      top: 0.2rem;
+    position: relative;
+    left: -4rem;
+    top: 0.2rem;
   }
-  
 }
-
 
 /* Landing Page */
 .landing-block {
   position: relative;
   left: 320px;
   top: -15px;
+  /* margin changes made for demo- Jan 13.*/
+  margin-left: 90px;
+  margin-top: 40px;
+  margin-bottom: 110px;
 }
 .landing-icon {
   position: relative;
@@ -609,26 +627,23 @@ input:focus, textarea:focus, select:focus{
 }
 @media screen and (max-width: 768px) {
   .create-post-btn {
-      position: relative;
-      left: 3rem;
+    position: relative;
+    left: 3rem;
   }
- 
 }
 
 @media screen and (min-width: 1024px) {
   .create-post-btn {
-      position: relative;
-      right: 20rem;
+    position: relative;
+    right: 20rem;
   }
- 
 }
 
 @media screen and (min-width: 768px) {
   .create-post-btn {
-      position: relative;
-      left: 55rem;
+    position: relative;
+    left: 55rem;
   }
- 
 }
 .create-post-btn:hover {
   color: #604747;
@@ -655,38 +670,38 @@ input:focus, textarea:focus, select:focus{
 
 @media screen and (min-width: 768px) {
   .update-profile {
-      position: relative;
-      left: 32rem;
-      top: -0.8rem;
+    position: relative;
+    left: 32rem;
+    top: -0.8rem;
   }
   .profile {
-      position: relative;
-      left: 2.6rem;
+    position: relative;
+    left: 2.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .body-content-profile {
-      width: 100%;
-      height: 950px;
-      display: grid;
-      justify-content: center;
-      overflow-y: scroll;
-      overflow-x: hidden;
+    width: 100%;
+    height: 950px;
+    display: grid;
+    justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .inner-content-profile {
-      width: 800px;
-      height: 850px;
-      display: grid;
+    width: 800px;
+    height: 850px;
+    display: grid;
   }
   .update-profile {
-      position: relative;
-      left: 32rem;
+    position: relative;
+    left: 32rem;
   }
   .profile {
-      position: relative;
-      left: 4rem;
-      top: 5rem;
+    position: relative;
+    left: 4rem;
+    top: 5rem;
   }
 }
 
@@ -699,10 +714,9 @@ input:focus, textarea:focus, select:focus{
   left: 0rem;
 }
 
-
 .create-heading {
   position: relative;
-  left: 25px;
+  left: 30px;
 }
 .create-desc {
   height: 130px;
@@ -719,7 +733,7 @@ input:focus, textarea:focus, select:focus{
 }
 .create-btn:hover {
   color: #604747;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 .upload {
   height: 50px;
@@ -748,35 +762,35 @@ input:focus, textarea:focus, select:focus{
 
 @media screen and (max-width: 768px) {
   .body-content-create {
-      width: 100%;
-      display: grid;
-      justify-content: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
   }
   .create-div {
-      width: 300px;
+    width: 300px;
   }
   .create-heading {
-      position: relative;
-      left: -3.8rem;
+    position: relative;
+    left: -3.8rem;
   }
   .form-label-create {
-      position: relative;
-      left: -6.2rem;
+    position: relative;
+    left: -6.2rem;
   }
   .create-desc {
-      position: relative;
-      left: -6.2rem;
+    position: relative;
+    left: -6.2rem;
   }
   .post-pickup {
-      position: relative;
-      left: -6.2rem;
+    position: relative;
+    left: -6.2rem;
   }
   .create-span {
-      position: relative;
-      left: -6.2rem;
+    position: relative;
+    left: -6.2rem;
   }
   .create-btn {
-      position: relative;
-      left: 2.5rem;
+    position: relative;
+    left: 2.5rem;
   }
 }
