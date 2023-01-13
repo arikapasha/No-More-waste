@@ -2,12 +2,15 @@ import React from "react";
 import "../styles.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const [item_name, setItemName] = useState("");
   const [description, setDescription] = useState("");
   const [pickup_time, setPickup] = useState("");
   const [file, setFile] = useState(null);
+
+  const navigate = useNavigate();
 
   const upload = async () => {
     try {
@@ -32,6 +35,7 @@ const CreatePost = () => {
         photo_link: imgUrl,
         pickup_time,
       });
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
