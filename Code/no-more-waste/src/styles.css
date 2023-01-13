@@ -78,7 +78,18 @@ body {
       position: relative;
       left: -41.5rem;
   }
-  
+  .body-content-profile {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  .inner-content-profile {
+      width: 800px;
+      height: 500px;
+      display: grid;
+  }
 }
 
 
@@ -640,6 +651,43 @@ input:focus, textarea:focus, select:focus{
   position: relative;
   left: 530px;
   top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .update-profile {
+      position: relative;
+      left: 32rem;
+      top: -0.8rem;
+  }
+  .profile {
+      position: relative;
+      left: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body-content-profile {
+      width: 100%;
+      height: 950px;
+      display: grid;
+      justify-content: center;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  .inner-content-profile {
+      width: 800px;
+      height: 850px;
+      display: grid;
+  }
+  .update-profile {
+      position: relative;
+      left: 32rem;
+  }
+  .profile {
+      position: relative;
+      left: 4rem;
+      top: 5rem;
+  }
 }
 
 /* Create post page */
