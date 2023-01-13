@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../images/noMoreWasteLogo.svg";
-import axios from "axios";
+//import axios from "axios";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";

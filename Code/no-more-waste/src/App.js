@@ -22,6 +22,7 @@ import About from './pages/About';
 import "./styles.css";
 import "./normalize.css";
 import CreatePost from './pages/CreatePost';
+import Static from "./pages/Static";
 
 
 const Layout = ()=>{
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path:"/about",
         element:<About/>
+      },
+      {
+        path:"/static",
+        element:<Static/>
       },
     ]
   },
