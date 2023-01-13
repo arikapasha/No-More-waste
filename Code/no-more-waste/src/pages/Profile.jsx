@@ -4,7 +4,9 @@ const Profile = () => {
   return (
     <div>
       <title>Profile</title>
-      <div class="profile">
+      <div class="body-content-profile">
+        <div class="inner-content-profile">
+        <div class="profile">
         <div class="grid grid--1x2 grid-cards">
           <div class="name-profile profile-padding">
             <label for="name" class="form-label">
@@ -101,6 +103,8 @@ const Profile = () => {
       <br />
       <br />
       <button class="card-button update-profile">Update information</button>
+        </div>
+      </div>
     </div>
   );
 };
