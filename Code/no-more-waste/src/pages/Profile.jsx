@@ -1,6 +1,9 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext.js";
 
 const Profile = () => {
+  const { currentUser, logout } = useContext(AuthContext);
   return (
     <div>
       <title>Profile</title>
@@ -18,7 +21,7 @@ const Profile = () => {
               id="na-me"
               name="name"
               class="form-input text-profile"
-              value="John Smith"
+              value={currentUser.username}
               
             />
             <br />
@@ -33,7 +36,7 @@ const Profile = () => {
               id="email-address"
               name="email"
               class="form-input text-profile"
-              value="johnsmith@gmail.com"
+              value={currentUser.email}
               
             />
             <br />
@@ -48,7 +51,7 @@ const Profile = () => {
               id="address-line"
               name="address"
               class="form-input text-profile address-prof"
-              value="123 Crane Cres, Regina SK, Canada"
+              value={currentUser.address}
               
             />
             <br />
@@ -63,7 +66,7 @@ const Profile = () => {
               id="address-line"
               name="phone_number"
               class="form-input text-profile"
-              value="3061234567"
+              value={currentUser.phone_number}
               
             />
             <br />
@@ -78,7 +81,7 @@ const Profile = () => {
               id="business-name"
               name="businessname"
               class="form-input text-profile"
-              value="Mcdonalds"
+              value={currentUser.businessname}
               
             />
             <br />
