@@ -47,62 +47,81 @@ const Home = () => {
 
   return (
     <div>
-      {currentUser ? 
-      <div class="body-content-home">
-        <div class="inner-content">
-          <div class="search-and-filter">
-            <div class="search">
-              <div class="search-div">
-                <img class="search-icon" src={search_icon} alt="" />
+      {currentUser ? (
+        <div class="body-content-home">
+          <div class="inner-content">
+            <div class="search-and-filter">
+              <div class="search">
+                <div class="search-div">
+                  <img class="search-icon" src={search_icon} alt="" />
+                </div>
+                <div>
+                  <img class="search-underline" src={line} alt="" />
+                </div>
+                <div>
+                  <input
+                    class="search-text"
+                    type="text"
+                    id="textPlaceholder"
+                    name="search-text"
+                    placeholder="Enter search request..."
+                  />
+                </div>
               </div>
-              <div>
-                <img class="search-underline" src={line} alt="" />
-              </div>
-              <div>
-                <input
-                  class="search-text"
-                  type="text"
-                  id="textPlaceholder"
-                  name="search-text"
-                  placeholder="Enter search request..."
-                />
+              <div class="filter">
+                <div class="filter-div">
+                  <img class="filter-icon" src={filter} alt="" />
+                </div>
               </div>
             </div>
-            <div class="filter">
-              <div class="filter-div">
-                <img class="filter-icon" src={filter} alt="" />
-              </div>
+            {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
+            {currentUser.role === "b" ? (
+              <Link to="/createpost">
+                <button class="card-button create-post-btn">
+                  Create a New Post
+                </button>
+              </Link>
+            ) : (
+              <Link></Link>
+            )}
+            <div class="grid grid--1x2 grid-cards">
+              {posts.map((post) => (
+                <div class="card" key={post.post_id}>
+                  <img
+                    class="card-image"
+                    src={`./uploads/${post.photo_link}`}
+                    alt=""
+                  />
+                  {/* <h3 className="card-heading">{}</h3> */}
+                  <h4 class="card-heading">{post.item_name}</h4>
+                  <p class="card-text">{post.description}</p>
+                  {currentUser.role === "s" ? (
+                    <Link to="/static">
+                      <button class="card-button">REQUEST</button>
+                    </Link>
+                  ) : (
+                    <Link></Link>
+                  )}
+                </div>
+              ))}
             </div>
-          </div>
-          {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
-          {currentUser.role === "b" ? (
-            <Link to="/createpost">
-              <button class="card-button create-post-btn">
-                Create a New Post
-              </button>
-            </Link>
-          ) : (
-            <Link></Link>
-          )}
-          <div class="grid grid--1x2 grid-cards">
-            {posts.map((post) => (
-              <div class="card" key={post.post_id}>
-                <img class="card-image" src={`./uploads/${post.photo_link}`} alt="" />
-                {/* <h3 className="card-heading">{}</h3> */}
-                <h4 class="card-heading">{post.item_name}</h4>
-                <p class="card-text">{post.description}</p>
-                {currentUser.role === "s" ? (
-                  <Link to="/static">
-                    <button class="card-button">REQUEST</button>
-                  </Link>
-                ) : (
-                  <Link></Link>
-                )}
-              </div>
-            ))}
           </div>
         </div>
-      </div> : <div>Please <Link to="/login">Login </Link> or <Link to="/signup">Sign Up</Link></div>}
+      ) : (
+        <div>
+          <div class="confirmation landing-block">
+            <div class="confirmation-text-block">
+              <p class="confirmation-text bigger-text">
+                Welcome to No More Waste
+              </p>
+              <p class="confirmation-text">
+                <Link to="/login">Sign In </Link>
+                to your account to proceed or <Link to="/signup">Sign Up</Link>  today!
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

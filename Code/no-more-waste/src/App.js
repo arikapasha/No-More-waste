@@ -17,7 +17,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Track from './pages/Track';
-import Support from './pages/Support';
+import ContactUs from "./pages/ContactUs";
 import About from './pages/About';
 import "./styles.css";
 import "./normalize.css";
@@ -58,8 +58,8 @@ const router = createBrowserRouter([
         element:<Track/>
       },
       {
-        path:"/support",
-        element:<Support/>
+        path:"/contact",
+        element:<ContactUs/>
       },
       {
         path:"/createpost",

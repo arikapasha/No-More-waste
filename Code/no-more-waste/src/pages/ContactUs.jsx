@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Support = () => {
+const ContactUs = () => {
   return (
     <div>
       <div class="body-content-create">
@@ -58,4 +58,4 @@ const Support = () => {
   )
 }
 
-export default Support
+export default ContactUs

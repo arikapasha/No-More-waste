@@ -19,7 +19,7 @@ const navbar = () => {
         </svg>
         <ul class="list nav__list collapsible__content">
           <li class="nav__item">
-            {currentUser ? <Link>{currentUser.businessname}</Link> : <Link></Link>}
+            {currentUser ? <Link to="">{currentUser.businessname}</Link> : <Link></Link>}
           </li>
           <li class="nav__item">
             {currentUser ? <Link to="/profile/2?cat=profile">Profile</Link> : <Link></Link> }
@@ -31,7 +31,7 @@ const navbar = () => {
             <Link to="/about">About Us</Link>
           </li>
           <li class="nav__item">
-            <Link to="/support">Support</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
 
           
