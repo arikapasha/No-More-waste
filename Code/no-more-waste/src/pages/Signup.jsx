@@ -132,7 +132,7 @@ const Signup = () => {
                 />
 
                 <label for="isBusiness" class="form-label">
-                  Business
+                  Restaurant
                 </label>
 
                 <input
