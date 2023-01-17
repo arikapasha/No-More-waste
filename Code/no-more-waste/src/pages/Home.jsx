@@ -9,10 +9,14 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {setError} from "react"
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -26,6 +30,23 @@ const Home = () => {
     };
     fetchData();
   }, []);
+
+  //const posts1 = posts;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const item_key = e.target.id;
+   // console.log(item_key)
+    try {
+       await axios.post("/posts/updatePost", {post_id: item_key});
+       //console.log("ive reached here")
+      //navigate("/static");
+    } catch (err) {
+      //setError(err.response.data); //console.log(res)
+      console.log(err.response.data)
+    }
+  };
+
   // const posts = [
   //   {
   //     post_id: 1,
@@ -84,20 +105,28 @@ const Home = () => {
             ) : (
               <Link></Link>
             )}
+
             <div class="grid grid--1x2 grid-cards">
               {posts.map((post) => (
-                <div class="card" key={post.post_id}>
+                <div class="card" key={post.post_id} value={post.post_id}>
+                  
                   <img
                     class="card-image"
                     src={`./uploads/${post.photo_link}`}
                     alt=""
                   />
                   {/* <h3 className="card-heading">{}</h3> */}
-                  <h4 class="card-heading">{post.item_name}</h4>
-                  <p class="card-text">{post.description}</p>
+                  <h4 class="card-heading" id="item_name" name="item_name">
+                    {post.item_name}
+                  </h4>
+                  <p class="card-text" id="description" name="description">
+                    {post.description}
+                  </p>
                   {currentUser.role === "s" ? (
-                    <Link to="/static">
-                      <button class="card-button">REQUEST</button>
+                    <Link to="">
+                      <button class="card-button" name = {post.post_id} id = {post.post_id} onClick={handleSubmit}>
+                        REQUEST
+                      </button>
                     </Link>
                   ) : (
                     <Link></Link>

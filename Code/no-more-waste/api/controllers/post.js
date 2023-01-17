@@ -1,4 +1,3 @@
-//import { JsonWebTokenError } from "jsonwebtoken";
 import jwt from "jsonwebtoken"
 import {db} from "../db.js"
 
@@ -34,6 +33,7 @@ export const getPost = (req,res)=>{
     //     });
     // });
 }
+
 export const addPost = (req,res)=>{
     const token = req.cookies.access_token;
     if(!token) return res.status(401).json("Not authenticated");
@@ -58,9 +58,31 @@ export const addPost = (req,res)=>{
         });
     });
 }
+
 export const deletePost = (req,res)=>{
     res.json("from controller")
 }
+
+
 export const updatePost = (req,res)=>{
-    res.json("from controller")
+    const token = req.cookies.access_token;
+    if(!token) return res.status(401).json("Not authenticated");
+
+    //console.log("ive reached")
+
+    jwt.verify(token, "jwtkey", (err, userInfo) => {
+        if(err) return res.status(403).json("token is not valid.");
+
+        const shelter_id = userInfo.user_id;
+        const post_id = req.body.post_id;
+
+        const q = "update post set shelter_id = " + shelter_id + " where post_id = (?)";
+
+        db.query(q, post_id, (err,data)=>{
+            if(err) return res.status(500).json.err;
+
+            return res.json("Shelter info has been added.");
+        });
+
+    });
 }
