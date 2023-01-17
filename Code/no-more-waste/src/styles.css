@@ -13,6 +13,11 @@ input[type="file"] {
   margin-bottom: -8px;
 }
 
+.already-requested{
+  
+  color: red;
+}
+
 html {
   /* 62.5% of 16px = 10px */
   font-size: 62.5%;

@@ -76,7 +76,7 @@ export const updatePost = (req,res)=>{
         const shelter_id = userInfo.user_id;
         const post_id = req.body.post_id;
 
-        const q = "update post set shelter_id = " + shelter_id + " where post_id = (?)";
+        const q = "update post set shelter_id = " + shelter_id + ", requested = "+ 1 +" where post_id = (?)";
 
         db.query(q, post_id, (err,data)=>{
             if(err) return res.status(500).json.err;

@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {setError} from "react"
+import { setError } from "react";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
@@ -36,14 +36,14 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const item_key = e.target.id;
-   // console.log(item_key)
+    // console.log(item_key)
     try {
-       await axios.post("/posts/updatePost", {post_id: item_key});
-       //console.log("ive reached here")
-      //navigate("/static");
+      await axios.post("/posts/updatePost", { post_id: item_key });
+      //console.log("ive reached here")
+      navigate("/static");
     } catch (err) {
       //setError(err.response.data); //console.log(res)
-      console.log(err.response.data)
+      setError(err.response.data);
     }
   };
 
@@ -109,7 +109,6 @@ const Home = () => {
             <div class="grid grid--1x2 grid-cards">
               {posts.map((post) => (
                 <div class="card" key={post.post_id} value={post.post_id}>
-                  
                   <img
                     class="card-image"
                     src={`./uploads/${post.photo_link}`}
@@ -122,14 +121,24 @@ const Home = () => {
                   <p class="card-text" id="description" name="description">
                     {post.description}
                   </p>
-                  {(currentUser.role === "s" && post.shelter_id == null) ? (
+                  {currentUser.role === "s" && post.shelter_id === null ? (
                     <Link to="">
-                      <button class="card-button" name = {post.post_id} id = {post.post_id} onClick={handleSubmit}>
+                      <button
+                        class="card-button"
+                        name={post.post_id}
+                        id={post.post_id}
+                        onClick={handleSubmit}
+                      >
                         REQUEST
                       </button>
                     </Link>
                   ) : (
-                    <p class="card-text">Already Requested</p>
+                    <Link></Link>
+                  )}
+                  {post.shelter_id != null ? (
+                    <p class="card-text already-requested">Already requested</p>
+                  ) : (
+                    <p></p>
                   )}
                 </div>
               ))}
