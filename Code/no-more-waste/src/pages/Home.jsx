@@ -122,14 +122,14 @@ const Home = () => {
                   <p class="card-text" id="description" name="description">
                     {post.description}
                   </p>
-                  {currentUser.role === "s" ? (
+                  {(currentUser.role === "s" && post.shelter_id == null) ? (
                     <Link to="">
                       <button class="card-button" name = {post.post_id} id = {post.post_id} onClick={handleSubmit}>
                         REQUEST
                       </button>
                     </Link>
                   ) : (
-                    <Link></Link>
+                    <p class="card-text">Already Requested</p>
                   )}
                 </div>
               ))}
