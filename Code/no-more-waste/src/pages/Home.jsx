@@ -47,6 +47,20 @@ const Home = () => {
     }
   };
 
+  const handleSubmitVolunteer = async (e) => {
+    e.preventDefault();
+    const item_key = e.target.id;
+    // console.log(item_key)
+    try {
+      await axios.post("/posts/updateVolunteer", { post_id: item_key });
+      //console.log("ive reached here")
+      navigate("/static");
+    } catch (err) {
+      //setError(err.response.data); //console.log(res)
+      setError(err.response.data);
+    }
+  };
+
   // const posts = [
   //   {
   //     post_id: 1,
@@ -134,9 +148,35 @@ const Home = () => {
                     </Link>
                   ) : (
                     <Link></Link>
-                  )}
-                  {post.shelter_id != null ? (
+                  )
+                  }
+                  {currentUser.role === "v" && post.driver_id === null && post.shelter_id != null ? (
+                    <Link to="">
+                      <button
+                        class="card-button"
+                        name={post.post_id}
+                        id={post.post_id}
+                        onClick={handleSubmitVolunteer}
+                      >
+                        ACCEPT
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link></Link>
+                  )
+                  }
+                  {currentUser.role === "s" && post.shelter_id != null ? (
                     <p class="card-text already-requested">Already requested</p>
+                  ) : (
+                    <p></p>
+                  )}
+                  {currentUser.role === "v" && post.driver_id != null && currentUser.user_id === post.driver_id ? (
+                    <p class="card-text already-requested">Please update your delivery status:</p>
+                  ) : (
+                    <p></p>
+                  )}
+                  {currentUser.role === "v" && post.driver_id != null && currentUser.user_id != post.driver_id ? (
+                    <p class="card-text already-requested">A driver has already accepted this request.</p>
                   ) : (
                     <p></p>
                   )}
