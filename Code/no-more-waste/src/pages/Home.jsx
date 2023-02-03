@@ -174,7 +174,7 @@ const Home = () => {
                       class="card-button"
                       name={post.post_id}
                       id={post.post_id}
-                      onClick={handleSubmitVolunteer}
+                      //onClick={handleSubmitPicked}
                     >
                       Picked Up
                     </button>
@@ -182,7 +182,7 @@ const Home = () => {
                       class="card-button"
                       name={post.post_id}
                       id={post.post_id}
-                      onClick={handleSubmitVolunteer}
+                      //onClick={handleSubmitDelivered}
                     >
                         Delivered
                       </button></>
