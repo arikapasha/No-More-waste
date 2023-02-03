@@ -96,6 +96,18 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <br />
+                {/* <label for="postal-code" class="form-label">
+                  Postal Code
+                </label>
+                <br />
+                <input
+                  type="text"
+                  id="postal-code"
+                  name="postal-code"
+                  class="form-input"
+                  onChange={handleChange}
+                />
+                <br /> */}
                 <label for="username" class="form-label">
                   First and Last name
                 </label>

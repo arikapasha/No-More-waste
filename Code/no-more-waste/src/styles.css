@@ -504,7 +504,7 @@ select:focus {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
-  padding: 8px;
+  padding: 2px;
   width: 28rem;
 }
 .form-input:focus {
