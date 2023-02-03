@@ -63,7 +63,7 @@ const Profile = () => {
             <br />
             <input
               type="tel"
-              id="address-line"
+              id="tel-line"
               name="phone_number"
               class="form-input text-profile"
               value={currentUser.phone_number}

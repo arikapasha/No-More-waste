@@ -85,6 +85,8 @@ export const updatePost = (req,res)=>{
         });
 
     });
+
+    // findDriver(req.body.post_id);
 }
 
 export const updateVolunteer = (req,res)=>{

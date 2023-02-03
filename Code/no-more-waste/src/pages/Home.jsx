@@ -33,16 +33,14 @@ const Home = () => {
 
   //const posts1 = posts;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { // this is for request button for shelter
     e.preventDefault();
     const item_key = e.target.id;
     // console.log(item_key)
     try {
       await axios.post("/posts/updatePost", { post_id: item_key });
-      //console.log("ive reached here")
       navigate("/static");
     } catch (err) {
-      //setError(err.response.data); //console.log(res)
       setError(err.response.data);
     }
   };
@@ -101,6 +99,7 @@ const Home = () => {
                     name="search-text"
                     placeholder="Enter search request..."
                   />
+                  <button class="card-button">Search</button>
                 </div>
               </div>
               <div class="filter">
@@ -194,9 +193,7 @@ const Home = () => {
               </p>
               <p class="confirmation-text">
                 <Link to="/login">Sign In </Link>
-                to your account to proceed or <Link to="/signup">
-                  Sign Up
-                </Link>{" "}
+                to your account to proceed or <Link to="/signup">Sign Up</Link>
                 today!
               </p>
             </div>

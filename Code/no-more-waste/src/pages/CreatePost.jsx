@@ -17,7 +17,7 @@ const CreatePost = () => {
       const formData = new FormData();
       formData.append("file", file);
       const res = await axios.post("/upload", formData);
-      console.log(res.data);
+      //console.log(res.data);
       return res.data;
     } catch (err) {
       console.log(err);
