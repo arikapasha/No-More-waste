@@ -170,7 +170,22 @@ const Home = () => {
                     <p></p>
                   )}
                   {currentUser.role === "v" && post.driver_id != null && currentUser.user_id === post.driver_id ? (
-                    <p class="card-text already-requested">Please update your delivery status:</p>
+                    <><p class="card-text already-requested">Please update your delivery status:</p><Link to=""><button
+                      class="card-button"
+                      name={post.post_id}
+                      id={post.post_id}
+                      onClick={handleSubmitVolunteer}
+                    >
+                      Picked Up
+                    </button>
+                    </Link><button
+                      class="card-button"
+                      name={post.post_id}
+                      id={post.post_id}
+                      onClick={handleSubmitVolunteer}
+                    >
+                        Delivered
+                      </button></>
                   ) : (
                     <p></p>
                   )}
