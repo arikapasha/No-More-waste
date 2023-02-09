@@ -156,9 +156,10 @@ select:focus {
     max-width: 1400px;
     /*margin-left: -15rem;*/
   }
+  
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) { /*was 1024px, changed to 1300 px for the best view.*/ 
   .grid--1x3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -213,7 +214,7 @@ select:focus {
 }
 
 .nav__brand {
-  transform: translateY(5px);
+  transform: translateY(1px);
 }
 
 @media screen and (min-width: 768px) {
@@ -622,7 +623,7 @@ select:focus {
 
 /* Home Page Business */
 .create-post-btn {
-  position: relative;
+  position:relative;
   left: 950px;
   top: 50px;
   bottom: 50px;

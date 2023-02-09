@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 import {db} from "../db.js"
 
 export const getPosts = (req,res)=>{
-    const q = "select * from post";
+    const q = "select * from post order by post_id desc";
     db.query(q, (err,data)=>{
        if(err) return res.send(err)
 

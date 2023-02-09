@@ -20,13 +20,27 @@ const navbar = () => {
         </svg> */}
         <ul class="list nav__list collapsible__content">
           <li class="nav__item">
-            {currentUser ? <Link to="/profile/2?cat=profile">{currentUser.businessname}</Link> : <Link></Link>}
+            {currentUser ? (
+              <Link to="/profile/2?cat=profile">
+                {currentUser.businessname}
+              </Link>
+            ) : (
+              <Link></Link>
+            )}
           </li>
           <li class="nav__item">
-            {currentUser ? <Link to="/profile/2?cat=profile">Profile</Link> : <Link></Link> }
+            {currentUser ? (
+              <Link to="/profile/2?cat=profile">Profile</Link>
+            ) : (
+              <Link></Link>
+            )}
           </li>
           <li class="nav__item">
-            {currentUser ? <Link to="/track/2?cat=track">Track Requests</Link> : <Link></Link>}
+            {currentUser ? (
+              <Link to="/track/2?cat=track">Track Requests</Link>
+            ) : (
+              <Link></Link>
+            )}
           </li>
           <li class="nav__item">
             <Link to="/about">About Us</Link>
@@ -35,11 +49,15 @@ const navbar = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
 
-          
-            <li  class="nav__item">
-              {currentUser ? <Link to="/login" onClick={logout}>Log Out</Link> : <Link></Link>}
-            </li>
-          
+          <li class="nav__item">
+            {currentUser ? (
+              <Link to="/login" onClick={logout}>
+                Log Out
+              </Link>
+            ) : (
+              <Link></Link>
+            )}
+          </li>
         </ul>
       </nav>
     </header>

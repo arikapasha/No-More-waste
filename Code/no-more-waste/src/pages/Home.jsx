@@ -83,7 +83,7 @@ const Home = () => {
       {currentUser ? (
         <div class="body-content-home">
           <div class="inner-content">
-            <div class="search-and-filter">
+            {/* <div class="search-and-filter">
               <div class="search">
                 <div class="search-div">
                   <img class="search-icon" src={search_icon} alt="" />
@@ -107,7 +107,7 @@ const Home = () => {
                   <img class="filter-icon" src={filter} alt="" />
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
             {currentUser.role === "b" ? (
               <Link to="/createpost">
@@ -119,7 +119,7 @@ const Home = () => {
               <Link></Link>
             )}
 
-            <div class="grid grid--1x2 grid-cards">
+            <div class="grid grid--1x3 grid--1x2 grid-cards">
               {posts.map((post) => (
                 <div class="card" key={post.post_id} value={post.post_id}>
                   <img
