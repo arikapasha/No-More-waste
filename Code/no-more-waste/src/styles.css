@@ -182,6 +182,8 @@ select:focus {
 }
 
 .nav__list {
+  display: flex;
+  list-style: none;
   width: 100%;
   margin: 0;
 }
@@ -207,14 +209,76 @@ select:focus {
   cursor: pointer;
 }
 
-.nav.collapsible--expanded .nav__toggler {
-  opacity: 1;
-  box-shadow: 0 0 0 3px #666;
-  border-radius: 5px;
-}
-
 .nav__brand {
   transform: translateY(1px);
+}
+
+.hidden-collapsible {
+  display: none;
+}
+
+.menu-item {
+  text-decoration: none;
+}
+
+.collapsed-menu {
+  width: 100rem;
+  margin-left: -20rem;
+}
+
+@keyframes example {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Nav mobile styles */
+.icon-menu {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+.icon--white {
+  fill: #604747;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+      height: 11rem;
+      flex-direction: column;
+      align-items: center;
+  }
+  .icon-menu {
+      opacity: 1;
+      position: relative;
+      top: 3.5rem;
+      left: -22rem;
+      padding: 5px;
+  }
+  .nav ul {
+      display: none;
+  }
+  .active .hidden-collapsible {
+      display: block;
+      opacity: 1;
+      max-height: 100%;
+      background-color: #F4EEE7;
+      position: relative;
+      top: 8.5rem;
+      width: 100%;
+      animation: example 0.6s ease-in-out forwards;
+  }
+  .active .icon-menu {
+      position: relative;
+      top: 3.5rem;
+      left: 15rem;
+      padding: 5px;
+      align-items: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
