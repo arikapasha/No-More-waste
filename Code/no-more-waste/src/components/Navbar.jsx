@@ -79,7 +79,7 @@ const NavBar = () => {
         </ul>
         <div class="collapsed-menu">
         <ul class="hidden-collapsible">
-          <li class="nav__item">
+          <li class="nav__item menu-item">
             {currentUser ? (
               <Link to="/profile/2?cat=profile">
                 {currentUser.businessname}
@@ -88,14 +88,14 @@ const NavBar = () => {
               <Link></Link>
             )}
           </li>
-          <li class="nav__item">
+          <li class="nav__item menu-item">
             {currentUser ? (
               <Link to="/profile/2?cat=profile">Profile</Link>
             ) : (
               <Link></Link>
             )}
           </li>
-          <li class="nav__item">
+          <li class="nav__item menu-item">
             {currentUser && currentUser.role ==='b' ? (
               <Link to="/track">My Posts</Link>
             ) : (
@@ -112,14 +112,14 @@ const NavBar = () => {
               <Link></Link>
             )}
           </li>
-          <li class="nav__item">
+          <li class="nav__item menu-item">
             <Link to="/about">About Us</Link>
           </li>
           <li class="nav__item">
             <Link to="/contact">Contact Us</Link>
           </li>
 
-          <li class="nav__item">
+          <li class="nav__item menu-item">
             {currentUser ? (
               <Link to="/login" onClick={logout}>
                 Log Out
