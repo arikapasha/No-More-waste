@@ -293,6 +293,7 @@ select:focus {
     font-size: 1.6rem;
     max-height: 100%;
     opacity: 1;
+    justify-content: flex-end;
   }
 
   .nav__item {
