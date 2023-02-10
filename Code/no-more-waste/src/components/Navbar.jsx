@@ -36,8 +36,18 @@ const navbar = () => {
             )}
           </li>
           <li class="nav__item">
-            {currentUser ? (
-              <Link to="/track/2?cat=track">Track Requests</Link>
+            {currentUser && currentUser.role ==='b' ? (
+              <Link to="/track">My Posts</Link>
+            ) : (
+              <Link></Link>
+            )}
+            {currentUser && currentUser.role ==='s' ? (
+              <Link to="/track">My requests</Link>
+            ) : (
+              <Link></Link>
+            )}
+            {currentUser && currentUser.role ==='v' ? (
+              <Link to="/track">My Deliveries</Link>
             ) : (
               <Link></Link>
             )}

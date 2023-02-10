@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         element:<Profile/>
       },
       {
-        path:"/track/:id",
+        path:"/track",
         element:<Track/>
       },
       {

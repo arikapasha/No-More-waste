@@ -31,8 +31,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-  //const posts1 = posts;
-
   const handleSubmit = async (e) => { // this is for request button for shelter
     e.preventDefault();
     const item_key = e.target.id;

@@ -80,7 +80,7 @@ const CreatePost = () => {
               </label>
               <br />
               <input
-                type="text"
+                type="datetime-local"
                 id="description"
                 name="description"
                 className="form-input post-pickup"
