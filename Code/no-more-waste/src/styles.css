@@ -301,6 +301,12 @@ select:focus {
   }
 }
 
+@media screen and (min-width: 1590px) {
+  .nav {
+      justify-content: space-between;
+  }
+}
+
 /* Search and filter component */
 
 .search-and-filter {
