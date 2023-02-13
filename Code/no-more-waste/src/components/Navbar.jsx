@@ -59,7 +59,7 @@ const NavBar = () => {
               <Link></Link>
             )}
             {currentUser && currentUser.role === "s" ? (
-              <Link to="/track">My requests</Link>
+              <Link to="/track">My Requests</Link>
             ) : (
               <Link></Link>
             )}
@@ -111,7 +111,7 @@ const NavBar = () => {
                 <Link></Link>
               )}
               {currentUser && currentUser.role === "s" ? (
-                <Link to="/track">My requests</Link>
+                <Link to="/track">My Requests</Link>
               ) : (
                 <Link></Link>
               )}

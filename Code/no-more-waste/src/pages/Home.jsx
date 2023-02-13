@@ -37,7 +37,7 @@ const Home = () => {
     // console.log(item_key)
     try {
       await axios.post("/posts/updatePost", { post_id: item_key });
-      navigate("/static");
+      navigate("/track");
     } catch (err) {
       setError(err.response.data);
     }
@@ -50,7 +50,7 @@ const Home = () => {
     try {
       await axios.post("/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
-      navigate("/static");
+      navigate("/track");
     } catch (err) {
       //setError(err.response.data); //console.log(res)
       setError(err.response.data);
@@ -167,7 +167,7 @@ const Home = () => {
                   ) : (
                     <p></p>
                   )}
-                  {currentUser.role === "v" && post.driver_id != null && currentUser.user_id === post.driver_id ? (
+                  {/* {currentUser.role === "v" && post.driver_id != null && currentUser.user_id === post.driver_id ? (
                     <><p class="card-text already-requested">Please update your delivery status:</p><Link to=""><button
                       class="card-button"
                       name={post.post_id}
@@ -186,7 +186,7 @@ const Home = () => {
                       </button></>
                   ) : (
                     <p></p>
-                  )}
+                  )} */}
                   {currentUser.role === "v" && post.driver_id != null && currentUser.user_id != post.driver_id ? (
                     <p class="card-text already-requested">A driver has already accepted this request.</p>
                   ) : (

@@ -703,7 +703,7 @@ select:focus {
 
 /* Home Page Business */
 .create-post-btn {
-  position:relative;
+  position:relative; 
   left: 950px;
   top: 50px;
   bottom: 50px;

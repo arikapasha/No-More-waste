@@ -55,16 +55,42 @@ const Track = () => {
             <h3>{post.item_name}</h3>
             <p>{post.description}</p>
             {currentUser && currentUser.role === "b" ? (
-              <Link to="/track">
-                <button
-                  name={post.post_id}
-                  id={post.post_id}
-                  onClick={handleSubmit}
-                >
-                  Delete Post
-                </button>
-              </Link>
+              //<Link to="/track">
+              <button
+                name={post.post_id}
+                id={post.post_id}
+                onClick={handleSubmit}
+              >
+                Delete Post
+              </button>
             ) : (
+              //</Link>
+              <Link></Link>
+            )}
+            {currentUser && currentUser.role === "v" ? (
+              //<Link to="/track">
+              <button
+                name={post.post_id}
+                id={post.post_id}
+                // onClick={handleSubmitPickedUp}
+              >
+                Picked Up
+              </button>
+            ) : (
+              //</Link>
+              <Link></Link>
+            )}
+            {currentUser && currentUser.role === "v" ? (
+              //<Link to="/track">
+              <button
+                name={post.post_id}
+                id={post.post_id}
+                // onClick={handleSubmitPickedUp}
+              >
+                Delivered
+              </button>
+            ) : (
+              //</Link>
               <Link></Link>
             )}
           </li>
