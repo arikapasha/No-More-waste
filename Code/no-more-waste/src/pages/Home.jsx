@@ -50,6 +50,7 @@ const Home = () => {
     try {
       await axios.post("/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
+      await axios.post("/posts/send-text-message", {phoneNumber: currentUser.phone_number, message: "You have picked up the order"});
       navigate("/track");
     } catch (err) {
       //setError(err.response.data); //console.log(res)

@@ -5,12 +5,16 @@ import userRoutes from "./routes/users.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import { db } from "./db.js";
+//import bodyParser from "body-parser";
+
 
 const app = express();
 
 app.use(express.json());
 
 app.use(cookieParser());
+
+//app.use(bodyParser());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

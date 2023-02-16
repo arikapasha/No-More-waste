@@ -1,5 +1,11 @@
 import jwt from "jsonwebtoken";
 import { db } from "../db.js";
+import twilio from "twilio"
+
+const accountSid = 'AC74e1d8c3ae2d4d0fb289ead6ef97226b';
+const authToken = '2778d7c4226a990071ddbc2e86e0f291';
+const twilioPhoneNumber = '+14582175795';
+const client =twilio(accountSid,authToken);
 
 export const getPosts = (req, res) => {
   const q = "select * from post order by post_id desc";
@@ -191,4 +197,22 @@ export const updateVolunteer = (req, res) => {
       return res.json("Volunteer info has been added.");
     });
   });
+};
+
+export const sendtextMessage = (toPhoneNumber, message) =>{
+  client.messages
+    .create({
+       body: message,
+       from: twilioPhoneNumber,
+       to: toPhoneNumber
+    })
+    .then(message => console.log(message.sid))
+    .catch(error => console.error(error));
+};
+
+export const sendTexts = (req, res) => {
+  const phoneNumber = req.body.phoneNumber;
+  const message = req.body.message;
+  sendtextMessage(phoneNumber, message);
+  res.send('Text message sent!');
 };
