@@ -1,10 +1,11 @@
-import mysql from "mysql2"
+import mysql from "mysql2";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const db = mysql.createConnection({
-    host: "db-mysql-nyc1-11769-do-user-12717269-0.b.db.ondigitalocean.com",
-    user:"doadmin",
-    password:"AVNS_bZXYxAzcGMWfIdVLnWr",
-    database:"defaultdb",
-    port: 25060,
-})
-
+  host: process.env.db_host,
+  user: process.env.db_user,
+  password: process.env.db_password,
+  database: process.env.db_database,
+  port: process.env.db_port,
+});
