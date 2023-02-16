@@ -1,10 +1,13 @@
 import jwt from "jsonwebtoken";
 import { db } from "../db.js";
 import twilio from "twilio"
+import dotenv from "dotenv"
+dotenv.config();
 
-const accountSid = 'AC74e1d8c3ae2d4d0fb289ead6ef97226b';
-const authToken = '2778d7c4226a990071ddbc2e86e0f291';
-const twilioPhoneNumber = '+14582175795';
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID
+const authToken = process.env.TWILIO_AUTH_TOKEN
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER
 const client =twilio(accountSid,authToken);
 
 export const getPosts = (req, res) => {
