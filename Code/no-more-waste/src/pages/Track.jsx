@@ -67,7 +67,7 @@ const Track = () => {
               //</Link>
               <Link></Link>
             )}
-            {currentUser && currentUser.role === "v" ? (
+            {currentUser && currentUser.role === "v" && post.accepted == 1 && post.pickedUp == null? (
               //<Link to="/track">
               <button
                 name={post.post_id}
@@ -80,7 +80,7 @@ const Track = () => {
               //</Link>
               <Link></Link>
             )}
-            {currentUser && currentUser.role === "v" ? (
+            {currentUser && currentUser.role === "v" && post.pickedUp == 1 && post.accepted == 1 ? (
               //<Link to="/track">
               <button
                 name={post.post_id}

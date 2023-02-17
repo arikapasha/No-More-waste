@@ -18,6 +18,11 @@ input[type="file"] {
   color: red;
 }
 
+.already-requested-by-you{
+  
+  color: green;
+}
+
 html {
   /* 62.5% of 16px = 10px */
   font-size: 62.5%;

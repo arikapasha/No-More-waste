@@ -31,7 +31,8 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async (e) => { // this is for request button for shelter
+  const handleSubmit = async (e) => {
+    // this is for request button for shelter
     e.preventDefault();
     const item_key = e.target.id;
     // console.log(item_key)
@@ -50,7 +51,10 @@ const Home = () => {
     try {
       await axios.post("/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
-      await axios.post("/posts/send-text-message", {phoneNumber: currentUser.phone_number, message: "You have picked up the order"});
+      await axios.post("/posts/send-text-message", {
+        phoneNumber: currentUser.phone_number,
+        message: "You have picked up the order",
+      });
       navigate("/track");
     } catch (err) {
       //setError(err.response.data); //console.log(res)
@@ -146,9 +150,10 @@ const Home = () => {
                     </Link>
                   ) : (
                     <Link></Link>
-                  )
-                  }
-                  {currentUser.role === "v" && post.driver_id === null && post.shelter_id != null ? (
+                  )}
+                  {currentUser.role === "v" &&
+                  post.driver_id === null &&
+                  post.shelter_id != null ? (
                     <Link to="">
                       <button
                         class="card-button"
@@ -161,8 +166,7 @@ const Home = () => {
                     </Link>
                   ) : (
                     <Link></Link>
-                  )
-                  }
+                  )}
                   {currentUser.role === "s" && post.shelter_id != null ? (
                     <p class="card-text already-requested">Already requested</p>
                   ) : (
@@ -188,8 +192,21 @@ const Home = () => {
                   ) : (
                     <p></p>
                   )} */}
-                  {currentUser.role === "v" && post.driver_id != null && currentUser.user_id != post.driver_id ? (
-                    <p class="card-text already-requested">A driver has already accepted this request.</p>
+                  {currentUser.role === "v" &&
+                  post.driver_id != null &&
+                  currentUser.user_id != post.driver_id ? (
+                    <p class="card-text already-requested">
+                      A driver has already accepted this request.
+                    </p>
+                  ) : (
+                    <p></p>
+                  )}
+                  {currentUser.role === "v" &&
+                  post.driver_id != null &&
+                  currentUser.user_id == post.driver_id ? (
+                    <p class="card-text already-requested-by-you">
+                      You have accepted this request. Please go to My Deliveries to update the status.
+                    </p>
                   ) : (
                     <p></p>
                   )}
