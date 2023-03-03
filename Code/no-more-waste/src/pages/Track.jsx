@@ -82,6 +82,7 @@ const Track = () => {
   return (
     <div>
       <div class="grid-track grid--1x2track">
+      <div class="curved-card">
       <ul>
         {posts.map((post) => (
           <li class="nav__item" key={post.post_id} value={post.post_id}>
@@ -261,6 +262,8 @@ const Track = () => {
           </li>
         ))}
       </ul>
+      </div>
+      
       </div>
       
     </div>
