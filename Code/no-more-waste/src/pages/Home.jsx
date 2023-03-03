@@ -31,29 +31,39 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, post_id, busPhoneNumber, item_name) => {
     // this is for request button for shelter
     e.preventDefault();
-    const item_key = e.target.id;
+    const item_key = post_id;
+    //const busPhoneNumber = e.target.
+
     // console.log(item_key)
     try {
       await axios.post("/posts/updatePost", { post_id: item_key });
+      await axios.post("/posts/send-text-message", {
+        phoneNumber: busPhoneNumber,
+        message: "The food item - "+item_name+" has been accepted by a shelter. The driver information will be updated soon.",
+      });
       navigate("/track");
     } catch (err) {
       setError(err.response.data);
     }
   };
 
-  const handleSubmitVolunteer = async (e) => {
+  const handleSubmitVolunteer = async (e, post_id, busPhoneNumber, shelterPhoneNumber, item_name) => {
     e.preventDefault();
-    const item_key = e.target.id;
+    const item_key = post_id;
     // console.log(item_key)
     try {
       await axios.post("/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
       await axios.post("/posts/send-text-message", {
-        phoneNumber: currentUser.phone_number,
-        message: "You have picked up the order",
+        phoneNumber: busPhoneNumber,
+        message: "A volunteer delivery driver has accepted the delivery for item - "+item_name+ ". The driver will be there shortly.",
+      });
+      await axios.post("/posts/send-text-message", {
+        phoneNumber: shelterPhoneNumber,
+        message: "A volunteer delivery driver has accepted the delivery for item - "+item_name+ ". The driver will pick up the food shortly. We will notify you when the driver is on their way to you with your food.",
       });
       navigate("/track");
     } catch (err) {
@@ -61,25 +71,6 @@ const Home = () => {
       setError(err.response.data);
     }
   };
-
-  // const posts = [
-  //   {
-  //     post_id: 1,
-  //     item_name: "Burger King",
-  //     description:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fuga hic repudiandae architecto nesciunt eius laboriosam! Sunt eos aspernatur ex quisquam molestias porro tempore culpa illum nam? Temporibus, minima saepe?      ",
-  //     photo_link:
-  //       "https://www.seriouseats.com/thmb/Il7mv9ZSDh7n0cZz3t3V-28ImkQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__04__20180309-french-fries-vicky-wasik-15-5a9844742c2446c7a7be9fbd41b6e27d.jpg",
-  //   },
-  //   {
-  //     post_id: 2,
-  //     item_name: "McDonalds",
-  //     description:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, fuga hic repudiandae architecto nesciunt eius laboriosam! Sunt eos aspernatur ex quisquam molestias porro tempore culpa illum nam? Temporibus, minima saepe?",
-  //     photo_link:
-  //       "https://www.seriouseats.com/thmb/Il7mv9ZSDh7n0cZz3t3V-28ImkQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__04__20180309-french-fries-vicky-wasik-15-5a9844742c2446c7a7be9fbd41b6e27d.jpg",
-  //   },
-  // ];
 
   return (
     <div>
@@ -111,7 +102,7 @@ const Home = () => {
                 </div>
               </div>
             </div> */}
-            {/* <button class="card-button create-post-btn"><Link to="/createpost">Create a New Post</Link></button> */}
+            
             {currentUser.role === "b" ? (
               <Link to="/createpost">
                 <button class="card-button create-post-btn">
@@ -143,7 +134,7 @@ const Home = () => {
                         class="card-button"
                         name={post.post_id}
                         id={post.post_id}
-                        onClick={handleSubmit}
+                        onClick={(e) => handleSubmit(e, post.post_id, post.restaurantPhoneNumber, post.item_name)}
                       >
                         REQUEST
                       </button>
@@ -159,7 +150,7 @@ const Home = () => {
                         class="card-button"
                         name={post.post_id}
                         id={post.post_id}
-                        onClick={handleSubmitVolunteer}
+                        onClick={(e) => handleSubmitVolunteer(e, post.post_id, post.restaurantPhoneNumber, post.shelterPhoneNumber, post.item_name)}
                       >
                         ACCEPT
                       </button>
@@ -172,29 +163,9 @@ const Home = () => {
                   ) : (
                     <p></p>
                   )}
-                  {/* {currentUser.role === "v" && post.driver_id != null && currentUser.user_id === post.driver_id ? (
-                    <><p class="card-text already-requested">Please update your delivery status:</p><Link to=""><button
-                      class="card-button"
-                      name={post.post_id}
-                      id={post.post_id}
-                      //onClick={handleSubmitPicked}
-                    >
-                      Picked Up
-                    </button>
-                    </Link><button
-                      class="card-button"
-                      name={post.post_id}
-                      id={post.post_id}
-                      //onClick={handleSubmitDelivered}
-                    >
-                        Delivered
-                      </button></>
-                  ) : (
-                    <p></p>
-                  )} */}
                   {currentUser.role === "v" &&
-                  post.driver_id != null &&
-                  currentUser.user_id != post.driver_id ? (
+                  post.driver_id !== null &&
+                  currentUser.user_id !== post.driver_id ? (
                     <p class="card-text already-requested">
                       A driver has already accepted this request.
                     </p>
@@ -202,10 +173,19 @@ const Home = () => {
                     <p></p>
                   )}
                   {currentUser.role === "v" &&
-                  post.driver_id != null &&
-                  currentUser.user_id == post.driver_id ? (
+                  post.driver_id !== null &&
+                  currentUser.user_id === post.driver_id && post.completed === null? (
                     <p class="card-text already-requested-by-you">
                       You have accepted this request. Please go to My Deliveries to update the status.
+                    </p>
+                  ) : (
+                    <p></p>
+                  )}
+                  {currentUser.role === "v" &&
+                  post.driver_id !== null &&
+                  currentUser.user_id === post.driver_id && post.completed === 1 ? (
+                    <p class="card-text already-requested-by-you">
+                      This delivery is complete
                     </p>
                   ) : (
                     <p></p>

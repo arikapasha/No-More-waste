@@ -10,6 +10,8 @@ import {
   getShelterPosts,
   getVolunteerPosts,
   sendTexts,
+  updatePickedUp,
+  updateDelivered
 } from "../controllers/post.js";
 
 const router = express.Router();
@@ -24,7 +26,9 @@ router.post("/", addPost);
 router.post("/deletePost", deletePost);
 router.post("/updatePost", updatePost);
 router.post("/updateVolunteer", updateVolunteer);
-router.post("/send-text-message", sendTexts)
+router.post("/send-text-message", sendTexts);
+router.post("/pickedUp", updatePickedUp);
+router.post("/delivered", updateDelivered);
 
 
 export default router;

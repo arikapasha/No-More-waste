@@ -316,7 +316,9 @@ select:focus {
 
 @media screen and (min-width: 1590px) {
   .nav {
-      justify-content: space-between;
+      /* justify-content: space-between; */
+      margin: 0 auto;
+
   }
 }
 
@@ -814,6 +816,7 @@ select:focus {
   border-radius: 15px;
   font-size: 1.3rem;
   width: 275px;
+  padding: 10px;
 }
 .create-btn {
   position: relative;

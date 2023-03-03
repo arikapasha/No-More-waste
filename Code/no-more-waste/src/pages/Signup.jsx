@@ -152,8 +152,8 @@ const Signup = () => {
                   type="checkbox"
                   id="shelter-option"
                   name="shelterOption"
-                  value={checkedVolunteer}
-                  onChange={handleVolunteer}
+                  value={checkedShelter}
+                  onChange={handleShelter}
                   class="check-input"
                 />
                 <label for="isShelter" class="form-label">
