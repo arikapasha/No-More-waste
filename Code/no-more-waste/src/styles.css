@@ -888,3 +888,121 @@ select:focus {
     left: 2.5rem;
   }
 }
+
+
+/* Track Page */
+.curved-card {
+  width: 55rem;
+  height: 37rem;
+  background-color: #F9F8F8;
+  justify-content: center;
+  margin: 3rem;
+  border-radius: 30px 0px 30px 0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.track-header {
+  color: #604747;
+  font-size: 2rem;
+}
+
+.disp {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-desc {
+  background-color: #604747;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-desc-rest {
+  background-color: #604747;
+  width: 9.4rem;
+  height: 3rem;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-desc-shelt {
+  background-color: #604747;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-desc-driver {
+  background-color: #604747;
+  width: 6.2rem;
+  height: 3rem;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.disc-p {
+  position: relative;
+  top: -1rem;
+  left: 1rem;
+  color: #fff;
+}
+
+.disc-content {
+  position: relative;
+  top: -1rem;
+  left: 1rem;
+}
+
+.track-btn {
+  border-radius: 12px;
+  background-color: #D9D9D9;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-size: 1.3rem;
+  width: 100px;
+  height: 35px;
+  position: relative;
+  left: 160px;
+  top: 15px;
+  color: #604747;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.track-btn:hover {
+  background-color: #604747;
+  color: #D9D9D9;
+}
+
+.grid-track {
+  display: grid;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.disc-content-error {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2track {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      max-width: 1400px;
+      /*margin-left: -15rem;*/
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
