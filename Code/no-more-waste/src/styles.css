@@ -985,7 +985,8 @@ select:focus {
 .grid-track {
   display: grid;
   justify-content: center;
-  margin-top: 4rem;
+  margin: 4rem;
+  
 }
 
 .disc-content-error {

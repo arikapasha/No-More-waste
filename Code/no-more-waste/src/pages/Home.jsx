@@ -102,7 +102,7 @@ const Home = () => {
                 </div>
               </div>
             </div> */}
-            
+
             {currentUser.role === "b" ? (
               <Link to="/createpost">
                 <button class="card-button create-post-btn">
@@ -134,7 +134,14 @@ const Home = () => {
                         class="card-button"
                         name={post.post_id}
                         id={post.post_id}
-                        onClick={(e) => handleSubmit(e, post.post_id, post.restaurantPhoneNumber, post.item_name)}
+                        onClick={(e) =>
+                          handleSubmit(
+                            e,
+                            post.post_id,
+                            post.restaurantPhoneNumber,
+                            post.item_name
+                          )
+                        }
                       >
                         REQUEST
                       </button>
@@ -144,13 +151,33 @@ const Home = () => {
                   )}
                   {currentUser.role === "v" &&
                   post.driver_id === null &&
-                  post.shelter_id != null ? (
+                  post.shelter_id !== null ? (
                     <Link to="">
+                      {/* <p class="card-text" id="description" name="description">
+                        Restaurant: {post.restaurantName}
+                        </p>
+                        <p class="card-text" id="description" name="description"> 
+                        Restaurant Address: {post.restaurantAddress}
+                        </p>
+                        <p class="card-text" id="description" name="description">
+                        Shelter: {post.shelterName}
+                        </p>
+                        <p class="card-text" id="description" name="description">
+                        Shelter Address: {post.shelterAddress}
+                      </p> */}
                       <button
                         class="card-button"
                         name={post.post_id}
                         id={post.post_id}
-                        onClick={(e) => handleSubmitVolunteer(e, post.post_id, post.restaurantPhoneNumber, post.shelterPhoneNumber, post.item_name)}
+                        onClick={(e) =>
+                          handleSubmitVolunteer(
+                            e,
+                            post.post_id,
+                            post.restaurantPhoneNumber,
+                            post.shelterPhoneNumber,
+                            post.item_name
+                          )
+                        }
                       >
                         ACCEPT
                       </button>
@@ -174,16 +201,19 @@ const Home = () => {
                   )}
                   {currentUser.role === "v" &&
                   post.driver_id !== null &&
-                  currentUser.user_id === post.driver_id && post.completed === null? (
+                  currentUser.user_id === post.driver_id &&
+                  post.completed === null ? (
                     <p class="card-text already-requested-by-you">
-                      You have accepted this request. Please go to My Deliveries to update the status.
+                      You have accepted this request. Please go to My Deliveries
+                      to update the status.
                     </p>
                   ) : (
                     <p></p>
                   )}
                   {currentUser.role === "v" &&
                   post.driver_id !== null &&
-                  currentUser.user_id === post.driver_id && post.completed === 1 ? (
+                  currentUser.user_id === post.driver_id &&
+                  post.completed === 1 ? (
                     <p class="card-text already-requested-by-you">
                       This delivery is complete
                     </p>
