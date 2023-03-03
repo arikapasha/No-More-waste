@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Track = () => {
   const { currentUser } = useContext(AuthContext);
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [posts, setPosts] = useState([]);
 
@@ -47,59 +47,46 @@ const Track = () => {
     }
   };
 
-  const handleSubmitPickedUp = async (e, post_id, shelterPhoneNumber, item_name) => {
-    e.preventDefault();
-    const item_key = post_id;
-    // console.log(item_key)
-    try {
-      await axios.post("/posts/pickedUp", { post_id: item_key });
-      await axios.post("/posts/send-text-message", {
-        phoneNumber: shelterPhoneNumber,
-        message: "The volunteer driver has picked up your order for item - "+item_name+ ". The driver will be there shortly.",
-      });
-      window.location.reload();
-    } catch (err) {
-      setError(err.response.data);
-    }
-  };
-  const handleSubmitDelivered = async (e, post_id, restaurantPhoneNumber, item_name) => {
-    e.preventDefault();
-    const item_key = post_id;
-    // console.log(item_key)
-    try {
-      await axios.post("/posts/delivered", { post_id: item_key });
-      await axios.post("/posts/send-text-message", {
-        phoneNumber: restaurantPhoneNumber,
-        message: "Your item "+item_name+ " has been delivered. Thank you for supporting our cause to reduce food waste. See you again!",
-      });
-      window.location.reload();
-    } catch (err) {
-      setError(err.response.data);
-    }
-  };
-  
-
   return (
     <div>
-      <ul>
+      <div class="grid-track grid--1x2track">
+        <div class="curved-card">
+        <ul>
         {posts.map((post) => (
           <li class="nav__item" key={post.post_id} value={post.post_id}>
-            <h3>{post.item_name}</h3>
-            <p>{post.description}</p>
+            <h3 class="track-header">{post.item_name}</h3>
+            <div class="disp">
+              <div class="item-desc">
+                <p class="disc-p">Description: 
+                </p>
+              </div>
+              <p class="disc-content">{post.description}</p>
+            </div>
             {currentUser &&
             currentUser.role === "b" &&
             post.shelter_id != null ? (
               //<Link to="/track">
-              <p>
-                <p>
-                  Restaurant: {post.restaurantName}, {post.restaurantAddress},
-                  {post.restaurantPhoneNumber}
-                </p>
-                <p>
-                  Shelter: {post.shelterName}, {post.shelterAddress},
-                  {post.shelterPhoneNumber}
-                </p>
-              </p>
+              <div>
+                <div class="disp">
+                <div class="item-desc-rest">
+                  <p class="disc-p">Restaurant: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.restaurantName}, {post.restaurantAddress},
+                  {post.restaurantPhoneNumber}</p>
+              </div>
+
+              <div class="disp">
+                <div class="item-desc-shelt">
+                  <p class="disc-p">Shelter: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.shelterName}, {post.shelterAddress},
+                  {post.shelterPhoneNumber}</p>
+              </div>
+              </div>
+              
+
             ) : (
               //</Link>
               <Link></Link>
@@ -108,15 +95,25 @@ const Track = () => {
             currentUser.role === "b" &&
             post.shelter_id === null ? (
               //<Link to="/track">
-              <p>
-                <p>
-                  Restaurant: {post.restaurantName}, {post.restaurantAddress},
-                  {post.restaurantPhoneNumber}
-                </p>
-                <p style={{color: "red"}}>
-                  Shelter: No shelter has accepted this delivery yet.
-                </p>
-              </p>
+              <div>
+                <div class="disp">
+                <div class="item-desc-rest">
+                  <p class="disc-p">Restaurant: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.restaurantName}, {post.restaurantAddress},
+                  {post.restaurantPhoneNumber}</p>
+              </div>
+
+              <div class="disp">
+                <div class="item-desc-shelt">
+                  <p class="disc-p">Shelter: 
+                  </p>
+                </div>
+                <p class="disc-content-error">Shelter: No shelter has accepted this delivery yet.</p>
+              </div>
+              </div>
+              
             ) : (
               //</Link>
               <Link></Link>
@@ -124,16 +121,26 @@ const Track = () => {
             {currentUser &&
             currentUser.role === "s" ? (
               //<Link to="/track">
-              <p>
-                <p>
-                  Restaurant: {post.restaurantName}, {post.restaurantAddress},
-                  {post.restaurantPhoneNumber}
-                </p>
-                <p>
-                  Shelter: {post.shelterName}, {post.shelterAddress},
-                  {post.shelterPhoneNumber}
-                </p>
-              </p>
+              <div>
+                <div class="disp">
+                <div class="item-desc-rest">
+                  <p class="disc-p">Restaurant: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.restaurantName}, {post.restaurantAddress},
+                  {post.restaurantPhoneNumber}</p>
+              </div>
+
+              <div class="disp">
+                <div class="item-desc-shelt">
+                  <p class="disc-p">Shelter: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.shelterName}, {post.shelterAddress},
+                  {post.shelterPhoneNumber}</p>
+              </div>
+              </div>
+              
             ) : (
               //</Link>
               <Link></Link>
@@ -141,16 +148,26 @@ const Track = () => {
             {currentUser &&
             currentUser.role === "v" ? (
               //<Link to="/track">
-              <p>
-                <p>
-                  Restaurant: {post.restaurantName}, {post.restaurantAddress},
-                  {post.restaurantPhoneNumber}
-                </p>
-                <p>
-                  Shelter: {post.shelterName}, {post.shelterAddress},
-                  {post.shelterPhoneNumber}
-                </p>
-              </p>
+              <div>
+                <div class="disp">
+                <div class="item-desc-rest">
+                  <p class="disc-p">Restaurant: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.restaurantName}, {post.restaurantAddress},
+                  {post.restaurantPhoneNumber}</p>
+              </div>
+
+              <div class="disp">
+                <div class="item-desc-shelt">
+                  <p class="disc-p">Shelter: 
+                  </p>
+                </div>
+                <p class="disc-content">{post.shelterName}, {post.shelterAddress},
+                  {post.shelterPhoneNumber}</p>
+              </div>
+              </div>
+              
             ) : (
               //</Link>
               <Link></Link>
@@ -158,6 +175,7 @@ const Track = () => {
             {currentUser && currentUser.role === "b" ? (
               //<Link to="/track">
               <button
+                class="track-btn"
                 name={post.post_id}
                 id={post.post_id}
                 onClick={handleSubmit}
@@ -174,6 +192,7 @@ const Track = () => {
             post.pickedUp === null ? (
               //<Link to="/track">
               <button
+                class="track-btn"
                 name={post.post_id}
                 id={post.post_id}
                 onClick={(e) => handleSubmitPickedUp(e, post.post_id, post.shelterPhoneNumber, post.item_name)}
@@ -190,6 +209,7 @@ const Track = () => {
             post.accepted === 1 && post.completed == null ? (
               //<Link to="/track">
               <button
+                class="track-btn"
                 name={post.post_id}
                 id={post.post_id}
                 onClick={(e) => handleSubmitDelivered(e, post.post_id, post.restaurantPhoneNumber, post.item_name)}
@@ -213,6 +233,9 @@ const Track = () => {
           </li>
         ))}
       </ul>
+        </div>
+      </div>
+      
     </div>
   );
 };
