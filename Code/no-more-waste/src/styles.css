@@ -802,7 +802,7 @@ select:focus {
 .create-div {
   margin-top: 8rem;
   margin-bottom: 20rem;
-  height: 500px;
+  height: 560px;
   position: relative;
   left: 0rem;
 }
@@ -986,7 +986,7 @@ select:focus {
   display: grid;
   justify-content: center;
   margin: 4rem;
-  
+
 }
 
 .disc-content-error {

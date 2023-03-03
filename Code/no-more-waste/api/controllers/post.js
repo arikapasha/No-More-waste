@@ -9,8 +9,8 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 const client = twilio(accountSid, authToken);
 
-const track_sql_query =
-  "select post.*, shelter.businessname shelterName, shelter.address shelterAddress,shelter.phone_number shelterPhoneNumber,restaurant.businessname restaurantName, restaurant.address restaurantAddress,    restaurant.phone_number restaurantPhoneNumber from post post, user shelter, user restaurant where post.rest_id = restaurant.user_id AND post.shelter_id = shelter.user_id ";
+// const track_sql_query =
+//   "select post.*, shelter.businessname shelterName, shelter.address shelterAddress,shelter.phone_number shelterPhoneNumber,restaurant.businessname restaurantName, restaurant.address restaurantAddress,    restaurant.phone_number restaurantPhoneNumber from post post, user shelter, user restaurant where post.rest_id = restaurant.user_id AND post.shelter_id = shelter.user_id ";
 
 export const getPosts = (req, res) => {
   const q = "SELECT post.*, shelter.businessname shelterName, shelter.address shelterAddress, shelter.phone_number shelterPhoneNumber, restaurant.businessname restaurantName, restaurant.address restaurantAddress, restaurant.phone_number restaurantPhoneNumber FROM defaultdb.post post LEFT JOIN defaultdb.user shelter ON post.shelter_id = shelter.user_id LEFT JOIN defaultdb.user restaurant ON post.rest_id = restaurant.user_id WHERE post.shelter_id IS NULL OR post.shelter_id = shelter.user_id order by post_id desc";
