@@ -31,7 +31,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async (e, post_id, busPhoneNumber, item_name) => {
+  const handleSubmit = async (e, busName, post_id,  busPhoneNumber, item_name) => {
     // this is for request button for shelter
     e.preventDefault();
     const item_key = post_id;
@@ -42,7 +42,7 @@ const Home = () => {
       await axios.post("/posts/updatePost", { post_id: item_key });
       await axios.post("/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
-        message: "The food item - "+item_name+" has been accepted by a shelter. The driver information will be updated soon.",
+        message: "Hi " + busName + "\nA shelter has requested the item - "+ item_name+ " for donation.\nWe will update you when a volunteer driver has accepted the delivery.\nThank you for your generosity!"
       });
       navigate("/track");
     } catch (err) {
@@ -126,8 +126,19 @@ const Home = () => {
                     {post.item_name}
                   </h4>
                   <p class="card-text" id="description" name="description">
-                    {post.description}
+                    Description: {post.description}
                   </p>
+                  <p class="card-text" id="description" name="description">
+                    Restaurant: {post.restaurantName } <br/>
+                    Address: {post.restaurantAddress}
+                  </p>
+                  {post.shelter_id === null ?
+                  <p class="card-text already-requested-by-you" id="description" name="description">No Shelter has requested this delivery yet.</p>
+                  : <p class="card-text" id="description" name="description">
+                  Shelter: {post.shelterName } <br/>
+                  Address: {post.shelterAddress}
+                </p>
+                }
                   {currentUser.role === "s" && post.shelter_id === null ? (
                     <Link to="">
                       <button
@@ -137,6 +148,7 @@ const Home = () => {
                         onClick={(e) =>
                           handleSubmit(
                             e,
+                            post.restaurantName,
                             post.post_id,
                             post.restaurantPhoneNumber,
                             post.item_name

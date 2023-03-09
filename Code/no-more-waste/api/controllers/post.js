@@ -253,18 +253,6 @@ export const updateDelivered = (req, res) => {
   });
 };
 
-// export const runQuery = (query) => {
-//   return new Promise((resolve, reject) => {
-//     connection.query(query, (error, results, fields) => {
-//       if (error) {
-//         reject(error);
-//       } else {
-//         resolve(results);
-//       }
-//     });
-//   });
-// };
-
 export const sendtextMessage = (toPhoneNumber, message) => {
   client.messages
     .create({
