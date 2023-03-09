@@ -863,8 +863,8 @@ select:focus {
   }
 }
 .create-post-btn:hover {
-  color: #604747;
-  background-color: #fff;
+  color: #fff;
+  background-color: #004445;
 }
 
 /* Profile Page */
