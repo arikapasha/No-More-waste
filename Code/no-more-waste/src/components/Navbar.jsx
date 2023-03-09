@@ -38,7 +38,7 @@ const NavBar = () => {
         <ul class="list nav__list collapsible__content">
           <li class="nav__item">
             {currentUser ? (
-              <Link to="/profile/2?cat=profile">
+              <Link to="/track">
                 {currentUser.businessname}
               </Link>
             ) : (
