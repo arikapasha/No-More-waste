@@ -90,7 +90,7 @@ const NavBar = () => {
           <ul class="hidden-collapsible">
             <li class="nav__item menu-item">
               {currentUser ? (
-                <Link to="/profile/2?cat=profile">
+                <Link to="/track">
                   {currentUser.businessname}
                 </Link>
               ) : (

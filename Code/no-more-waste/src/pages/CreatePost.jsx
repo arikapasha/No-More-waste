@@ -79,7 +79,7 @@ const CreatePost = () => {
                 name="description"
                 className="form-input create-desc"
                 placeholder="Food type, quantity, allergies, etc"
-                maxlength = "150"
+                maxlength = "100"
                 onChange={(e) => setDescription(e.target.value)}></textarea>
               <br />
               <label for="description" className="form-label form-label-create">

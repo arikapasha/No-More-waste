@@ -105,7 +105,7 @@ const Home = () => {
 
             {currentUser.role === "b" ? (
               <Link to="/createpost">
-                <button class="card-button create-post-btn">
+                <button class="card-button create-post-btn"> 
                   Create a New Post
                 </button>
               </Link>
@@ -122,22 +122,55 @@ const Home = () => {
                     alt=""
                   />
                   {/* <h3 className="card-heading">{}</h3> */}
-                  <h4 class="card-heading" id="item_name" name="item_name">
+                  <div class="card-head-div">
+                    <div class="card-head-design">
+                    <h4 class="card-heading" id="item_name" name="item_name">
                     {post.item_name}
-                  </h4>
+                    </h4>
+                    </div>
+                  </div>
+                  <div class="card-head-div">
                   <p class="card-text" id="description" name="description">
-                    Description: {post.description}
+                    {post.description}
                   </p>
-                  <p class="card-text" id="description" name="description">
-                    Restaurant: {post.restaurantName } <br/>
-                    Address: {post.restaurantAddress}
-                  </p>
-                  {post.shelter_id === null ?
-                  <p class="card-text already-requested-by-you" id="description" name="description">No Shelter has requested this delivery yet.</p>
-                  : <p class="card-text" id="description" name="description">
-                  Shelter: {post.shelterName } <br/>
-                  Address: {post.shelterAddress}
+                  </div>
+                  <div>
+                  <div class="restaurant-banner">
+                    <p class="card-restaurant">Restaurant</p>
+                  </div>
+                  <div class="rest-details">
+                  <p class="card-text rest-shelt-text" id="description" name="description">
+                  {post.restaurantName } <br/>
+                  {post.restaurantAddress}
                 </p>
+                  </div>
+                  </div>
+                  
+                  {post.shelter_id === null ?
+                  <div>
+                  <div class="shelter-region">
+                    <div class="shelter-banner">
+                      <p class="card-shelter">Shelter</p>
+                    </div>
+                    <div class="shelter-details">
+                      <p class="card-text shelt-no-req" id="description" name="description" style={{color: "green"}}>
+                        No request
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                  : <div>
+                    <div class="shelter-region"><div class="shelter-banner">
+                  <p class="card-shelter">Shelter</p>
+                </div>
+                <div class="shelter-details">
+                <p class="card-text text-shelt-details" id="description" name="description">
+                  {post.shelterName } <br/>
+                  {post.shelterAddress}
+                </p>
+                  </div>
+                </div>
+                  </div>
                 }
                   {currentUser.role === "s" && post.shelter_id === null ? (
                     <Link to="">
@@ -198,7 +231,12 @@ const Home = () => {
                     <Link></Link>
                   )}
                   {currentUser.role === "s" && post.shelter_id != null ? (
-                    <p class="card-text already-requested">Already requested</p>
+                    <div>
+                      <div class="already-req-banner">
+                      <p class="card-text already-requested">Already requested</p>
+                      </div>
+                    </div>
+                    
                   ) : (
                     <p></p>
                   )}

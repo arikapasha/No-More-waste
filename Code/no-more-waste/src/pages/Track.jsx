@@ -109,7 +109,7 @@ const Track = () => {
                     <div class="item-desc">
                       <p class="disc-p">Description:</p>
                     </div>
-                    <p class="disc-content">{post.description}</p>
+                    <p class="disc-content disc-content-description">{post.description}</p>
                   </div>
                   {currentUser &&
                   currentUser.role === "b" &&
