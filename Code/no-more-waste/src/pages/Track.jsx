@@ -169,7 +169,8 @@ const Track = () => {
                     <div class="rest-details">
                       <p class="card-text rest-shelt-text" id="description" name="description">
                       {post.restaurantName } <br/>
-                      {post.restaurantAddress} <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.restaurantAddress}/> <br/>
                       {post.restaurantPhoneNumber}
                       </p>
                     </div>
@@ -200,7 +201,8 @@ const Track = () => {
                     <div class="rest-details">
                       <p class="card-text rest-shelt-text" id="description" name="description">
                       {post.restaurantName } <br/>
-                      {post.restaurantAddress} <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.restaurantAddress}/> <br/>
                       {post.restaurantPhoneNumber}
                       </p>
                     </div>
@@ -273,7 +275,8 @@ const Track = () => {
                     <div class="rest-details">
                       <p class="card-text rest-shelt-text" id="description" name="description">
                       {post.restaurantName } <br/>
-                      {post.restaurantAddress} <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.restaurantAddress}/> <br/>
                       {post.restaurantPhoneNumber}
                       </p>
                     </div>
