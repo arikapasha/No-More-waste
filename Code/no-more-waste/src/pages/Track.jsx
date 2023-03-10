@@ -97,44 +97,57 @@ const Track = () => {
   return (
     <div>
       <ul>
-        <div class="grid-track grid--1x2track">
+        <div class="body-content-home">
+          <div class="inner-content-track">
+          <div class="grid grid--1x3 grid--1x2 grid-cards">
           {currentUser && posts.length === 0 ? (
             <p>You have no posts.</p>
           ) : (
             posts.map((post) => (
-              <div class="curved-card">
+              <div class="card card-track">
                 <li class="nav__item" key={post.post_id} value={post.post_id}>
-                  <h3 class="track-header">{post.item_name}</h3>
-                  <div class="disp">
-                    <div class="item-desc">
-                      <p class="disc-p">Description:</p>
+                <div class="card-head-div">
+                    <div class="card-head-design">
+                    <h4 class="card-heading" id="item_name" name="item_name">
+                    {post.item_name}
+                    </h4>
                     </div>
-                    <p class="disc-content disc-content-description">{post.description}</p>
+                  </div>
+                  <div class="card-head-div">
+                  <p class="card-text" id="description" name="description">
+                    {post.description}
+                  </p>
                   </div>
                   {currentUser &&
                   currentUser.role === "b" &&
                   post.shelter_id !== null ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-rest">
-                          <p class="disc-p">Restaurant:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.restaurantName}, {post.restaurantAddress},{" "}
-                          {post.restaurantPhoneNumber}
-                        </p>
-                      </div>
+                  <div class="rest-track-details">
+                  <div class="restaurant-banner">
+                    <p class="card-restaurant">Restaurant</p>
+                  </div>
+                  <div class="rest-details">
+                  <p class="card-text rest-shelt-text" id="description" name="description">
+                  {post.restaurantName } <br/>
+                  {post.restaurantAddress} <br/>
+                  {post.restaurantPhoneNumber}
+                </p>
+                  </div>
+                  </div>
 
-                      <div class="disp">
-                        <div class="item-desc-shelt">
-                          <p class="disc-p">Shelter:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.shelterName}, {post.shelterAddress},{" "}
-                          {post.shelterPhoneNumber}
-                        </p>
-                      </div>
+                  <div class="shelter-region shelt-track-details">
+                    <div class="shelter-banner">
+                  <p class="card-shelter">Shelter</p>
+                </div>
+                <div class="shelter-details">
+                <p class="card-text text-shelt-details" id="description" name="description">
+                  {post.shelterName } <br/>
+                  {post.shelterAddress} <br/>
+                  {post.shelterPhoneNumber}
+                </p>
+                  </div>
+                </div>
                     </div>
                   ) : (
                     //</Link>
@@ -200,14 +213,17 @@ const Track = () => {
                   post.driver_id !== null ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-driver">
-                          <p class="disc-p">Driver:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.driverUsername}, {post.driverPhoneNumber}
-                        </p>
-                      </div>
+                      <div class="driver-track-details">
+                    <div class="shelter-banner">
+                  <p class="card-shelter">Driver</p>
+                </div>
+                <div class="shelter-details">
+                <p class="card-text text-shelt-details" id="description" name="description">
+                  {post.driverUsername } <br/>
+                  {post.driverPhoneNumber} 
+                </p>
+                  </div>
+                </div>
                     </div>
                   ) : (
                     //</Link>
@@ -218,14 +234,16 @@ const Track = () => {
                   post.driver_id === null ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-driver">
-                          <p class="disc-p">Driver:</p>
-                        </div>
-                        <p class="disc-content">
-                          No Driver has been assigned yet.
-                        </p>
-                      </div>
+                      <div class="driver-track-details">
+                    <div class="shelter-banner">
+                  <p class="card-shelter">Driver</p>
+                </div>
+                <div class="shelter-details">
+                <p class="card-text text-shelt-details" id="description" name="description">
+                  None
+                </p>
+                  </div>
+                </div>
                     </div>
                   ) : (
                     //</Link>
@@ -261,7 +279,7 @@ const Track = () => {
                   {currentUser && currentUser.role === "b" ? (
                     //<Link to="/track">
                     <button
-                      class="track-btn"
+                      class="card-button card-btn-track"
                       name={post.post_id}
                       id={post.post_id}
                       onClick={handleSubmit}
@@ -337,6 +355,10 @@ const Track = () => {
             ))
           )}
         </div>
+          </div>
+        
+        </div>
+        
       </ul>
     </div>
   );
