@@ -3,6 +3,7 @@ import "../styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import altimg from "../images/alt-img.jpg"
 
 const CreatePost = () => {
   const [item_name, setItemName] = useState("");

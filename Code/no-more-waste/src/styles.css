@@ -612,6 +612,24 @@ select:focus {
   transition: 0.5s;
 }
 
+/*for driver when they have accepted the deliver*/
+.already-accepted-banner {
+  border-radius: 12px;
+  background-color: #EBEBE4;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-size: 1.3rem;
+  width: 170px;
+  height: 53px;
+  position: absolute;
+  display: flex;
+  left: 100px;
+  top: 450px;
+  cursor: not-allowed;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
 .card-button {
   border-radius: 12px;
   background-color: #f8b400;
@@ -1131,7 +1149,7 @@ select:focus {
 
 .complete-deliv {
   top: 320px;
-  width: 90px;
+  width: 100px;
   left: 135px;
 }
 
@@ -1150,5 +1168,13 @@ select:focus {
 
 .map-link{
   text-decoration: underline;
+  
+}
+
+.vol-status{
+  font-size: medium;
+  color: red;
+  text-decoration: bold;
+  border: 5px;
   
 }

@@ -9,7 +9,7 @@ const ContactUs = () => {
             <form className="signup-form">
             <div class="card-head-design create-header contact-header">
                     <h4 class="card-heading" id="item_name" name="item_name">
-                    Contact us
+                    Contact Us
                     </h4>
                     </div>
 

@@ -214,7 +214,10 @@ const Track = () => {
                     </div>
                     <div class="shelter-details">
                       <p class="card-text text-shelt-details" id="description" name="description">
-                      None
+                      {post.shelterName } <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.shelterAddress}/> <br/>
+                      {post.shelterPhoneNumber}
                       </p>
                     </div>
                   </div>
@@ -288,7 +291,10 @@ const Track = () => {
                     </div>
                     <div class="shelter-details">
                       <p class="card-text text-shelt-details" id="description" name="description">
-                      None
+                      {post.shelterName } <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.shelterAddress}/> <br/>
+                      {post.shelterPhoneNumber}
                       </p>
                     </div>
                   </div>
@@ -368,7 +374,7 @@ const Track = () => {
                     //<Link to="/track">
                     <div>
                       <div class="already-req-banner complete-deliv">
-                      <p class="card-text already-requested delivered">Delivered</p>
+                      <p class="card-text already-requested delivered">Completed  </p>
                       </div>
                     </div>
                   ) : (

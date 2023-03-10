@@ -13,9 +13,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setError } from "react";
 import MapLink from "../components/MapLink";
+import alert from "../images/alert.jpg";
+
+//import altImg from "../public/uploads/alt-img.jpg"
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
+  const [showDiv, setShowDiv] = useState(false);
 
   const navigate = useNavigate();
 
@@ -32,7 +36,20 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async (e, busName, post_id,  busPhoneNumber, item_name) => {
+  useEffect(() => {
+    setShowDiv(true);
+    setTimeout(() => {
+      setShowDiv(false);
+    }, 20000); // 10 seconds in milliseconds
+  }, []);
+
+  const handleSubmit = async (
+    e,
+    busName,
+    post_id,
+    busPhoneNumber,
+    item_name
+  ) => {
     // this is for request button for shelter
     e.preventDefault();
     const item_key = post_id;
@@ -43,7 +60,12 @@ const Home = () => {
       await axios.post("/posts/updatePost", { post_id: item_key });
       await axios.post("/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
-        message: "Hi " + busName + "\nA shelter has requested the item - "+ item_name+ " for donation.\nWe will update you when a volunteer driver has accepted the delivery.\nThank you for your generosity!"
+        message:
+          "Hi " +
+          busName +
+          "\nA shelter has requested the item - " +
+          item_name +
+          " for donation.\nWe will update you when a volunteer driver has accepted the delivery.\nThank you for your generosity!",
       });
       navigate("/track");
     } catch (err) {
@@ -51,7 +73,13 @@ const Home = () => {
     }
   };
 
-  const handleSubmitVolunteer = async (e, post_id, busPhoneNumber, shelterPhoneNumber, item_name) => {
+  const handleSubmitVolunteer = async (
+    e,
+    post_id,
+    busPhoneNumber,
+    shelterPhoneNumber,
+    item_name
+  ) => {
     e.preventDefault();
     const item_key = post_id;
     // console.log(item_key)
@@ -60,11 +88,17 @@ const Home = () => {
       //console.log("ive reached here")
       await axios.post("/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
-        message: "A volunteer delivery driver has accepted the delivery for item - "+item_name+ ". The driver will be there shortly.",
+        message:
+          "A volunteer delivery driver has accepted the delivery for item - " +
+          item_name +
+          ". The driver will be there shortly.",
       });
       await axios.post("/posts/send-text-message", {
         phoneNumber: shelterPhoneNumber,
-        message: "A volunteer delivery driver has accepted the delivery for item - "+item_name+ ". The driver will pick up the food shortly. We will notify you when the driver is on their way to you with your food.",
+        message:
+          "A volunteer delivery driver has accepted the delivery for item - " +
+          item_name +
+          ". The driver will pick up the food shortly. We will notify you when the driver is on their way to you with your food.",
       });
       navigate("/track");
     } catch (err) {
@@ -103,10 +137,18 @@ const Home = () => {
                 </div>
               </div>
             </div> */}
+            {currentUser.role === "v" && showDiv ? (
+              <div class="vol-status">
+                <i>Please go to <Link to="/track">My Deliveries</Link> to Update
+                any posts that have been Picked up or already Deilvered.</i>
+              </div>
+            ) : (
+              <Link></Link>
+            )}
 
             {currentUser.role === "b" ? (
               <Link to="/createpost">
-                <button class="card-button create-post-btn"> 
+                <button class="card-button create-post-btn">
                   Create a New Post
                 </button>
               </Link>
@@ -125,56 +167,78 @@ const Home = () => {
                   {/* <h3 className="card-heading">{}</h3> */}
                   <div class="card-head-div">
                     <div class="card-head-design">
-                    <h4 class="card-heading" id="item_name" name="item_name">
-                    {post.item_name}
-                    </h4>
+                      <h4 class="card-heading" id="item_name" name="item_name">
+                        {post.item_name}
+                      </h4>
                     </div>
                   </div>
                   <div class="card-head-div">
-                  <p class="card-text card-desc" id="description" name="description">
-                    {post.description}
-                  </p>
+                    <p
+                      class="card-text card-desc"
+                      id="description"
+                      name="description"
+                    >
+                      {post.description}
+                    </p>
                   </div>
                   <div>
-                  <div class="restaurant-banner">
-                    <p class="card-restaurant">Restaurant</p>
-                  </div>
-                  <div class="rest-details">
-                  <p class="card-text rest-shelt-text" id="description" name="description">
-                  {post.restaurantName } <br/>
-                  {/* {post.restaurantAddress} */}
-                  <MapLink class ="map-link" address={post.restaurantAddress}/>
-                </p>
-                  </div>
-                  </div>
-                  
-                  {post.shelter_id === null ?
-                  <div>
-                  <div class="shelter-region">
-                    <div class="shelter-banner">
-                      <p class="card-shelter">Shelter</p>
+                    <div class="restaurant-banner">
+                      <p class="card-restaurant">Restaurant</p>
                     </div>
-                    <div class="shelter-details">
-                      <p class="card-text shelt-no-req" id="description" name="description" style={{color: "green"}}>
-                        No request
+                    <div class="rest-details">
+                      <p
+                        class="card-text rest-shelt-text"
+                        id="description"
+                        name="description"
+                      >
+                        {post.restaurantName} <br />
+                        {/* {post.restaurantAddress} */}
+                        <MapLink
+                          class="map-link"
+                          address={post.restaurantAddress}
+                        />
                       </p>
                     </div>
                   </div>
-                </div>
-                  : <div>
-                    <div class="shelter-region"><div class="shelter-banner">
-                  <p class="card-shelter">Shelter</p>
-                </div>
-                <div class="shelter-details">
-                <p class="card-text text-shelt-details" id="description" name="description">
-                  {post.shelterName } <br/>
-                  {/* {post.shelterAddress} */}
-                  <MapLink address={post.shelterAddress}/>
-                </p>
-                  </div>
-                </div>
-                  </div>
-                }
+
+                  {post.shelter_id === null ? (
+                    <div>
+                      <div class="shelter-region">
+                        <div class="shelter-banner">
+                          <p class="card-shelter">Shelter</p>
+                        </div>
+                        <div class="shelter-details">
+                          <p
+                            class="card-text shelt-no-req"
+                            id="description"
+                            name="description"
+                            style={{ color: "green" }}
+                          >
+                            No request
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div class="shelter-region">
+                        <div class="shelter-banner">
+                          <p class="card-shelter">Shelter</p>
+                        </div>
+                        <div class="shelter-details">
+                          <p
+                            class="card-text text-shelt-details"
+                            id="description"
+                            name="description"
+                          >
+                            {post.shelterName} <br />
+                            {/* {post.shelterAddress} */}
+                            <MapLink address={post.shelterAddress} />
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   {currentUser.role === "s" && post.shelter_id === null ? (
                     <Link to="">
                       <button
@@ -236,19 +300,22 @@ const Home = () => {
                   {currentUser.role === "s" && post.shelter_id != null ? (
                     <div>
                       <div class="already-req-banner">
-                      <p class="card-text already-requested">Already requested</p>
+                        <p class="card-text already-requested">
+                          Already requested
+                        </p>
                       </div>
                     </div>
-                    
                   ) : (
                     <p></p>
                   )}
                   {currentUser.role === "v" &&
                   post.driver_id !== null &&
                   currentUser.user_id !== post.driver_id ? (
-                    <p class="card-text already-requested">
-                      A driver has already accepted this request.
-                    </p>
+                    <div class="already-req-banner">
+                      <p class="card-text already-requested">
+                        Already Accepted
+                      </p>
+                    </div>
                   ) : (
                     <p></p>
                   )}
@@ -256,10 +323,11 @@ const Home = () => {
                   post.driver_id !== null &&
                   currentUser.user_id === post.driver_id &&
                   post.completed === null ? (
-                    <p class="card-text already-requested-by-you">
-                      You have accepted this request. Please go to My Deliveries
-                      to update the status.
-                    </p>
+                    <div class="already-accepted-banner">
+                      <p class="card-text already-requested">
+                        Go to My Deliveries to Update Status
+                      </p>
+                    </div>
                   ) : (
                     <p></p>
                   )}
@@ -267,9 +335,15 @@ const Home = () => {
                   post.driver_id !== null &&
                   currentUser.user_id === post.driver_id &&
                   post.completed === 1 ? (
-                    <p class="card-text already-requested-by-you">
-                      This delivery is complete
-                    </p>
+                    <div
+                      class="already-accepted-banner"
+                      style={{ width: "140px" }}
+                    >
+                      <p class="card-text already-requested">
+                        This delivery is <br />
+                        complete
+                      </p>
+                    </div>
                   ) : (
                     <p></p>
                   )}
