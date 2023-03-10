@@ -46,9 +46,11 @@ const CreatePost = () => {
         <div class="inner-content-create">
           <div className="sign-up create-div">
             <form className="signup-form">
-              <h3 className="sign-up-heading create-heading">
-                Create a new post
-              </h3>
+            <div class="card-head-design create-header"> 
+                    <h4 class="card-heading" id="item_name" name="item_name">
+                    Create a new post
+                    </h4>
+                    </div>
               <label for="item_name" className="form-label form-label-create">
                 Item Name
               </label>

@@ -453,6 +453,10 @@ select:focus {
   border-radius: 0px 20px 0px 20px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+
+.card-desc {
+  height: 70px;
+}
 .card-text {
   font-size: 1.5rem;
   max-width: 320px;
@@ -923,8 +927,8 @@ select:focus {
 }
 .update-profile {
   width: 160px;
-  background-color: #604747;
-  color: #fff;
+  background-color: #f8b400;
+  color: #004445;
   position: relative;
   left: 530px;
   top: 30px;
@@ -974,6 +978,14 @@ select:focus {
   height: 560px;
   position: relative;
   left: 0rem;
+  background-color: #faf5e4;
+}
+
+.create-header {
+  width: 158px;
+  position: relative;
+  left: 35px;
+  top: 10px;
 }
 
 .create-heading {
@@ -989,14 +1001,12 @@ select:focus {
 }
 .create-btn {
   position: relative;
-  top: 20px;
-  background-color: #604747;
-  color: #ffffff;
+  top: 35px;
   left: 100px;
 }
 .create-btn:hover {
-  color: #604747;
-  background-color: #d9d9d9;
+  color: #fff;
+  background-color: #004445;
 }
 .upload {
   height: 50px;
@@ -1109,8 +1119,21 @@ select:focus {
   margin-left: 0;
 }
 
+.complete-deliv {
+  top: 320px;
+  width: 90px;
+  left: 135px;
+}
+
+
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
       grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Contact page */
+.contact-header {
+  width: 105px;
+  left: 60px;
 }

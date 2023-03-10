@@ -130,7 +130,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div class="card-head-div">
-                  <p class="card-text" id="description" name="description">
+                  <p class="card-text card-desc" id="description" name="description">
                     {post.description}
                   </p>
                   </div>

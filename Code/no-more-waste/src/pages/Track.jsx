@@ -104,6 +104,7 @@ const Track = () => {
             <p>You have no posts.</p>
           ) : (
             posts.map((post) => (
+              
               <div class="card card-track">
                 <li class="nav__item" key={post.post_id} value={post.post_id}>
                 <div class="card-head-div">
@@ -359,7 +360,11 @@ const Track = () => {
                   post.accepted === 1 &&
                   post.completed === 1 ? (
                     //<Link to="/track">
-                    <p style={{ color: "green" }}>This delivery is complete.</p>
+                    <div>
+                      <div class="already-req-banner complete-deliv">
+                      <p class="card-text already-requested delivered">Delivered</p>
+                      </div>
+                    </div>
                   ) : (
                     //</Link>
                     <Link></Link>

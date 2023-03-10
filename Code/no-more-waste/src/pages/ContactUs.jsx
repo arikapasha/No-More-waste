@@ -7,9 +7,11 @@ const ContactUs = () => {
         <div class="inner-content-create">
           <div className="sign-up create-div">
             <form className="signup-form">
-              <h3 className="sign-up-heading create-heading support-heading">
-                Contact Us
-              </h3>
+            <div class="card-head-design create-header contact-header">
+                    <h4 class="card-heading" id="item_name" name="item_name">
+                    Contact us
+                    </h4>
+                    </div>
 
               <label for="description" className="form-label form-label-create">
                 Name
