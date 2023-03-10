@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext.js";
-import Logo from "../images/noMoreWasteLogo.svg";
+import Logo from "../images/noMoreWasteLogo.png";
 import menu from "../images/menu-nowaste.svg";
 import "../styles.css";
 //import sprite from "../images/sprite.svg#menu";
