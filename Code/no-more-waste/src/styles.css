@@ -471,6 +471,11 @@ select:focus {
   text-align: center;
 }
 
+.text-driver-details {
+  text-align: center;
+}
+
+
 .restaurant-banner {
   max-width: 98px;
   height: 30px;
@@ -504,7 +509,28 @@ select:focus {
   left: 220px;
 }
 
+.driver-banner {
+  max-width: 69px;
+  height: 30px;
+  background-color: #b8e1dd;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 15px;
+  position: relative;
+  top: -198px;
+  left: 220px;
+}
+
 .card-shelter {
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  top: -22px;
+  color: white;
+  font-family: helvetica, sans-serif;
+}
+
+.card-driver {
   font-size: 1.5rem;
   font-weight: 600;
   position: relative;
@@ -525,6 +551,18 @@ select:focus {
   position: relative;
   top: -188px;
   left: 223px;
+}
+
+.driver-details {
+  max-width: 120px;
+  position: relative;
+  top: -188px;
+  left: 223px;
+}
+
+.driver-track-details2 {
+  position: relative;
+  top: 100px;
 }
 
 .shelt-no-req {
@@ -1033,9 +1071,26 @@ select:focus {
   top: -20px;
 }
 
+.text-driver-details {
+  left: -80px;
+  top: 38px;
+}
+
+.text-driver-details2 {
+  left: -106px;
+  top: 39px;
+  text-align: center;
+}
+
 .driver-track-details {
-  position: relative;
-  top: -177px;
+  position: absolute;
+  display: flex;
+  left: 25px;
+  top: 348px;
+}
+
+.desc-track {
+  height: 90px;
 }
 
 .card-track {

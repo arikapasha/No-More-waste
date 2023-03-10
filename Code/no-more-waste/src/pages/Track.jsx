@@ -114,7 +114,7 @@ const Track = () => {
                     </div>
                   </div>
                   <div class="card-head-div">
-                  <p class="card-text" id="description" name="description">
+                  <p class="card-text desc-track" id="description" name="description">
                     {post.description}
                   </p>
                   </div>
@@ -124,30 +124,30 @@ const Track = () => {
                     //<Link to="/track">
                     <div>
                   <div class="rest-track-details">
-                  <div class="restaurant-banner">
-                    <p class="card-restaurant">Restaurant</p>
-                  </div>
-                  <div class="rest-details">
-                  <p class="card-text rest-shelt-text" id="description" name="description">
-                  {post.restaurantName } <br/>
-                  {post.restaurantAddress} <br/>
-                  {post.restaurantPhoneNumber}
-                </p>
-                  </div>
+                    <div class="restaurant-banner">
+                      <p class="card-restaurant">Restaurant</p>
+                    </div>
+                    <div class="rest-details">
+                      <p class="card-text rest-shelt-text" id="description" name="description">
+                      {post.restaurantName } <br/>
+                      {post.restaurantAddress} <br/>
+                      {post.restaurantPhoneNumber}
+                      </p>
+                    </div>
                   </div>
 
                   <div class="shelter-region shelt-track-details">
                     <div class="shelter-banner">
-                  <p class="card-shelter">Shelter</p>
-                </div>
-                <div class="shelter-details">
-                <p class="card-text text-shelt-details" id="description" name="description">
-                  {post.shelterName } <br/>
-                  {post.shelterAddress} <br/>
-                  {post.shelterPhoneNumber}
-                </p>
+                      <p class="card-shelter">Shelter</p>
+                    </div>
+                    <div class="shelter-details">
+                      <p class="card-text text-shelt-details" id="description" name="description">
+                      {post.shelterName } <br/>
+                      {post.shelterAddress} <br/>
+                      {post.shelterPhoneNumber}
+                      </p>
+                    </div>
                   </div>
-                </div>
                     </div>
                   ) : (
                     //</Link>
@@ -158,24 +158,29 @@ const Track = () => {
                   post.shelter_id === null ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-rest">
-                          <p class="disc-p">Restaurant:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.restaurantName}, {post.restaurantAddress},{" "}
-                          {post.restaurantPhoneNumber}
-                        </p>
-                      </div>
+                      <div class="rest-track-details">
+                    <div class="restaurant-banner">
+                      <p class="card-restaurant">Restaurant</p>
+                    </div>
+                    <div class="rest-details">
+                      <p class="card-text rest-shelt-text" id="description" name="description">
+                      {post.restaurantName } <br/>
+                      {post.restaurantAddress} <br/>
+                      {post.restaurantPhoneNumber}
+                      </p>
+                    </div>
+                  </div>
 
-                      <div class="disp">
-                        <div class="item-desc-shelt">
-                          <p class="disc-p">Shelter:</p>
-                        </div>
-                        <p class="disc-content-error disc-content">
-                          No shelter has accepted this delivery yet.
-                        </p>
-                      </div>
+                      <div class="shelter-region shelt-track-details">
+                    <div class="shelter-banner">
+                      <p class="card-shelter">Shelter</p>
+                    </div>
+                    <div class="shelter-details">
+                      <p class="card-text text-shelt-details" id="description" name="description">
+                      None
+                      </p>
+                    </div>
+                  </div>
                     </div>
                   ) : (
                     //</Link>
@@ -184,25 +189,29 @@ const Track = () => {
                   {currentUser && currentUser.role === "s" ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-rest">
-                          <p class="disc-p">Restaurant:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.restaurantName}, {post.restaurantAddress},{" "}
-                          {post.restaurantPhoneNumber}
-                        </p>
-                      </div>
+                      <div class="rest-track-details">
+                    <div class="restaurant-banner">
+                      <p class="card-restaurant">Restaurant</p>
+                    </div>
+                    <div class="rest-details">
+                      <p class="card-text rest-shelt-text" id="description" name="description">
+                      {post.restaurantName } <br/>
+                      {post.restaurantAddress} <br/>
+                      {post.restaurantPhoneNumber}
+                      </p>
+                    </div>
+                  </div>
 
-                      <div class="disp">
-                        <div class="item-desc-shelt">
-                          <p class="disc-p">Shelter:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.shelterName}, {post.shelterAddress},{" "}
-                          {post.shelterPhoneNumber}
-                        </p>
-                      </div>
+                  <div class="shelter-region shelt-track-details">
+                    <div class="shelter-banner">
+                      <p class="card-shelter">Shelter</p>
+                    </div>
+                    <div class="shelter-details">
+                      <p class="card-text text-shelt-details" id="description" name="description">
+                      None
+                      </p>
+                    </div>
+                  </div>
                     </div>
                   ) : (
                     //</Link>
@@ -214,11 +223,11 @@ const Track = () => {
                     //<Link to="/track">
                     <div>
                       <div class="driver-track-details">
-                    <div class="shelter-banner">
-                  <p class="card-shelter">Driver</p>
+                    <div class="driver-banner">
+                  <p class="card-driver">Driver</p>
                 </div>
-                <div class="shelter-details">
-                <p class="card-text text-shelt-details" id="description" name="description">
+                <div class="driver-details">
+                <p class="card-text text-driver-details2" id="description" name="description">
                   {post.driverUsername } <br/>
                   {post.driverPhoneNumber} 
                 </p>
@@ -230,21 +239,22 @@ const Track = () => {
                     <Link></Link>
                   )}
                   {currentUser &&
-                  (currentUser.role === "b" || currentUser.role === "s") &&
-                  post.driver_id === null ? (
+                  ((currentUser.role === "b" || currentUser.role === "s")) &&
+                  ((post.driver_id === null) || (post.shelter_id === null))? (
                     //<Link to="/track">
                     <div>
                       <div class="driver-track-details">
-                    <div class="shelter-banner">
-                  <p class="card-shelter">Driver</p>
+                    <div class="driver-banner">
+                  <p class="card-driver">Driver</p>
                 </div>
-                <div class="shelter-details">
-                <p class="card-text text-shelt-details" id="description" name="description">
+                <div class="driver-details">
+                <p class="card-text text-driver-details" id="description" name="description">
                   None
                 </p>
                   </div>
                 </div>
                     </div>
+                
                   ) : (
                     //</Link>
                     <Link></Link>
@@ -252,25 +262,29 @@ const Track = () => {
                   {currentUser && currentUser.role === "v" ? (
                     //<Link to="/track">
                     <div>
-                      <div class="disp">
-                        <div class="item-desc-rest">
-                          <p class="disc-p">Restaurant:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.restaurantName}, {post.restaurantAddress},{" "}
-                          {post.restaurantPhoneNumber}
-                        </p>
-                      </div>
+                      <div class="rest-track-details">
+                    <div class="restaurant-banner">
+                      <p class="card-restaurant">Restaurant</p>
+                    </div>
+                    <div class="rest-details">
+                      <p class="card-text rest-shelt-text" id="description" name="description">
+                      {post.restaurantName } <br/>
+                      {post.restaurantAddress} <br/>
+                      {post.restaurantPhoneNumber}
+                      </p>
+                    </div>
+                  </div>
 
-                      <div class="disp">
-                        <div class="item-desc-shelt">
-                          <p class="disc-p">Shelter:</p>
-                        </div>
-                        <p class="disc-content">
-                          {post.shelterName}, {post.shelterAddress},{" "}
-                          {post.shelterPhoneNumber}
-                        </p>
-                      </div>
+                  <div class="shelter-region shelt-track-details">
+                    <div class="shelter-banner">
+                      <p class="card-shelter">Shelter</p>
+                    </div>
+                    <div class="shelter-details">
+                      <p class="card-text text-shelt-details" id="description" name="description">
+                      None
+                      </p>
+                    </div>
+                  </div>
                     </div>
                   ) : (
                     //</Link>
@@ -296,7 +310,7 @@ const Track = () => {
                   post.pickedUp === null ? (
                     //<Link to="/track">
                     <button
-                      class="track-btn"
+                      class="card-button card-btn-track"
                       name={post.post_id}
                       id={post.post_id}
                       onClick={(e) =>
@@ -321,7 +335,7 @@ const Track = () => {
                   post.completed == null ? (
                     //<Link to="/track">
                     <button
-                      class="track-btn"
+                      class="card-button card-btn-track"
                       name={post.post_id}
                       id={post.post_id}
                       onClick={(e) =>
