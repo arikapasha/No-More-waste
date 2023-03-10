@@ -7,6 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { setError } from "react";
 import { useNavigate } from "react-router-dom";
+import MapLink from "../components/MapLink.jsx";
 
 const Track = () => {
   const { currentUser } = useContext(AuthContext);
@@ -131,7 +132,8 @@ const Track = () => {
                     <div class="rest-details">
                       <p class="card-text rest-shelt-text" id="description" name="description">
                       {post.restaurantName } <br/>
-                      {post.restaurantAddress} <br/>
+                      {/* {post.restaurantAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.restaurantAddress}/> <br/>
                       {post.restaurantPhoneNumber}
                       </p>
                     </div>
@@ -144,7 +146,8 @@ const Track = () => {
                     <div class="shelter-details">
                       <p class="card-text text-shelt-details" id="description" name="description">
                       {post.shelterName } <br/>
-                      {post.shelterAddress} <br/>
+                      {/* {post.shelterAddress} <br/> */}
+                      <MapLink class ="map-link" address={post.shelterAddress}/><br/>
                       {post.shelterPhoneNumber}
                       </p>
                     </div>

@@ -1135,3 +1135,8 @@ select:focus {
   width: 105px;
   left: 60px;
 }
+
+.map-link{
+  text-decoration: underline;
+  
+}
