@@ -17,7 +17,7 @@ const CreatePost = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post("http://localhost:8800/api/upload", formData);
       //console.log(res.data);
       return res.data;
     } catch (err) {
@@ -30,7 +30,7 @@ const CreatePost = () => {
     const imgUrl = await upload();
 
     try {
-      await axios.post("/posts", {
+      await axios.post("http://localhost:8800/api/posts", {
         item_name,
         description,
         photo_link: imgUrl,

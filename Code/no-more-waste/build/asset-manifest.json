@@ -1,16 +1,22 @@
 {
-  "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.810c6fd7.js",
-    "static/js/787.692b9eab.chunk.js": "/static/js/787.692b9eab.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.810c6fd7.js.map": "/static/js/main.810c6fd7.js.map",
-    "787.692b9eab.chunk.js.map": "/static/js/787.692b9eab.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.810c6fd7.js"
-  ]
+  "main.css": "/static/css/main.aab10c22.chunk.css",
+  "main.js": "/static/js/main.e7161b16.chunk.js",
+  "main.js.map": "/static/js/main.e7161b16.chunk.js.map",
+  "static/js/1.790a55fe.chunk.js": "/static/js/1.790a55fe.chunk.js",
+  "static/js/1.790a55fe.chunk.js.map": "/static/js/1.790a55fe.chunk.js.map",
+  "static/js/2.62183d53.chunk.js": "/static/js/2.62183d53.chunk.js",
+  "static/js/2.62183d53.chunk.js.map": "/static/js/2.62183d53.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.273c737e.js",
+  "runtime~main.js.map": "/static/js/runtime~main.273c737e.js.map",
+  "static/media/noMoreWasteLogo.svg": "/static/media/noMoreWasteLogo.66dbdb79.svg",
+  "static/media/menu-nowaste.svg": "/static/media/menu-nowaste.7ab6c4e1.svg",
+  "static/media/copyright.png": "/static/media/copyright.427877d0.png",
+  "static/media/instagram.png": "/static/media/instagram.9aefd702.png",
+  "static/media/search-icon.svg": "/static/media/search-icon.4c679a6c.svg",
+  "static/media/filter.png": "/static/media/filter.aba73251.png",
+  "static/media/alert.jpg": "/static/media/alert.8df28616.jpg",
+  "static/css/main.aab10c22.chunk.css.map": "/static/css/main.aab10c22.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.f6307a25e2f0f50b4f4512803445ffd6.js": "/precache-manifest.f6307a25e2f0f50b4f4512803445ffd6.js",
+  "service-worker.js": "/service-worker.js"
 }

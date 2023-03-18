@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/posts");
+        const res = await axios.get("http://localhost:8800/api/posts");
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -57,8 +57,8 @@ const Home = () => {
 
     // console.log(item_key)
     try {
-      await axios.post("/posts/updatePost", { post_id: item_key });
-      await axios.post("/posts/send-text-message", {
+      await axios.post("http://localhost:8800/api/posts/updatePost", { post_id: item_key });
+      await axios.post("http://localhost:8800/api/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
         message:
           "Hi " +
@@ -84,16 +84,16 @@ const Home = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("/posts/updateVolunteer", { post_id: item_key });
+      await axios.post("http://localhost:8800/api/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
-      await axios.post("/posts/send-text-message", {
+      await axios.post("http://localhost:8800/api/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
         message:
           "A volunteer delivery driver has accepted the delivery for item - " +
           item_name +
           ". The driver will be there shortly.",
       });
-      await axios.post("/posts/send-text-message", {
+      await axios.post("http://localhost:8800/api/posts/send-text-message", {
         phoneNumber: shelterPhoneNumber,
         message:
           "A volunteer delivery driver has accepted the delivery for item - " +

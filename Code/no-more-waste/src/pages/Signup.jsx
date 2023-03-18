@@ -54,7 +54,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/auth/signup", inputs);
+      const res = await axios.post("http://localhost:8800/api/auth/signup", inputs);
       navigate("/login");
       console.log(res);
     } catch (err) {

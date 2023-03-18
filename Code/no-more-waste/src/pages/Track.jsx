@@ -20,11 +20,11 @@ const Track = () => {
     let endpoint = " ";
     const fetchData = async () => {
       if (currentUser.role === "b") {
-        endpoint = "/posts/restPosts";
+        endpoint = "http://localhost:8800/api/posts/restPosts";
       } else if (currentUser.role === "s") {
-        endpoint = "/posts/shelterPosts";
-      } else {
-        endpoint = "/posts/volunteerPosts";
+        endpoint = "http://localhost:8800/api/posts/shelterPosts";
+      } else if (currentUser.role === "v") {
+        endpoint = "http://localhost:8800/api/posts/volunteerPosts";
       }
       try {
         const res = await axios.get(endpoint);
@@ -41,8 +41,8 @@ const Track = () => {
     const item_key = e.target.id;
     // console.log(item_key)
     try {
-      await axios.post("/posts/deletePost", { post_id: item_key });
-      window.location.reload();
+      await axios.post("http://localhost:8800/api/posts/deletePost", { post_id: item_key }).then(() => window.location.reload());
+      
     } catch (err) {
       setError(err.response.data);
     }
@@ -58,15 +58,16 @@ const Track = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("/posts/pickedUp", { post_id: item_key });
-      await axios.post("/posts/send-text-message", {
+      await axios.post("http://localhost:8800/api/posts/pickedUp", { post_id: item_key });
+      await axios.post("http://localhost:8800/api/posts/send-text-message", {
         phoneNumber: shelterPhoneNumber,
         message:
           "The volunteer driver has picked up your order for item - " +
           item_name +
           ". The driver will be there shortly.",
-      });
-      window.location.reload();
+      }).then(() => window.location.reload());
+      
+      
     } catch (err) {
       setError(err.response.data);
     }
@@ -81,15 +82,15 @@ const Track = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("/posts/delivered", { post_id: item_key });
-      await axios.post("/posts/send-text-message", {
+      await axios.post("http://localhost:8800/api/posts/delivered", { post_id: item_key });
+      await axios.post("http://localhost:8800/api/posts/send-text-message", {
         phoneNumber: restaurantPhoneNumber,
         message:
           "Your item " +
           item_name +
           " has been delivered. Thank you for supporting our cause to reduce food waste. See you again!",
-      });
-      window.location.reload();
+      }).then(() => window.location.reload());
+      
     } catch (err) {
       setError(err.response.data);
     }
