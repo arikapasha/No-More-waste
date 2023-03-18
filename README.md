@@ -15,6 +15,7 @@ Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering 
 - [Vlog 3 (End Point Vlog)](https://youtu.be/eZyz1MGKM_o)
 - [Vlog 4](https://www.youtube.com/watch?v=KqtDUrkIR0E)
 - [Vlog 5](https://www.youtube.com/watch?v=O1C9I8tSyuI&feature=youtu.be)
+- [Vlog 6](https://youtu.be/akMIVAxbwkc)
 
 #### Diagrams:
 - [Lo-Fi](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Lo-Fi%20Prototypes)
