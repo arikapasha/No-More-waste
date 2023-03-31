@@ -99,11 +99,14 @@ const Track = () => {
   return (
     <div>
       <ul>
-        <div class="body-content-home">
+        <div class="body-content-home track-spacing">
           <div class="inner-content-track">
           <div class="grid grid--1x3 grid--1x2 grid-cards">
           {currentUser && posts.length === 0 ? (
-            <p>You have no posts.</p>
+            <div class="no-posts">
+              <p class="no-posts-p">You have no posts.</p>
+            </div>
+            
           ) : (
             posts.map((post) => (
               

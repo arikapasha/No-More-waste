@@ -105,7 +105,7 @@ const Profile = () => {
       </div>
       <br />
       <br />
-      <button class="card-button update-profile">Update information</button>
+      {/* <button class="card-button update-profile">Update information</button> */}
         </div>
       </div>
     </div>

@@ -13,6 +13,10 @@ input[type="file"] {
   margin-bottom: -8px;
 }
 
+input {
+  font-size: 12px;
+}
+
 .already-requested{
   color: red;
 }
@@ -48,7 +52,6 @@ body {
   body {
     width: 100%;
     height: 100%;
-    margin: 0;
     padding: 0;
     overflow-x: hidden;
     background-color: #faf5e4;
@@ -163,6 +166,8 @@ select:focus {
 
 .grid-footer {
   display: grid;
+  position: relative;
+  left: 240px;
 }
 
 @media screen and (min-width: 768px) {
@@ -206,7 +211,7 @@ select:focus {
 
 .nav__item {
   padding: 0.5rem 2rem;
-  border-bottom: 1px solid #222;
+  /*border-bottom: 1px solid #222;*/
   font-size: 1.7rem;
   font-family: helvetica, sans-serif;
   opacity: 0.9;
@@ -286,6 +291,9 @@ select:focus {
     top: -27px;
     left: -30px;
   }
+  .nav__item {
+    padding: 1rem 2rem;
+  }
   .nav ul {
       display: none;
   }
@@ -296,7 +304,7 @@ select:focus {
       background-color: #2c786c;
       position: relative;
       top: 8.5rem;
-      left: -20px;
+      left: -60px;
       width: 100%;
       animation: example 0.6s ease-in-out forwards;
   }
@@ -656,11 +664,11 @@ select:focus {
 
 /* Footer */
 .footer {
-  /*position: fixed;
+  position: relative;
   left: 0;
-  bottom: 0;*/
+  bottom: 0;
   width: 100%;
-  height: 250px;
+  height: 200px;
   background-color: #d9d9d9;
   color: #000000;
 }
@@ -671,11 +679,25 @@ select:focus {
   font-size: 1.3rem;
 }
 
+.copyright-area {
+  position: relative;
+  left: 490px;
+}
+
 @media screen and (max-width: 768px) {
   .footer {
-    height: 500px;
+    height: 300px;
     overflow-y: hidden;
     overflow-x: hidden;
+  }
+  .footer-align {
+    position: relative;
+    left: 150px;
+  }
+  .copyright-area {
+    position: relative;
+    left: 80px;
+    top: 30px;
   }
 }
 .footer-span {
@@ -692,38 +714,6 @@ select:focus {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-}
-
-.newsletter-input {
-  border: none;
-  border-radius: 5px;
-  height: 2.4rem;
-  width: 220px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  transition: 0.5s;
-}
-.newsletter-input:focus {
-  border: 3px solid #000000;
-}
-.newsletter-button {
-  border: none;
-  border-radius: 5px;
-  height: 2.4rem;
-  width: 9rem;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-.newsletter-button:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-.newsletter-span {
-  position: relative;
-  top: -10px;
 }
 .copyright-icon {
   height: 15px;
@@ -793,11 +783,12 @@ select:focus {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
-  padding: 2px;
+  padding: 1rem;
   width: 28rem;
+  font-size: 1.3rem;
 }
 .form-input:focus {
-  border: 3px solid #604747;
+  border: 3px solid #004445;
 }
 .is-member {
   font-size: 1.1rem;
@@ -1153,6 +1144,17 @@ select:focus {
   left: 135px;
 }
 
+.no-posts {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-posts-p {
+  position: relative;
+  left: 220px;
+}
+
 
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
@@ -1160,10 +1162,45 @@ select:focus {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .no-posts-p {
+    position: relative;
+    left: 10px;
+  }
+}
+
 /* Contact page */
 .contact-header {
   width: 105px;
-  left: 60px;
+  left: 230px;
+}
+.contact-area {
+  position: relative;
+  top: 40px;
+}
+
+.contact-btn {
+  position: relative;
+  left: 10px;
+  top: 15px;
+}
+
+.email-direction {
+  font-size: 1.7rem;
+  width: 600px;
+  text-align: center;
+}
+
+.click-email {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.click-to-email {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 200px;
 }
 
 .map-link{
@@ -1177,4 +1214,164 @@ select:focus {
   text-decoration: bold;
   border: 5px;
   
+}
+
+@media screen and (max-width: 768px) {
+  .email-direction {
+    width: 300px;
+  }
+  
+  .contact-header {
+    position: relative;
+    left: 70px;
+  }
+
+  .click-to-email {
+    position: relative;
+    left: 70px;
+  }
+}
+
+/* Footer alignment */
+.track-spacing {
+  margin-bottom: 750px;
+}
+
+.contact-spacing {
+  margin-bottom: 250px;
+}
+
+
+/* About Page */
+.about {
+  margin-bottom: 100px;
+}
+
+
+/* About Page */
+.about-content-area {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.ceos {
+  width: 150px;
+  height: 150px;
+  margin-left: 8rem;
+}
+
+.our-pictures {
+  display: flex;
+  flex-direction: row;
+  margin-top: 9rem;
+  margin-bottom: 7rem;
+  position: relative;
+  left: -40px;
+}
+
+.why, .aim, .how {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 200px;
+  border-radius: 20px 0px 20px 0px;
+  margin-bottom: 5rem;
+  background-color: #faf5e4;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.why-desc, .aim-desc, .how-desc {
+  font-size: 1.5rem;
+  width: 600px;
+  position: relative;
+  top: -25px;
+}
+
+.name-and-pic {
+  display: flex;
+  flex-direction: column;
+}
+
+.bulbul {
+  position: relative;
+  left: 105px;
+  font-size: 1.7rem;
+}
+
+.faizah {
+  position: relative;
+  left: 100px;
+  font-size: 1.7rem;
+}
+
+.arika {
+  position: relative;
+  left: 110px;
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 768px) {
+  .ceos {
+    width: 70px;
+    height: 70px;
+    margin-left: 3rem;
+  }
+
+  .our-pictures {
+    position: relative;
+    left: -20px;
+  }
+
+  .bulbul {
+    position: relative;
+    left: 27px;
+    font-size: 1.4rem;
+  }
+  
+  .faizah {
+    position: relative;
+    left: 22px;
+    font-size: 1.4rem;
+  }
+  
+  .arika {
+    position: relative;
+    left: 25px;
+    font-size: 1.4rem;
+  }
+
+  .why, .aim, .how {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 20px 0px 20px 0px;
+    margin-bottom: 5rem;
+    background-color: #faf5e4;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+  
+  .aim-desc {
+    font-size: 1.5rem;
+    width: 270px;
+    position: relative;
+    top: -70px;
+  }
+
+  .how-desc {
+    font-size: 1.5rem;
+    width: 270px;
+    position: relative;
+    top: -60px;
+  }
+
+  .why-desc {
+    font-size: 1.5rem;
+    width: 270px;
+    position: relative;
+    top: -30px;
+  } 
 }
