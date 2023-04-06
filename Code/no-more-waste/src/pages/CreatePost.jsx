@@ -3,7 +3,7 @@ import "../styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import altimg from "../images/alt-img.jpg"
+
 
 const CreatePost = () => {
   const [item_name, setItemName] = useState("");
@@ -17,7 +17,7 @@ const CreatePost = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("http://localhost:8800/api/upload", formData);
+      const res = await axios.post(process.env.REACT_APP_BASE_URL + "/upload", formData);
       //console.log(res.data);
       return res.data;
     } catch (err) {
@@ -30,7 +30,7 @@ const CreatePost = () => {
     const imgUrl = await upload();
 
     try {
-      await axios.post("http://localhost:8800/api/posts", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts", {
         item_name,
         description,
         photo_link: imgUrl,

@@ -12,7 +12,6 @@ import React from 'react';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import SinglePost from './pages/SinglePost';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Profile from './pages/Profile';
@@ -22,7 +21,6 @@ import About from './pages/About';
 import "./styles.css";
 import "./normalize.css";
 import CreatePost from './pages/CreatePost';
-import Static from "./pages/Static";
 
 
 const Layout = ()=>{
@@ -46,10 +44,6 @@ const router = createBrowserRouter([
         element:<Home/>
       },
       {
-        path:"/post/:id",
-        element:<SinglePost/>
-      },
-      {
         path:"/profile/:id",
         element:<Profile/>
       },
@@ -68,10 +62,6 @@ const router = createBrowserRouter([
       {
         path:"/about",
         element:<About/>
-      },
-      {
-        path:"/static",
-        element:<Static/>
       },
     ]
   },

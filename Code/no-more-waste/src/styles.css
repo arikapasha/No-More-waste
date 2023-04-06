@@ -1375,3 +1375,61 @@ select:focus {
     top: -30px;
   } 
 }
+
+.landing-page {
+  display: grid;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  width: 600px;
+  height: 200px;
+  border-radius: 20px 0px 20px 0px;
+  margin: auto;
+  margin-bottom: 18rem;
+  margin-top: 10rem;
+  background-color: #faf5e4;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.landing-page-desc {
+  font-size: 1.5rem;
+  width: 600px;
+  position: relative;
+  top: -25px;
+  left: 120px;
+}
+
+.welcome-heading {
+  margin-left: 110px;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-page {
+    display: grid;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 330px;
+    height: 270px;
+    border-radius: 20px 0px 20px 0px;
+    margin: auto;
+    margin-bottom: 9rem;
+    margin-top: 9rem;
+    background-color: #faf5e4;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .landing-page-desc {
+    font-size: 2rem;
+    width: 270px;
+    position: relative;
+    top: -50px;
+    left: 33px;
+    
+  }
+
+  .welcome-heading {
+    margin-left: 10px;
+    font-size: 2.2rem;
+  }
+}

@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { setError } from "react";
 import { useNavigate } from "react-router-dom";
 import MapLink from "../components/MapLink.jsx";
+import dotenv from "dotenv";
+dotenv.config();
 
 const Track = () => {
   const { currentUser } = useContext(AuthContext);
@@ -20,11 +22,11 @@ const Track = () => {
     let endpoint = " ";
     const fetchData = async () => {
       if (currentUser.role === "b") {
-        endpoint = "http://localhost:8800/api/posts/restPosts";
+        endpoint = process.env.REACT_APP_BASE_URL + "/posts/restPosts";
       } else if (currentUser.role === "s") {
-        endpoint = "http://localhost:8800/api/posts/shelterPosts";
+        endpoint = process.env.REACT_APP_BASE_URL + "/posts/shelterPosts";
       } else if (currentUser.role === "v") {
-        endpoint = "http://localhost:8800/api/posts/volunteerPosts";
+        endpoint = process.env.REACT_APP_BASE_URL + "/posts/volunteerPosts";
       }
       try {
         const res = await axios.get(endpoint);
@@ -41,7 +43,7 @@ const Track = () => {
     const item_key = e.target.id;
     // console.log(item_key)
     try {
-      await axios.post("http://localhost:8800/api/posts/deletePost", { post_id: item_key }).then(() => window.location.reload());
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/deletePost", { post_id: item_key }).then(() => window.location.reload());
       
     } catch (err) {
       setError(err.response.data);
@@ -58,8 +60,8 @@ const Track = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("http://localhost:8800/api/posts/pickedUp", { post_id: item_key });
-      await axios.post("http://localhost:8800/api/posts/send-text-message", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/pickedUp", { post_id: item_key });
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/send-text-message", {
         phoneNumber: shelterPhoneNumber,
         message:
           "The volunteer driver has picked up your order for item - " +
@@ -82,8 +84,8 @@ const Track = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("http://localhost:8800/api/posts/delivered", { post_id: item_key });
-      await axios.post("http://localhost:8800/api/posts/send-text-message", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/delivered", { post_id: item_key });
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/send-text-message", {
         phoneNumber: restaurantPhoneNumber,
         message:
           "Your item " +

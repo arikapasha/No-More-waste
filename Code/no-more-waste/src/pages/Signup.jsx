@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 import Logo from "../images/noMoreWasteLogo.svg";
 import axios from "axios";
+
+
 
 const Signup = () => {
   const [checkedBus, setCheckedBus] = useState(false);
@@ -54,7 +55,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/signup", inputs);
+      const res = await axios.post(process.env.REACT_APP_BASE_URL + "/auth/signup", inputs);
       navigate("/login");
       console.log(res);
     } catch (err) {

@@ -1,9 +1,6 @@
 import React from "react";
 import "../styles.css";
 import "../styles.css";
-import search_icon from "../images/search-icon.svg";
-import line from "../images/line.png";
-import filter from "../images/filter.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
@@ -13,9 +10,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setError } from "react";
 import MapLink from "../components/MapLink";
-import alert from "../images/alert.jpg";
 
-//import altImg from "../public/uploads/alt-img.jpg"
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
@@ -27,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/api/posts");
+        const res = await axios.get(process.env.REACT_APP_BASE_URL + "/posts");
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -57,8 +52,8 @@ const Home = () => {
 
     // console.log(item_key)
     try {
-      await axios.post("http://localhost:8800/api/posts/updatePost", { post_id: item_key });
-      await axios.post("http://localhost:8800/api/posts/send-text-message", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/updatePost", { post_id: item_key });
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
         message:
           "Hi " +
@@ -84,16 +79,16 @@ const Home = () => {
     const item_key = post_id;
     // console.log(item_key)
     try {
-      await axios.post("http://localhost:8800/api/posts/updateVolunteer", { post_id: item_key });
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/updateVolunteer", { post_id: item_key });
       //console.log("ive reached here")
-      await axios.post("http://localhost:8800/api/posts/send-text-message", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/send-text-message", {
         phoneNumber: busPhoneNumber,
         message:
           "A volunteer delivery driver has accepted the delivery for item - " +
           item_name +
           ". The driver will be there shortly.",
       });
-      await axios.post("http://localhost:8800/api/posts/send-text-message", {
+      await axios.post(process.env.REACT_APP_BASE_URL + "/posts/send-text-message", {
         phoneNumber: shelterPhoneNumber,
         message:
           "A volunteer delivery driver has accepted the delivery for item - " +
@@ -161,7 +156,7 @@ const Home = () => {
                 <div class="card" key={post.post_id} value={post.post_id}>
                   <img
                     class="card-image"
-                    src={`./uploads/${post.photo_link}`}
+                    src={`${post.photo_link}`}
                     alt=""
                   />
                   {/* <h3 className="card-heading">{}</h3> */}
@@ -354,18 +349,14 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <div class="confirmation landing-block ">
-            <div class="confirmation-text-block">
-              <p class="confirmation-text bigger-text">
-                Welcome to No More Waste
-              </p>
-              <p class="confirmation-text">
-                <Link to="/login">Sign In </Link>
-                to your account to proceed or <Link to="/signup">Sign Up</Link>
-                today!
-              </p>
-            </div>
-          </div>
+        <div class="landing-page">
+          <h3 class="welcome-heading">Welcome to No More Waste</h3>
+          <p class="landing-page-desc">
+            <Link to="/login">Log In </Link>
+            to your account to proceed or <Link to="/signup">Sign Up </Link>
+            today!
+          </p>
+        </div>
         </div>
       )}
     </div>

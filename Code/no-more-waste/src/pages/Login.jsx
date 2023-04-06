@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
 
+
 const Login = () => {
   const [inputs, setInputs] = useState({
     email: "",
