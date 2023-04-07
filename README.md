@@ -1,5 +1,4 @@
 # Capstone Project SSE - No More Waste
-## Team Vecna
 # Description
 A Responsive Web App that will give restaurants a platform to connect with local shelters so excess food does not go to waste.
 Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering at the University of Regina.<br/> 
