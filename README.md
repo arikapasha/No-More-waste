@@ -18,11 +18,11 @@ The website will give restaurants the ability to post a food item they want gone
 - [Vlog 5](https://www.youtube.com/watch?v=O1C9I8tSyuI&feature=youtu.be)
 - [Vlog 6](https://youtu.be/akMIVAxbwkc)
 
-# Watch Our Demo
+# Demo
 [![Waste](https://user-images.githubusercontent.com/90287606/230542565-5e7d5e77-8a25-4bbb-a9c0-c4021e84f99d.png)
 ](https://www.youtube.com/watch?v=DeeWeUCt1w8)
 
-# Watch Our Commercial 
+# Commercial 
 [![Waste](https://user-images.githubusercontent.com/90287606/230543168-217a7489-f27a-4a90-ac27-2e3ce7b53da7.png)
 ](https://www.youtube.com/watch?v=XSP4Tj_Rsuk)
 
