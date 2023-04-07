@@ -6,9 +6,9 @@ Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering 
 The website will give restaurants the ability to post a food item they want gone which gives room for shelters to accept the item and finally, a volunteer driver accepting to deliver it to the shelter.
 
 #### Members
-1. Arika Pasha
-2. Bulbul Arora
-3. Faizah Kolapo
+1. Bulbul Arora
+2. Faizah Kolapo
+3. Arika Pasha
 
 #### Vlogs:
 - [Vlog 1](https://www.youtube.com/watch?v=Uno1oIQs6zY)
