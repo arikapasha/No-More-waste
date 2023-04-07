@@ -5,7 +5,6 @@ import { AuthContext } from "../context/authContext.js";
 import Logo from "../images/noMoreWasteLogo.svg";
 import menu from "../images/menu-nowaste.svg";
 import "../styles.css";
-//import sprite from "../images/sprite.svg#menu";
 
 const NavBar = () => {
   const { currentUser, logout } = useContext(AuthContext);
@@ -32,15 +31,11 @@ const NavBar = () => {
             <img class="" src={menu} alt="" />
           )}
         </button>
-        {/* <svg class="icon icon--white nav__toggler">
-          <use href={sprite}></use>
-        </svg> */}
+
         <ul class="list nav__list collapsible__content">
           <li class="nav__item">
             {currentUser ? (
-              <Link to="/track">
-                {currentUser.businessname}
-              </Link>
+              <Link to="/track">{currentUser.businessname}</Link>
             ) : (
               <Link></Link>
             )}
@@ -90,9 +85,7 @@ const NavBar = () => {
           <ul class="hidden-collapsible">
             <li class="nav__item menu-item">
               {currentUser ? (
-                <Link to="/track">
-                  {currentUser.businessname}
-                </Link>
+                <Link to="/track">{currentUser.businessname}</Link>
               ) : (
                 <Link></Link>
               )}

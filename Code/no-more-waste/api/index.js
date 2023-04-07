@@ -10,10 +10,8 @@ import cors from "cors";
 import { format } from "url";
 import { Storage } from "@google-cloud/storage";
 
-//import bodyParser from "body-parser";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-//console.log(path.join(__dirname, 'index.html'));
 
 const app = express();
 
@@ -25,7 +23,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "../build")));
 
-
+//storing pictures in a google storage bucket
 const storage = new Storage({
   keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
 });

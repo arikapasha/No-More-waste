@@ -4,8 +4,6 @@ import { useState } from "react";
 import Logo from "../images/noMoreWasteLogo.svg";
 import axios from "axios";
 
-
-
 const Signup = () => {
   const [checkedBus, setCheckedBus] = useState(false);
   const [checkedShelter, setCheckedShelter] = useState(false);
@@ -55,11 +53,14 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(process.env.REACT_APP_BASE_URL + "/auth/signup", inputs);
+      const res = await axios.post(
+        process.env.REACT_APP_BASE_URL + "/auth/signup",
+        inputs
+      );
       navigate("/login");
       console.log(res);
     } catch (err) {
-      setError(err.response.data); //console.log(res)
+      setError(err.response.data);
     }
   };
   return (
@@ -97,18 +98,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <br />
-                {/* <label for="postal-code" class="form-label">
-                  Postal Code
-                </label>
-                <br />
-                <input
-                  type="text"
-                  id="postal-code"
-                  name="postal-code"
-                  class="form-input"
-                  onChange={handleChange}
-                />
-                <br /> */}
+
                 <label for="username" class="form-label">
                   First and Last name
                 </label>
@@ -203,8 +193,7 @@ const Signup = () => {
                 <p class="is-member">
                   Already a member? <Link to="/login">Sign In</Link>
                 </p>
-                {/*     <a href="#" class="sign-in">Sign in</a> <br />
-                 */}
+
                 <button
                   onClick={handleSubmit}
                   class="card-button signup-button"

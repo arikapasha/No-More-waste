@@ -8,88 +8,77 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import React from 'react';
-import Signup from './pages/Signup';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Profile from './pages/Profile';
-import Track from './pages/Track';
+import React from "react";
+import Signup from "./pages/Signup";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Profile from "./pages/Profile";
+import Track from "./pages/Track";
 import ContactUs from "./pages/ContactUs";
-import About from './pages/About';
+import About from "./pages/About";
 import "./styles.css";
 import "./normalize.css";
-import CreatePost from './pages/CreatePost';
+import CreatePost from "./pages/CreatePost";
 
-
-const Layout = ()=>{
+const Layout = () => {
   return (
     <>
-    <Navbar/>
-    <Outlet/>
-    <Footer/>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
-  )
-}
-
+  );
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
-    children:[
+    element: <Layout />,
+    children: [
       {
-        path:"/",
-        element:<Home/>
+        path: "/",
+        element: <Home />,
       },
       {
-        path:"/profile/:id",
-        element:<Profile/>
+        path: "/profile/:id",
+        element: <Profile />,
       },
       {
-        path:"/track",
-        element:<Track/>
+        path: "/track",
+        element: <Track />,
       },
       {
-        path:"/contact",
-        element:<ContactUs/>
+        path: "/contact",
+        element: <ContactUs />,
       },
       {
-        path:"/createpost",
-        element:<CreatePost/>
+        path: "/createpost",
+        element: <CreatePost />,
       },
       {
-        path:"/about",
-        element:<About/>
+        path: "/about",
+        element: <About />,
       },
-    ]
+    ],
   },
   {
     path: "/signup",
-    element: <Signup/>,
+    element: <Signup />,
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
 ]);
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <h2>
-          No more waste
-        </h2>
-        
-      </header> */}
-
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
   );
 }
-
-
 
 export default App;

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext.js";
 
-
 const Login = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -74,10 +73,7 @@ const Login = () => {
                 <p class="is-member">
                   Not a member?<Link to="/signup">Sign Up Today!</Link>
                 </p>
-                {/*     <a href="#" class="sign-in">Sign up today!</a> <br />
-                 */}
-                {/*           <p>This is an error!</p>
-                 */}
+
                 <button
                   onClick={handleSubmit}
                   class="card-button signup-button sign-in-btn"

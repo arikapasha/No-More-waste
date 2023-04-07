@@ -1,12 +1,10 @@
 import React from "react";
 
 const ContactUs = () => {
-
   function handleEmailClick(event) {
     event.preventDefault();
     window.location.href = "mailto:nomorewaste.abf@gmail.com";
   }
-
 
   return (
     <div>
@@ -18,11 +16,16 @@ const ContactUs = () => {
             </h4>
           </div>
 
-          <p class="email-direction">To contact us, you can email us at: nomorewaste.abf@gmail.com</p>
+          <p class="email-direction">
+            To contact us, you can email us at: nomorewaste.abf@gmail.com
+          </p>
           <div class="click-to-email">
             <p class="click-email">Or click</p>
 
-            <button className="card-button create-btn submit-btn contact-btn" onClick={handleEmailClick}>
+            <button
+              className="card-button create-btn submit-btn contact-btn"
+              onClick={handleEmailClick}
+            >
               Email Us
             </button>
           </div>

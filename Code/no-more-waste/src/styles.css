@@ -6,7 +6,7 @@
 
 /*changes made for file input*/
 input[type="file"] {
-  display:flex;
+  display: flex;
   width: 100%;
   font-size: 15px;
   margin-top: 15px;
@@ -17,11 +17,11 @@ input {
   font-size: 12px;
 }
 
-.already-requested{
+.already-requested {
   color: red;
 }
 
-.already-requested-by-you{
+.already-requested-by-you {
   color: green;
 }
 
@@ -32,7 +32,14 @@ html {
 .body-style {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, #004445, #476e62, #829986, #bfc6b1, #faf5e4);
+  background-image: linear-gradient(
+    to right bottom,
+    #004445,
+    #476e62,
+    #829986,
+    #bfc6b1,
+    #faf5e4
+  );
   position: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -177,10 +184,10 @@ select:focus {
     max-width: 1400px;
     /*margin-left: -15rem;*/
   }
-  
 }
 
-@media screen and (min-width: 1300px) { /*was 1024px, changed to 1300 px for the best view.*/ 
+@media screen and (min-width: 1300px) {
+  /*was 1024px, changed to 1300 px for the best view.*/
   .grid--1x3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -193,7 +200,7 @@ select:focus {
 }
 /* Navigation Bar */
 .nav {
-  background:  #2c786c;
+  background: #2c786c;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -223,7 +230,7 @@ select:focus {
 }
 
 .nav__item > a:hover {
-  color: #FE8402;
+  color: #fe8402;
 }
 
 .nav__toggler {
@@ -264,7 +271,6 @@ select:focus {
   width: 40px;
   height: 40px;
   opacity: 0;
-  
 }
 
 .icon--white {
@@ -273,18 +279,18 @@ select:focus {
 
 @media screen and (max-width: 768px) {
   .nav {
-      height: 11rem;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
+    height: 11rem;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
   }
   .icon-menu {
-      opacity: 1;
-      position: relative;
-      top: 3.5rem;
-      left: -22rem;
-      padding: 5px;
-      /* z-index:2; */
+    opacity: 1;
+    position: relative;
+    top: 3.5rem;
+    left: -22rem;
+    padding: 5px;
+    /* z-index:2; */
   }
   .nav__brand {
     position: relative;
@@ -295,32 +301,31 @@ select:focus {
     padding: 1rem 2rem;
   }
   .nav ul {
-      display: none;
+    display: none;
   }
   .active .hidden-collapsible {
-      display: block;
-      opacity: 1;
-      max-height: 100%;
-      background-color: #2c786c;
-      position: relative;
-      top: 8.5rem;
-      left: -60px;
-      width: 100%;
-      animation: example 0.6s ease-in-out forwards;
+    display: block;
+    opacity: 1;
+    max-height: 100%;
+    background-color: #2c786c;
+    position: relative;
+    top: 8.5rem;
+    left: -60px;
+    width: 100%;
+    animation: example 0.6s ease-in-out forwards;
   }
   .active .icon-menu {
-      position: relative;
-      top: 3.5rem;
-      left: 15rem;
-      padding: 5px;
-      align-items: center;
-      z-index:2;
+    position: relative;
+    top: 3.5rem;
+    left: 15rem;
+    padding: 5px;
+    align-items: center;
+    z-index: 2;
   }
-  .active .collapsed-menu{
-      z-index:1;
+  .active .collapsed-menu {
+    z-index: 1;
   }
 }
-
 
 @media screen and (min-width: 768px) {
   .nav__toggler {
@@ -343,9 +348,8 @@ select:focus {
 
 @media screen and (min-width: 1590px) {
   .nav {
-      /* justify-content: space-between; */
-      margin: 0 auto;
-
+    /* justify-content: space-between; */
+    margin: 0 auto;
   }
 }
 
@@ -424,7 +428,8 @@ select:focus {
   border: 1px solid #004445;
   /*border: 3px solid #2c786c;*/
   /*box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   position: relative;
 }
 /*@media screen and (min-width: 768px) {
@@ -469,7 +474,8 @@ select:focus {
   left: 14px;
   top: 15px;
   border-radius: 0px 20px 0px 20px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .card-desc {
@@ -496,7 +502,6 @@ select:focus {
 .text-driver-details {
   text-align: center;
 }
-
 
 .restaurant-banner {
   max-width: 98px;
@@ -605,7 +610,7 @@ select:focus {
 
 .already-req-banner {
   border-radius: 12px;
-  background-color: #EBEBE4;
+  background-color: #ebebe4;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   font-size: 1.3rem;
@@ -623,7 +628,7 @@ select:focus {
 /*for driver when they have accepted the deliver*/
 .already-accepted-banner {
   border-radius: 12px;
-  background-color: #EBEBE4;
+  background-color: #ebebe4;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   font-size: 1.3rem;
@@ -902,7 +907,7 @@ select:focus {
 
 /* Home Page Business */
 .create-post-btn {
-  position:relative; 
+  position: relative;
   left: 950px;
   top: 50px;
   bottom: 50px;
@@ -1087,7 +1092,6 @@ select:focus {
   }
 }
 
-
 /* Track Page */
 .rest-track-details {
   position: relative;
@@ -1155,10 +1159,9 @@ select:focus {
   left: 220px;
 }
 
-
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1203,24 +1206,22 @@ select:focus {
   left: 200px;
 }
 
-.map-link{
+.map-link {
   text-decoration: underline;
-  
 }
 
-.vol-status{
+.vol-status {
   font-size: medium;
   color: red;
   text-decoration: bold;
   border: 5px;
-  
 }
 
 @media screen and (max-width: 768px) {
   .email-direction {
     width: 300px;
   }
-  
+
   .contact-header {
     position: relative;
     left: 70px;
@@ -1241,12 +1242,10 @@ select:focus {
   margin-bottom: 250px;
 }
 
-
 /* About Page */
 .about {
   margin-bottom: 100px;
 }
-
 
 /* About Page */
 .about-content-area {
@@ -1270,7 +1269,9 @@ select:focus {
   left: -40px;
 }
 
-.why, .aim, .how {
+.why,
+.aim,
+.how {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -1282,7 +1283,9 @@ select:focus {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.why-desc, .aim-desc, .how-desc {
+.why-desc,
+.aim-desc,
+.how-desc {
   font-size: 1.5rem;
   width: 600px;
   position: relative;
@@ -1329,20 +1332,22 @@ select:focus {
     left: 27px;
     font-size: 1.4rem;
   }
-  
+
   .faizah {
     position: relative;
     left: 22px;
     font-size: 1.4rem;
   }
-  
+
   .arika {
     position: relative;
     left: 25px;
     font-size: 1.4rem;
   }
 
-  .why, .aim, .how {
+  .why,
+  .aim,
+  .how {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -1353,7 +1358,7 @@ select:focus {
     background-color: #faf5e4;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
-  
+
   .aim-desc {
     font-size: 1.5rem;
     width: 270px;
@@ -1373,7 +1378,7 @@ select:focus {
     width: 270px;
     position: relative;
     top: -30px;
-  } 
+  }
 }
 
 .landing-page {
@@ -1425,7 +1430,6 @@ select:focus {
     position: relative;
     top: -50px;
     left: 33px;
-    
   }
 
   .welcome-heading {

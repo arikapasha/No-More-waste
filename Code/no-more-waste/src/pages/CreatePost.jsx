@@ -4,7 +4,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 const CreatePost = () => {
   const [item_name, setItemName] = useState("");
   const [description, setDescription] = useState("");
@@ -17,7 +16,10 @@ const CreatePost = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post(process.env.REACT_APP_BASE_URL + "/upload", formData);
+      const res = await axios.post(
+        process.env.REACT_APP_BASE_URL + "/upload",
+        formData
+      );
       //console.log(res.data);
       return res.data;
     } catch (err) {
@@ -47,11 +49,11 @@ const CreatePost = () => {
         <div class="inner-content-create">
           <div className="sign-up create-div">
             <form className="signup-form">
-            <div class="card-head-design create-header"> 
-                    <h4 class="card-heading" id="item_name" name="item_name">
-                    Create a new post
-                    </h4>
-                    </div>
+              <div class="card-head-design create-header">
+                <h4 class="card-heading" id="item_name" name="item_name">
+                  Create a new post
+                </h4>
+              </div>
               <label for="item_name" className="form-label form-label-create">
                 Item Name
               </label>
@@ -69,22 +71,16 @@ const CreatePost = () => {
                 Food Description
               </label>
               <br />
-              {/* <input
-                type="text"
+
+              <textarea
                 id="description"
                 name="description"
                 className="form-input create-desc"
                 placeholder="Food type, quantity, allergies, etc"
-                onChange={(e) => setDescription(e.target.value)}
-              /> */}
-              <textarea 
-                id="description"
-                name="description"
-                className="form-input create-desc"
-                placeholder="Food type, quantity, allergies, etc"
-                maxlength = "100"
+                maxlength="100"
                 minlength="50"
-                onChange={(e) => setDescription(e.target.value)}></textarea>
+                onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
               <br />
               <label for="description" className="form-label form-label-create">
                 Pickup Time
@@ -105,12 +101,6 @@ const CreatePost = () => {
                 name=""
                 onChange={(e) => setFile(e.target.files[0])}
               />
-              {/* <span class="create-span">
-                <div className="upload">
-                  <p className="upload-btn">+</p>
-                </div>
-                <p className="upload-instruct">Upload pictures</p>
-              </span> */}
 
               <button className="card-button create-btn" onClick={handleSubmit}>
                 Create

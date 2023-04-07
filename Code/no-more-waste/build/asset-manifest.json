@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.35741d3a.chunk.css",
-  "main.js": "/static/js/main.89d91690.chunk.js",
-  "main.js.map": "/static/js/main.89d91690.chunk.js.map",
+  "main.css": "/static/css/main.e6bc52ff.chunk.css",
+  "main.js": "/static/js/main.7e30e416.chunk.js",
+  "main.js.map": "/static/js/main.7e30e416.chunk.js.map",
   "static/js/1.e276198e.chunk.js": "/static/js/1.e276198e.chunk.js",
   "static/js/1.e276198e.chunk.js.map": "/static/js/1.e276198e.chunk.js.map",
   "static/js/2.9dd2a40a.chunk.js": "/static/js/2.9dd2a40a.chunk.js",
@@ -15,8 +15,8 @@
   "static/media/faizah-kolapo.png": "/static/media/faizah-kolapo.d96f8fc1.png",
   "static/media/arika-pasha.png": "/static/media/arika-pasha.1c5b3067.png",
   "static/media/instagram.png": "/static/media/instagram.9aefd702.png",
-  "static/css/main.35741d3a.chunk.css.map": "/static/css/main.35741d3a.chunk.css.map",
+  "static/css/main.e6bc52ff.chunk.css.map": "/static/css/main.e6bc52ff.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.0d2339213db2ea1477a0dae9432c2e95.js": "/precache-manifest.0d2339213db2ea1477a0dae9432c2e95.js",
+  "precache-manifest.605a2e9c592dc67269ea87c2f6784f3d.js": "/precache-manifest.605a2e9c592dc67269ea87c2f6784f3d.js",
   "service-worker.js": "/service-worker.js"
 }
