@@ -11,9 +11,9 @@ The website will give restaurants the ability to post a food item they want gone
 3. Faizah Kolapo
 
 #### Vlogs:
-- [Vlog 1 (Starting Point Vlog)](https://www.youtube.com/watch?v=Uno1oIQs6zY)
-- [Vlog 2 (Mid Point Vlog)](https://www.youtube.com/watch?v=vSOWJAjV0Jc)
-- [Vlog 3 (End Point Vlog)](https://youtu.be/eZyz1MGKM_o)
+- [Vlog 1](https://www.youtube.com/watch?v=Uno1oIQs6zY)
+- [Vlog 2](https://www.youtube.com/watch?v=vSOWJAjV0Jc)
+- [Vlog 3](https://youtu.be/eZyz1MGKM_o)
 - [Vlog 4](https://www.youtube.com/watch?v=KqtDUrkIR0E)
 - [Vlog 5](https://www.youtube.com/watch?v=O1C9I8tSyuI&feature=youtu.be)
 - [Vlog 6](https://youtu.be/akMIVAxbwkc)
