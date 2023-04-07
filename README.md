@@ -1,4 +1,4 @@
-# Capstone project SSE - No More Waste
+# Capstone Project SSE - No More Waste
 ## Team Vecna
 ### Description
 A Responsive Web App that will give restaurants a platform to connect with local shelters so excess food does not go to waste.
@@ -18,6 +18,9 @@ The website will give restaurants the ability to post a food item they want gone
 - [Vlog 5](https://www.youtube.com/watch?v=O1C9I8tSyuI&feature=youtu.be)
 - [Vlog 6](https://youtu.be/akMIVAxbwkc)
 - [Demo](https://www.youtube.com/watch?v=DeeWeUCt1w8)
+# Watch Our Demo
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=DeeWeUCt1w8)
+# Watch Our Commercial 
 
 #### Diagrams:
 - [Lo-Fi](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Lo-Fi%20Prototypes)
