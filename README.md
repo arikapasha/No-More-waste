@@ -1,16 +1,16 @@
 # Capstone Project SSE - No More Waste
 ## Team Vecna
-### Description
+# Description
 A Responsive Web App that will give restaurants a platform to connect with local shelters so excess food does not go to waste.
 Created for the Capstone Project(ENSE 400/477) for Software Systems Engineering at the University of Regina.<br/> 
 The website will give restaurants the ability to post a food item they want gone which gives room for shelters to accept the item and finally, a volunteer driver accepting to deliver it to the shelter.
 
-#### Members
+# Members
 1. Bulbul Arora
 2. Faizah Kolapo
 3. Arika Pasha
 
-#### Vlogs:
+# Vlogs:
 - [Vlog 1](https://www.youtube.com/watch?v=Uno1oIQs6zY)
 - [Vlog 2](https://www.youtube.com/watch?v=vSOWJAjV0Jc)
 - [Vlog 3](https://youtu.be/eZyz1MGKM_o)
@@ -27,12 +27,12 @@ The website will give restaurants the ability to post a food item they want gone
 ](https://www.youtube.com/watch?v=XSP4Tj_Rsuk)
 
 
-#### Diagrams:
+# Diagrams:
 - [Lo-Fi](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Lo-Fi%20Prototypes)
 - [Hi-Fi](https://github.com/bulbularora/No-More-waste/tree/main/Prototypes/Hi-Fi%20Prototypes)
 - [UML Diagrams](https://github.com/bulbularora/No-More-waste/tree/main/Documentation/UML%20Diagrams)
 
-#### Planning
+# Planning
 - [Documentation](https://github.com/bulbularora/No-More-waste/tree/main/Documentation)
 
 
