@@ -36,6 +36,8 @@ https://no-more-waste-381322.uw.r.appspot.com/
 
 # Planning
 - [Documentation](https://github.com/bulbularora/No-More-waste/tree/main/Documentation)
+- [Final Documentation](https://github.com/bulbularora/No-More-waste/tree/main/Project%20Closing)
+
 
 
 
