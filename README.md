@@ -9,7 +9,7 @@ https://no-more-waste-381322.uw.r.appspot.com/
 
 # Members
 1. Bulbul Arora
-2. Teni Kolapo
+2. Faizah Kolapo
 3. Arika Pasha
 
 # Vlogs:
